@@ -1,0 +1,21 @@
+{
+  "name": "TowerBreak.EventBus.Tests",
+  "rootNamespace": "TowerBreak.EventBus.Tests",
+  "references": [
+    "TowerBreak.EventBus"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": true
+}

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/admin/Desktop/Fork/TowerBreak/Assets/Scripts -type f -name \"*.asmdef\" | xargs ls -lh)",
+      "Bash(ls -la /c/Users/admin/Desktop/Fork/TowerBreak/*.sln 2>/dev/null)",
+      "Bash(find /c/Users/admin/Desktop/Fork/TowerBreak/Assets/Scripts/GameData/TowerBreaker -type f -name \"*.cs\" | xargs wc -l | tail -1)",
+      "Bash(find /c/Users/admin/Desktop/Fork/TowerBreak/Assets/Scripts -type f -name \"*.cs\" | xargs wc -l | tail -1)"
+    ]
+  }
+}

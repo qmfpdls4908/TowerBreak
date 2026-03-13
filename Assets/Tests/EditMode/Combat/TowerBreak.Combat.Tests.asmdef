@@ -1,0 +1,23 @@
+{
+  "name": "TowerBreak.Combat.Tests",
+  "rootNamespace": "TowerBreak.Combat.Tests",
+  "references": [
+    "TowerBreak.Combat",
+    "TowerBreak.GameData",
+    "TowerBreak.DI"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

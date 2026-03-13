@@ -1,0 +1,17 @@
+{
+  "name": "TowerBreak.Combat",
+  "rootNamespace": "TowerBreak.Combat",
+  "references": [
+    "TowerBreak.GameData",
+    "TowerBreak.DI"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

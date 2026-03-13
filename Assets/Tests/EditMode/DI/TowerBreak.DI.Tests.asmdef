@@ -1,0 +1,21 @@
+{
+  "name": "TowerBreak.DI.Tests",
+  "rootNamespace": "TowerBreak.DI.Tests",
+  "references": [
+    "TowerBreak.DI"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

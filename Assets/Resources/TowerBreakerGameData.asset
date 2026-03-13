@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa44c9fb3bcc939409b4cdc6a7a1ec83, type: 3}
+  m_Name: TowerBreakerGameData
+  m_EditorClassIdentifier: 
+  Floors:
+  - Id: 1
+    DisplayName: Floor 1
+    RewardTableId: 1001
+    RecommendedPower: 10
+    BattleBackdropKey: env/floor01/backdrop
+    BattleBgmKey: bgm/floor01
+  - Id: 2
+    DisplayName: Floor 2
+    RewardTableId: 1002
+    RecommendedPower: 18
+    BattleBackdropKey: env/floor02/backdrop
+    BattleBgmKey: bgm/floor02
+  - Id: 3
+    DisplayName: Floor 3
+    RewardTableId: 1003
+    RecommendedPower: 28
+    BattleBackdropKey: env/floor03/backdrop
+    BattleBgmKey: bgm/floor03
+  FloorWaves:
+  - FloorId: 1
+    WaveIndex: 1
+    EnemyId: 101
+    SpawnOrder: 1
+    SpawnTime: 0
+    Quantity: 2
+  - FloorId: 1
+    WaveIndex: 1
+    EnemyId: 102
+    SpawnOrder: 2
+    SpawnTime: 5
+    Quantity: 1
+  - FloorId: 2
+    WaveIndex: 1
+    EnemyId: 101
+    SpawnOrder: 1
+    SpawnTime: 0
+    Quantity: 3
+  Enemies:
+  - Id: 101
+    Archetype: 0
+    Health: 30
+    Pressure: 4.5
+    MoveSpeed: 1.6
+    AttackCadence: 1.2
+    IsArmored: 0
+    PrefabKey: enemy/basic_melee
+    PortraitKey: portrait/enemy/basic_melee
+    HitVfxKey: vfx/enemy/hit/basic
+    HitSfxKey: sfx/enemy/hit/basic
+    DeathVfxKey: vfx/enemy/death/basic
+  - Id: 102
+    Archetype: 1
+    Health: 65
+    Pressure: 8
+    MoveSpeed: 1
+    AttackCadence: 2
+    IsArmored: 1
+    PrefabKey: enemy/armored_pusher
+    PortraitKey: portrait/enemy/armored_pusher
+    HitVfxKey: vfx/enemy/hit/armored
+    HitSfxKey: sfx/enemy/hit/armored
+    DeathVfxKey: vfx/enemy/death/armored
+  Weapons: []
+  RewardTables: []
+  RewardEntries: []
+  EnhancementCosts: []
+  RerollCosts: []

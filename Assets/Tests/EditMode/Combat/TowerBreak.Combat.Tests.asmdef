@@ -2,21 +2,23 @@
   "name": "TowerBreak.Combat.Tests",
   "rootNamespace": "TowerBreak.Combat.Tests",
   "references": [
+    "UnityEngine.TestRunner",
+    "UnityEditor.TestRunner",
     "TowerBreak.Combat",
-    "TowerBreak.GameData",
-    "TowerBreak.DI"
+    "TowerBreak.GameData"
   ],
   "includePlatforms": [
     "Editor"
   ],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
-  "overrideReferences": false,
-  "precompiledReferences": [],
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll"
+  ],
   "autoReferenced": false,
-  "defineConstraints": [],
-  "optionalUnityReferences": [
-    "TestAssemblies"
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
   ],
   "versionDefines": [],
   "noEngineReferences": false

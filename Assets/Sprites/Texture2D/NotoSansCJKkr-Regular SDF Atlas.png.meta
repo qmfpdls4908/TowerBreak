@@ -1,0 +1,4173 @@
+fileFormatVersion: 2
+guid: 0903a5b6d3f4bf34280739a71f4f2f8e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7376596813489365477
+    second: NotoSansCJKkr-Regular SDF Atlas_0
+  - first:
+      213: 6452115971736610426
+    second: NotoSansCJKkr-Regular SDF Atlas_1
+  - first:
+      213: -3344360208838490130
+    second: NotoSansCJKkr-Regular SDF Atlas_2
+  - first:
+      213: 5649779267361985735
+    second: NotoSansCJKkr-Regular SDF Atlas_3
+  - first:
+      213: 5228586357873749322
+    second: NotoSansCJKkr-Regular SDF Atlas_4
+  - first:
+      213: -9104858930740803835
+    second: NotoSansCJKkr-Regular SDF Atlas_5
+  - first:
+      213: -3441980644608025909
+    second: NotoSansCJKkr-Regular SDF Atlas_6
+  - first:
+      213: 1763777997276800584
+    second: NotoSansCJKkr-Regular SDF Atlas_7
+  - first:
+      213: -4330087138082768114
+    second: NotoSansCJKkr-Regular SDF Atlas_8
+  - first:
+      213: -6493753936226375115
+    second: NotoSansCJKkr-Regular SDF Atlas_9
+  - first:
+      213: 607166086263042624
+    second: NotoSansCJKkr-Regular SDF Atlas_10
+  - first:
+      213: -8396897238611710194
+    second: NotoSansCJKkr-Regular SDF Atlas_11
+  - first:
+      213: 3409152855827255199
+    second: NotoSansCJKkr-Regular SDF Atlas_12
+  - first:
+      213: 3165382179665443458
+    second: NotoSansCJKkr-Regular SDF Atlas_13
+  - first:
+      213: 8853662784433971724
+    second: NotoSansCJKkr-Regular SDF Atlas_14
+  - first:
+      213: 178083933750420210
+    second: NotoSansCJKkr-Regular SDF Atlas_15
+  - first:
+      213: -5322839335280960175
+    second: NotoSansCJKkr-Regular SDF Atlas_16
+  - first:
+      213: 4322671010991808394
+    second: NotoSansCJKkr-Regular SDF Atlas_17
+  - first:
+      213: 8104570365196633753
+    second: NotoSansCJKkr-Regular SDF Atlas_18
+  - first:
+      213: -7375825468199451999
+    second: NotoSansCJKkr-Regular SDF Atlas_19
+  - first:
+      213: 7928018940282917758
+    second: NotoSansCJKkr-Regular SDF Atlas_20
+  - first:
+      213: -8040506161838660042
+    second: NotoSansCJKkr-Regular SDF Atlas_21
+  - first:
+      213: 4628537987662021388
+    second: NotoSansCJKkr-Regular SDF Atlas_22
+  - first:
+      213: -3462211835857275442
+    second: NotoSansCJKkr-Regular SDF Atlas_23
+  - first:
+      213: 3472213201868234141
+    second: NotoSansCJKkr-Regular SDF Atlas_24
+  - first:
+      213: -2596751026836333393
+    second: NotoSansCJKkr-Regular SDF Atlas_25
+  - first:
+      213: 8103335069943981899
+    second: NotoSansCJKkr-Regular SDF Atlas_26
+  - first:
+      213: -1731721584507650475
+    second: NotoSansCJKkr-Regular SDF Atlas_27
+  - first:
+      213: 9160066345934518807
+    second: NotoSansCJKkr-Regular SDF Atlas_28
+  - first:
+      213: 7838875515420042421
+    second: NotoSansCJKkr-Regular SDF Atlas_29
+  - first:
+      213: 4298913440544805876
+    second: NotoSansCJKkr-Regular SDF Atlas_30
+  - first:
+      213: -1771090599356062191
+    second: NotoSansCJKkr-Regular SDF Atlas_31
+  - first:
+      213: 3186964684946610436
+    second: NotoSansCJKkr-Regular SDF Atlas_32
+  - first:
+      213: -7018220563706843479
+    second: NotoSansCJKkr-Regular SDF Atlas_33
+  - first:
+      213: 1722915530730791165
+    second: NotoSansCJKkr-Regular SDF Atlas_34
+  - first:
+      213: 6408763868668002381
+    second: NotoSansCJKkr-Regular SDF Atlas_35
+  - first:
+      213: -9004367064950472037
+    second: NotoSansCJKkr-Regular SDF Atlas_36
+  - first:
+      213: 8209578643572628877
+    second: NotoSansCJKkr-Regular SDF Atlas_37
+  - first:
+      213: 3150198331550459052
+    second: NotoSansCJKkr-Regular SDF Atlas_38
+  - first:
+      213: -5972673886884501170
+    second: NotoSansCJKkr-Regular SDF Atlas_39
+  - first:
+      213: -1797651390401347901
+    second: NotoSansCJKkr-Regular SDF Atlas_40
+  - first:
+      213: -4717318854711513174
+    second: NotoSansCJKkr-Regular SDF Atlas_41
+  - first:
+      213: -7190667707080721283
+    second: NotoSansCJKkr-Regular SDF Atlas_42
+  - first:
+      213: -8377270589782059982
+    second: NotoSansCJKkr-Regular SDF Atlas_43
+  - first:
+      213: -8601868397532606534
+    second: NotoSansCJKkr-Regular SDF Atlas_44
+  - first:
+      213: 2806913179275074563
+    second: NotoSansCJKkr-Regular SDF Atlas_45
+  - first:
+      213: 8255650426678584453
+    second: NotoSansCJKkr-Regular SDF Atlas_46
+  - first:
+      213: -5374626127587844605
+    second: NotoSansCJKkr-Regular SDF Atlas_47
+  - first:
+      213: 1309962267907207520
+    second: NotoSansCJKkr-Regular SDF Atlas_48
+  - first:
+      213: 5971826869625800342
+    second: NotoSansCJKkr-Regular SDF Atlas_49
+  - first:
+      213: -6627582427291406506
+    second: NotoSansCJKkr-Regular SDF Atlas_50
+  - first:
+      213: 5989836402591739252
+    second: NotoSansCJKkr-Regular SDF Atlas_51
+  - first:
+      213: 5511362455295553259
+    second: NotoSansCJKkr-Regular SDF Atlas_52
+  - first:
+      213: 7902222374227671186
+    second: NotoSansCJKkr-Regular SDF Atlas_53
+  - first:
+      213: 1607115499700601122
+    second: NotoSansCJKkr-Regular SDF Atlas_54
+  - first:
+      213: 7591516165085571090
+    second: NotoSansCJKkr-Regular SDF Atlas_55
+  - first:
+      213: -7288851829357483021
+    second: NotoSansCJKkr-Regular SDF Atlas_56
+  - first:
+      213: 1278893334111428452
+    second: NotoSansCJKkr-Regular SDF Atlas_57
+  - first:
+      213: -2874632712390094521
+    second: NotoSansCJKkr-Regular SDF Atlas_58
+  - first:
+      213: 3861006356005851143
+    second: NotoSansCJKkr-Regular SDF Atlas_59
+  - first:
+      213: -3807688606961432164
+    second: NotoSansCJKkr-Regular SDF Atlas_60
+  - first:
+      213: 6296742477830849723
+    second: NotoSansCJKkr-Regular SDF Atlas_61
+  - first:
+      213: -1099388711297085846
+    second: NotoSansCJKkr-Regular SDF Atlas_62
+  - first:
+      213: 6336115331115190813
+    second: NotoSansCJKkr-Regular SDF Atlas_63
+  - first:
+      213: -2368808384575446024
+    second: NotoSansCJKkr-Regular SDF Atlas_64
+  - first:
+      213: 5584490117892387269
+    second: NotoSansCJKkr-Regular SDF Atlas_65
+  - first:
+      213: -7089748770232042997
+    second: NotoSansCJKkr-Regular SDF Atlas_66
+  - first:
+      213: 424217537356507944
+    second: NotoSansCJKkr-Regular SDF Atlas_67
+  - first:
+      213: -7520183878353856791
+    second: NotoSansCJKkr-Regular SDF Atlas_68
+  - first:
+      213: -7898198071261747755
+    second: NotoSansCJKkr-Regular SDF Atlas_69
+  - first:
+      213: -5778608044783411212
+    second: NotoSansCJKkr-Regular SDF Atlas_70
+  - first:
+      213: -6709369877751373000
+    second: NotoSansCJKkr-Regular SDF Atlas_71
+  - first:
+      213: 6691403388521082623
+    second: NotoSansCJKkr-Regular SDF Atlas_72
+  - first:
+      213: -56626864263382493
+    second: NotoSansCJKkr-Regular SDF Atlas_73
+  - first:
+      213: 4508821174593668731
+    second: NotoSansCJKkr-Regular SDF Atlas_74
+  - first:
+      213: -2767691486312003641
+    second: NotoSansCJKkr-Regular SDF Atlas_75
+  - first:
+      213: 7062405328968483987
+    second: NotoSansCJKkr-Regular SDF Atlas_76
+  - first:
+      213: 6635050068022344476
+    second: NotoSansCJKkr-Regular SDF Atlas_77
+  - first:
+      213: 6738009211276926602
+    second: NotoSansCJKkr-Regular SDF Atlas_78
+  - first:
+      213: -4901782130706200695
+    second: NotoSansCJKkr-Regular SDF Atlas_79
+  - first:
+      213: 327191687346532298
+    second: NotoSansCJKkr-Regular SDF Atlas_80
+  - first:
+      213: -8026263194206112703
+    second: NotoSansCJKkr-Regular SDF Atlas_81
+  - first:
+      213: 2276444248300459648
+    second: NotoSansCJKkr-Regular SDF Atlas_82
+  - first:
+      213: -13809432278166098
+    second: NotoSansCJKkr-Regular SDF Atlas_83
+  - first:
+      213: 2016163964429375321
+    second: NotoSansCJKkr-Regular SDF Atlas_84
+  - first:
+      213: 5958631782044582877
+    second: NotoSansCJKkr-Regular SDF Atlas_85
+  - first:
+      213: -8342827625589222409
+    second: NotoSansCJKkr-Regular SDF Atlas_86
+  - first:
+      213: -6640687016321679327
+    second: NotoSansCJKkr-Regular SDF Atlas_87
+  - first:
+      213: 1848076525037085195
+    second: NotoSansCJKkr-Regular SDF Atlas_88
+  - first:
+      213: -569931279007561967
+    second: NotoSansCJKkr-Regular SDF Atlas_89
+  - first:
+      213: 4142713234894849648
+    second: NotoSansCJKkr-Regular SDF Atlas_90
+  - first:
+      213: 6163681484865659018
+    second: NotoSansCJKkr-Regular SDF Atlas_91
+  - first:
+      213: -1768393946687332272
+    second: NotoSansCJKkr-Regular SDF Atlas_92
+  - first:
+      213: -964017737865286004
+    second: NotoSansCJKkr-Regular SDF Atlas_93
+  - first:
+      213: -1270138301817805605
+    second: NotoSansCJKkr-Regular SDF Atlas_94
+  - first:
+      213: 9203545866625505214
+    second: NotoSansCJKkr-Regular SDF Atlas_95
+  - first:
+      213: -2334682178301895296
+    second: NotoSansCJKkr-Regular SDF Atlas_96
+  - first:
+      213: 673793670010483525
+    second: NotoSansCJKkr-Regular SDF Atlas_97
+  - first:
+      213: -4948453248067086799
+    second: NotoSansCJKkr-Regular SDF Atlas_98
+  - first:
+      213: 6806569303649867043
+    second: NotoSansCJKkr-Regular SDF Atlas_99
+  - first:
+      213: -4588960662055689270
+    second: NotoSansCJKkr-Regular SDF Atlas_100
+  - first:
+      213: -6107217996539946216
+    second: NotoSansCJKkr-Regular SDF Atlas_101
+  - first:
+      213: 1028617419098759037
+    second: NotoSansCJKkr-Regular SDF Atlas_102
+  - first:
+      213: -5555579721753056765
+    second: NotoSansCJKkr-Regular SDF Atlas_103
+  - first:
+      213: 2219429485668005096
+    second: NotoSansCJKkr-Regular SDF Atlas_104
+  - first:
+      213: -8427244086095300895
+    second: NotoSansCJKkr-Regular SDF Atlas_105
+  - first:
+      213: -2016192891858864397
+    second: NotoSansCJKkr-Regular SDF Atlas_106
+  - first:
+      213: 1412895972480536424
+    second: NotoSansCJKkr-Regular SDF Atlas_107
+  - first:
+      213: -7383040285894386835
+    second: NotoSansCJKkr-Regular SDF Atlas_108
+  - first:
+      213: 3442800218405265786
+    second: NotoSansCJKkr-Regular SDF Atlas_109
+  - first:
+      213: -1438265323543171798
+    second: NotoSansCJKkr-Regular SDF Atlas_110
+  - first:
+      213: -8825833241131972629
+    second: NotoSansCJKkr-Regular SDF Atlas_111
+  - first:
+      213: 9022591117448727321
+    second: NotoSansCJKkr-Regular SDF Atlas_112
+  - first:
+      213: 6842597956150783806
+    second: NotoSansCJKkr-Regular SDF Atlas_113
+  - first:
+      213: -8839329295474092858
+    second: NotoSansCJKkr-Regular SDF Atlas_114
+  - first:
+      213: 8456363822396762565
+    second: NotoSansCJKkr-Regular SDF Atlas_115
+  - first:
+      213: 1701870919918738781
+    second: NotoSansCJKkr-Regular SDF Atlas_116
+  - first:
+      213: -7599931906938387121
+    second: NotoSansCJKkr-Regular SDF Atlas_117
+  - first:
+      213: -3491499517320930112
+    second: NotoSansCJKkr-Regular SDF Atlas_118
+  - first:
+      213: -5616929624927653302
+    second: NotoSansCJKkr-Regular SDF Atlas_119
+  - first:
+      213: -6627390061162724391
+    second: NotoSansCJKkr-Regular SDF Atlas_120
+  - first:
+      213: -5060551531198827391
+    second: NotoSansCJKkr-Regular SDF Atlas_121
+  - first:
+      213: -3501856646354069364
+    second: NotoSansCJKkr-Regular SDF Atlas_122
+  - first:
+      213: -3807252531768062224
+    second: NotoSansCJKkr-Regular SDF Atlas_123
+  - first:
+      213: -3241518803460650219
+    second: NotoSansCJKkr-Regular SDF Atlas_124
+  - first:
+      213: -8044256438486691635
+    second: NotoSansCJKkr-Regular SDF Atlas_125
+  - first:
+      213: -5019936322637657235
+    second: NotoSansCJKkr-Regular SDF Atlas_126
+  - first:
+      213: -5243540402138606036
+    second: NotoSansCJKkr-Regular SDF Atlas_127
+  - first:
+      213: -483704868353119112
+    second: NotoSansCJKkr-Regular SDF Atlas_128
+  - first:
+      213: -8706792633895681531
+    second: NotoSansCJKkr-Regular SDF Atlas_129
+  - first:
+      213: -6467404814734986010
+    second: NotoSansCJKkr-Regular SDF Atlas_130
+  - first:
+      213: 880513729155788143
+    second: NotoSansCJKkr-Regular SDF Atlas_131
+  - first:
+      213: -1731512932909242361
+    second: NotoSansCJKkr-Regular SDF Atlas_132
+  - first:
+      213: 6963396232290880500
+    second: NotoSansCJKkr-Regular SDF Atlas_133
+  - first:
+      213: -8445048696892334320
+    second: NotoSansCJKkr-Regular SDF Atlas_134
+  - first:
+      213: -7176895178093900362
+    second: NotoSansCJKkr-Regular SDF Atlas_135
+  - first:
+      213: 1795721576982361990
+    second: NotoSansCJKkr-Regular SDF Atlas_136
+  - first:
+      213: -3099900140636152462
+    second: NotoSansCJKkr-Regular SDF Atlas_137
+  - first:
+      213: 3598607321427362386
+    second: NotoSansCJKkr-Regular SDF Atlas_138
+  - first:
+      213: 8915665340973260846
+    second: NotoSansCJKkr-Regular SDF Atlas_139
+  - first:
+      213: 4223134731228429405
+    second: NotoSansCJKkr-Regular SDF Atlas_140
+  - first:
+      213: -1136593482428567708
+    second: NotoSansCJKkr-Regular SDF Atlas_141
+  - first:
+      213: 7972352820701588402
+    second: NotoSansCJKkr-Regular SDF Atlas_142
+  - first:
+      213: -4511983633464267472
+    second: NotoSansCJKkr-Regular SDF Atlas_143
+  - first:
+      213: -421088914887858817
+    second: NotoSansCJKkr-Regular SDF Atlas_144
+  - first:
+      213: 3908751993266333673
+    second: NotoSansCJKkr-Regular SDF Atlas_145
+  - first:
+      213: 3421315211938235207
+    second: NotoSansCJKkr-Regular SDF Atlas_146
+  - first:
+      213: 5585764331843203501
+    second: NotoSansCJKkr-Regular SDF Atlas_147
+  - first:
+      213: 508891553277545052
+    second: NotoSansCJKkr-Regular SDF Atlas_148
+  - first:
+      213: -8064105468194880125
+    second: NotoSansCJKkr-Regular SDF Atlas_149
+  - first:
+      213: 5970629677593459271
+    second: NotoSansCJKkr-Regular SDF Atlas_150
+  - first:
+      213: -7608071732442516063
+    second: NotoSansCJKkr-Regular SDF Atlas_151
+  - first:
+      213: -2911508227658131624
+    second: NotoSansCJKkr-Regular SDF Atlas_152
+  - first:
+      213: -5110736170990745159
+    second: NotoSansCJKkr-Regular SDF Atlas_153
+  - first:
+      213: 379080508512721309
+    second: NotoSansCJKkr-Regular SDF Atlas_154
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1842
+        width: 47
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e1ef4f08bfee5660800000000000000
+      internalID: 7376596813489365477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1842
+        width: 57
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a762cf0aa458a8950800000000000000
+      internalID: 6452115971736610426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1842
+        width: 56
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee70b37fb127691d0800000000000000
+      internalID: -3344360208838490130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 1847
+        width: 54
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c45a725f4c086e40800000000000000
+      internalID: 5649779267361985735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1842
+        width: 28
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4da48a179baf8840800000000000000
+      internalID: 5228586357873749322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1842
+        width: 63
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507c627ca0b05a180800000000000000
+      internalID: -9104858930740803835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1842
+        width: 61
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bca5e5217d0ab30d0800000000000000
+      internalID: -3441980644608025909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1836
+        width: 61
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 846655e5eb23a7810800000000000000
+      internalID: 1763777997276800584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 1836
+        width: 60
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0bb61090b078e3c0800000000000000
+      internalID: -4330087138082768114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 1805
+        width: 87
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53aae6c433d81e5a0800000000000000
+      internalID: -6493753936226375115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1823
+        width: 86
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0427f5ba6561d6800800000000000000
+      internalID: 607166086263042624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 1823
+        width: 86
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f271d337a387b80800000000000000
+      internalID: -8396897238611710194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1862
+        width: 86
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f879cb57ebf4f20800000000000000
+      internalID: 3409152855827255199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1732
+        width: 87
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a7f4d4252bdeb20800000000000000
+      internalID: 3165382179665443458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1862
+        width: 87
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c02684bc4678eda70800000000000000
+      internalID: 8853662784433971724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1741
+        width: 110
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2e56be46ea87200800000000000000
+      internalID: 178083933750420210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 1754
+        width: 109
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15d1a1083d97126b0800000000000000
+      internalID: -5322839335280960175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1667
+        width: 111
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f9b0bc1663dfb30800000000000000
+      internalID: 4322671010991808394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1754
+        width: 103
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99604baaec7397070800000000000000
+      internalID: 8104570365196633753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1745
+        width: 105
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a241b2c0ddc3a990800000000000000
+      internalID: -7375825468199451999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1668
+        width: 88
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e73d124c83bf50e60800000000000000
+      internalID: 7928018940282917758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 1677
+        width: 93
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63664490f326a6090800000000000000
+      internalID: -8040506161838660042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1692
+        width: 89
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c030ff7d6cedb3040800000000000000
+      internalID: 4628537987662021388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1704
+        width: 102
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5f29acda0c3ffc0800000000000000
+      internalID: -3462211835857275442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1649
+        width: 114
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d17c1b287cf2030800000000000000
+      internalID: 3472213201868234141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1579
+        width: 115
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac1a4303bc76fbd0800000000000000
+      internalID: -2596751026836333393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_26
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 1657
+        width: 111
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47e9f31054d47070800000000000000
+      internalID: 8103335069943981899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_27
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 1668
+        width: 30
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e7b89d460b7f7e0800000000000000
+      internalID: -1731721584507650475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_28
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1575
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71aff6c3fc71f1f70800000000000000
+      internalID: 9160066345934518807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_29
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1668
+        width: 30
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b46e17cfb749cc60800000000000000
+      internalID: 7838875515420042421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_30
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1579
+        width: 101
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f353df5ffec8ab30800000000000000
+      internalID: 4298913440544805876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_31
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1590
+        width: 103
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1162958cb72db67e0800000000000000
+      internalID: -1771090599356062191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_32
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1606
+        width: 103
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40915f5ee7f5a3c20800000000000000
+      internalID: 3186964684946610436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_33
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 1644
+        width: 102
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae69e8d4954a9e90800000000000000
+      internalID: -7018220563706843479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_34
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1613
+        width: 102
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df0663bfb8609e710800000000000000
+      internalID: 1722915530730791165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1498
+        width: 123
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d40805198c080f850800000000000000
+      internalID: 6408763868668002381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_36
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1427
+        width: 123
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9286629cdf0a0380800000000000000
+      internalID: -9004367064950472037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_37
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 1569
+        width: 116
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d97c5b7484ee170800000000000000
+      internalID: 8209578643572628877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_38
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 1481
+        width: 117
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca4e71c21b0c7bb20800000000000000
+      internalID: 3150198331550459052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_39
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1485
+        width: 116
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e496ff49ebccc1da0800000000000000
+      internalID: -5972673886884501170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_40
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 1491
+        width: 113
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cef325b5957d07e0800000000000000
+      internalID: -1797651390401347901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_41
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 1500
+        width: 109
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafeaacbe77b88eb0800000000000000
+      internalID: -4717318854711513174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_42
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1516
+        width: 105
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7cb49571dd953c90800000000000000
+      internalID: -7190667707080721283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_43
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1516
+        width: 78
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23496b488c4fdbb80800000000000000
+      internalID: -8377270589782059982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_44
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1459
+        width: 120
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf0960644600a880800000000000000
+      internalID: -8601868397532606534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1344
+        width: 123
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30c9d063aa824f620800000000000000
+      internalID: 2806913179275074563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_46
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1337
+        width: 124
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 584aaff9256f19270800000000000000
+      internalID: 8255650426678584453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_47
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1358
+        width: 87
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30ed790530e7965b0800000000000000
+      internalID: -5374626127587844605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_48
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1327
+        width: 28
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06136cffdbbed2210800000000000000
+      internalID: 1309962267907207520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_49
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1398
+        width: 119
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 696cd28d5e030e250800000000000000
+      internalID: 5971826869625800342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_50
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 1398
+        width: 116
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65faca595e81604a0800000000000000
+      internalID: -6627582427291406506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_51
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1412
+        width: 114
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d2f2ff87c202350800000000000000
+      internalID: 5989836402591739252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_52
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1322
+        width: 122
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beee050e3fa4c7c40800000000000000
+      internalID: 5511362455295553259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_53
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 1395
+        width: 81
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298fbffa1655aad60800000000000000
+      internalID: 7902222374227671186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_54
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 1362
+        width: 28
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221cda8380f9d4610800000000000000
+      internalID: 1607115499700601122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_55
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1305
+        width: 122
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218af860bbb7a5960800000000000000
+      internalID: 7591516165085571090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1190
+        width: 127
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fbe0b211ebc8da90800000000000000
+      internalID: -7288851829357483021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_57
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1185
+        width: 128
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f935526ba8fb110800000000000000
+      internalID: 1278893334111428452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_58
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1174
+        width: 128
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 741554e47c04b18d0800000000000000
+      internalID: -2874632712390094521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_59
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1247
+        width: 126
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700114503dc059530800000000000000
+      internalID: 3861006356005851143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_60
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1244
+        width: 126
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9903cec26f582bc0800000000000000
+      internalID: -3807688606961432164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_61
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 1170
+        width: 127
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb488390ce5826750800000000000000
+      internalID: 6296742477830849723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_62
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 1272
+        width: 123
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e0019bacf2eb0f0800000000000000
+      internalID: -1099388711297085846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_63
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1120
+        width: 106
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a070fc2576ee750800000000000000
+      internalID: 6336115331115190813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_64
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 1201
+        width: 107
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f3e960235d402fd0800000000000000
+      internalID: -2368808384575446024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1038
+        width: 129
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1b7a0ac28108d40800000000000000
+      internalID: 5584490117892387269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_66
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1032
+        width: 129
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0a7e8b7e072c9d90800000000000000
+      internalID: -7089748770232042997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_67
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1093
+        width: 128
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b20a54a9f13e500800000000000000
+      internalID: 424217537356507944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_68
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1090
+        width: 128
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e659153b90f2a790800000000000000
+      internalID: -7520183878353856791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_69
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1185
+        width: 89
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d5a4cc53b6f36290800000000000000
+      internalID: -7898198071261747755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_70
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 1053
+        width: 53
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff587289924ecfa0800000000000000
+      internalID: -5778608044783411212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_71
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 1049
+        width: 28
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8336ce9d4a783e2a0800000000000000
+      internalID: -6709369877751373000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_72
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1081
+        width: 98
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffee4a5ede3acdc50800000000000000
+      internalID: 6691403388521082623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_73
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1020
+        width: 109
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32a36deba22d63ff0800000000000000
+      internalID: -56626864263382493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_74
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 942
+        width: 130
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b764a6338fc829e30800000000000000
+      internalID: 4508821174593668731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_75
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 936
+        width: 130
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c7008ec14f2799d0800000000000000
+      internalID: -2767691486312003641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_76
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 1084
+        width: 129
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3940efc7a34b20260800000000000000
+      internalID: 7062405328968483987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_77
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 930
+        width: 131
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b376302ee641c50800000000000000
+      internalID: 6635050068022344476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_78
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1029
+        width: 131
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e987b9da7328d50800000000000000
+      internalID: 6738009211276926602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 911
+        width: 99
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98746e47f1f59fbb0800000000000000
+      internalID: -4901782130706200695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_80
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 884
+        width: 58
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf20c92b1b6a8400800000000000000
+      internalID: 327191687346532298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_81
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 907
+        width: 100
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1447d8b562cfc9090800000000000000
+      internalID: -8026263194206112703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_82
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 878
+        width: 61
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0861ee29bfd879f10800000000000000
+      internalID: 2276444248300459648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_83
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 866
+        width: 130
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea5928ef460fecff0800000000000000
+      internalID: -13809432278166098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_84
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 817
+        width: 103
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95791cc817adafb10800000000000000
+      internalID: 2016163964429375321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_85
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 788
+        width: 28
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd3ce1c190051b250800000000000000
+      internalID: 5958631782044582877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_86
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 784
+        width: 132
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3507a0a72583c80800000000000000
+      internalID: -8342827625589222409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_87
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 813
+        width: 29
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120099fa75a87d3a0800000000000000
+      internalID: -6640687016321679327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_88
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 930
+        width: 97
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02e298decfa5a910800000000000000
+      internalID: 1848076525037085195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_89
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 878
+        width: 108
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 117ce5875823718f0800000000000000
+      internalID: -569931279007561967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_90
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 910
+        width: 60
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0768734fcbfdd7930800000000000000
+      internalID: 4142713234894849648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_91
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 898
+        width: 64
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a80e11667abc98550800000000000000
+      internalID: 6163681484865659018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_92
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 733
+        width: 131
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05020c823176577e0800000000000000
+      internalID: -1768393946687332272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_93
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 767
+        width: 29
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e2d5999fe1f92f0800000000000000
+      internalID: -964017737865286004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_94
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 726
+        width: 131
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd42888a1ff8f5ee0800000000000000
+      internalID: -1270138301817805605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_95
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 712
+        width: 131
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb75a36043099bf70800000000000000
+      internalID: 9203545866625505214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_96
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 833
+        width: 98
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d51e2bdea899fd0800000000000000
+      internalID: -2334682178301895296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_97
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 779
+        width: 110
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 543b1e0e5cbc95900800000000000000
+      internalID: 673793670010483525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_98
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 726
+        width: 133
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13655592dff835bb0800000000000000
+      internalID: -4948453248067086799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_99
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 746
+        width: 60
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325d02b08bac57e50800000000000000
+      internalID: 6806569303649867043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 585
+        width: 105
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac3ede9579cb050c0800000000000000
+      internalID: -4588960662055689270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_101
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 579
+        width: 28
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b1d5ee69dce3ba0800000000000000
+      internalID: -6107217996539946216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_102
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 574
+        width: 135
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f1923c712664e00800000000000000
+      internalID: 1028617419098759037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_103
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 558
+        width: 138
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30aab838dad96e2b0800000000000000
+      internalID: -5555579721753056765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_104
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 664
+        width: 75
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4f441bb5ffcce10800000000000000
+      internalID: 2219429485668005096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_105
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 634
+        width: 58
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e637c4372a6c0b80800000000000000
+      internalID: -8427244086095300895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_106
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 637
+        width: 104
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f6b5124f3b0504e0800000000000000
+      internalID: -2016192891858864397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_107
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 630
+        width: 28
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86f4840b66d9b9310800000000000000
+      internalID: 1412895972480536424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_108
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 631
+        width: 105
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6bdddc1afb2a8990800000000000000
+      internalID: -7383040285894386835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_109
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 625
+        width: 28
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a71eea2de8847cf20800000000000000
+      internalID: 3442800218405265786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_110
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 574
+        width: 134
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d6279fe414a0ce0800000000000000
+      internalID: -1438265323543171798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_111
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 574
+        width: 47
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be78e7fad67548580800000000000000
+      internalID: -8825833241131972629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 430
+        width: 141
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b402d41dea63d70800000000000000
+      internalID: 9022591117448727321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_113
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 506
+        width: 129
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f6e25669ac5fe50800000000000000
+      internalID: 6842597956150783806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_114
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 424
+        width: 141
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c4109aa6d4645580800000000000000
+      internalID: -8839329295474092858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_115
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 407
+        width: 141
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c96c6db71a0b5570800000000000000
+      internalID: 8456363822396762565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_116
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 481
+        width: 139
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5dd253b5924e9710800000000000000
+      internalID: 1701870919918738781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_117
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 476
+        width: 139
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f45c7c1623e978690800000000000000
+      internalID: -7599931906938387121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_118
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 504
+        width: 81
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc53a010b3bb8fc0800000000000000
+      internalID: -3491499517320930112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_119
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 471
+        width: 51
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a42b1d11448ac02b0800000000000000
+      internalID: -5616929624927653302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_120
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 455
+        width: 80
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d301705ad7c604a0800000000000000
+      internalID: -6627390061162724391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_121
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 420
+        width: 51
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 184b55fb13f45c9b0800000000000000
+      internalID: -5060551531198827391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_122
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 456
+        width: 141
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8899bb0fe7e66fc0800000000000000
+      internalID: -3501856646354069364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_123
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 304
+        width: 141
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe02c97efbe92bc0800000000000000
+      internalID: -3807252531768062224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_124
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 393
+        width: 141
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51b8af292dfc303d0800000000000000
+      internalID: -3241518803460650219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_125
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 387
+        width: 141
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc01ad5b36f0d5090800000000000000
+      internalID: -8044256438486691635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_126
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 420
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b0a16e28a955ab0800000000000000
+      internalID: -5019936322637657235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_127
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 306
+        width: 142
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c269e1529c33b37b0800000000000000
+      internalID: -5243540402138606036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_128
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 339
+        width: 131
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87c6fa92cf88949f0800000000000000
+      internalID: -483704868353119112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_129
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 281
+        width: 142
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50209a3ea324b2780800000000000000
+      internalID: -8706792633895681531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_130
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 308
+        width: 141
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4f11736992f36a0800000000000000
+      internalID: -6467404814734986010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_131
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 301
+        width: 141
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d6f2e4296383c00800000000000000
+      internalID: 880513729155788143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_132
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 300
+        width: 141
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70823f5592e68f7e0800000000000000
+      internalID: -1731512932909242361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_133
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 327
+        width: 114
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fbcdf7caf3f2a060800000000000000
+      internalID: 6963396232290880500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_134
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 154
+        width: 142
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f5bd634f82dca80800000000000000
+      internalID: -8445048696892334320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_135
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 299
+        width: 142
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdcf7f3cdb866c90800000000000000
+      internalID: -7176895178093900362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_136
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 230
+        width: 109
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 687b987924fabe810800000000000000
+      internalID: 1795721576982361990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_137
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 151
+        width: 144
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27dd23efe31faf4d0800000000000000
+      internalID: -3099900140636152462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_138
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 154
+        width: 141
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2524cc7ea42d0f130800000000000000
+      internalID: 3598607321427362386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_139
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 154
+        width: 141
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2029f0f36ecabb70800000000000000
+      internalID: 8915665340973260846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_140
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 227
+        width: 119
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c3c75b9a69b9a30800000000000000
+      internalID: 4223134731228429405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_141
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 154
+        width: 27
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f22d9ef320a30f0800000000000000
+      internalID: -1136593482428567708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_142
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 154
+        width: 142
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb600ea6ac73ae60800000000000000
+      internalID: 7972352820701588402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_143
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 154
+        width: 142
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d6cf67ac63261c0800000000000000
+      internalID: -4511983633464267472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_144
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 197
+        width: 131
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f752149ecddf72af0800000000000000
+      internalID: -421088914887858817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_145
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 154
+        width: 141
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e76db97a3dae3630800000000000000
+      internalID: 3908751993266333673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_146
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 146
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7430830fe04fa7f20800000000000000
+      internalID: 3421315211938235207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_147
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 145
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da1bf8ea01f948d40800000000000000
+      internalID: 5585764331843203501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_148
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 0
+        width: 145
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a0e46eb22ff0700800000000000000
+      internalID: 508891553277545052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_149
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 0
+        width: 145
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38585f85dca861090800000000000000
+      internalID: -8064105468194880125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_150
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 26
+        width: 86
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74afc5ade00fbd250800000000000000
+      internalID: 5970629677593459271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_151
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 0
+        width: 51
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a5b2129113ba6690800000000000000
+      internalID: -7608071732442516063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_152
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 143
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8575fc951be3897d0800000000000000
+      internalID: -2911508227658131624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_153
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 65
+        width: 89
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b94b53c7840319b0800000000000000
+      internalID: -5110736170990745159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotoSansCJKkr-Regular SDF Atlas_154
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 0
+        width: 127
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d99dc2bc6b3c24500800000000000000
+      internalID: 379080508512721309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NotoSansCJKkr-Regular SDF Atlas_0: 7376596813489365477
+      NotoSansCJKkr-Regular SDF Atlas_1: 6452115971736610426
+      NotoSansCJKkr-Regular SDF Atlas_10: 607166086263042624
+      NotoSansCJKkr-Regular SDF Atlas_100: -4588960662055689270
+      NotoSansCJKkr-Regular SDF Atlas_101: -6107217996539946216
+      NotoSansCJKkr-Regular SDF Atlas_102: 1028617419098759037
+      NotoSansCJKkr-Regular SDF Atlas_103: -5555579721753056765
+      NotoSansCJKkr-Regular SDF Atlas_104: 2219429485668005096
+      NotoSansCJKkr-Regular SDF Atlas_105: -8427244086095300895
+      NotoSansCJKkr-Regular SDF Atlas_106: -2016192891858864397
+      NotoSansCJKkr-Regular SDF Atlas_107: 1412895972480536424
+      NotoSansCJKkr-Regular SDF Atlas_108: -7383040285894386835
+      NotoSansCJKkr-Regular SDF Atlas_109: 3442800218405265786
+      NotoSansCJKkr-Regular SDF Atlas_11: -8396897238611710194
+      NotoSansCJKkr-Regular SDF Atlas_110: -1438265323543171798
+      NotoSansCJKkr-Regular SDF Atlas_111: -8825833241131972629
+      NotoSansCJKkr-Regular SDF Atlas_112: 9022591117448727321
+      NotoSansCJKkr-Regular SDF Atlas_113: 6842597956150783806
+      NotoSansCJKkr-Regular SDF Atlas_114: -8839329295474092858
+      NotoSansCJKkr-Regular SDF Atlas_115: 8456363822396762565
+      NotoSansCJKkr-Regular SDF Atlas_116: 1701870919918738781
+      NotoSansCJKkr-Regular SDF Atlas_117: -7599931906938387121
+      NotoSansCJKkr-Regular SDF Atlas_118: -3491499517320930112
+      NotoSansCJKkr-Regular SDF Atlas_119: -5616929624927653302
+      NotoSansCJKkr-Regular SDF Atlas_12: 3409152855827255199
+      NotoSansCJKkr-Regular SDF Atlas_120: -6627390061162724391
+      NotoSansCJKkr-Regular SDF Atlas_121: -5060551531198827391
+      NotoSansCJKkr-Regular SDF Atlas_122: -3501856646354069364
+      NotoSansCJKkr-Regular SDF Atlas_123: -3807252531768062224
+      NotoSansCJKkr-Regular SDF Atlas_124: -3241518803460650219
+      NotoSansCJKkr-Regular SDF Atlas_125: -8044256438486691635
+      NotoSansCJKkr-Regular SDF Atlas_126: -5019936322637657235
+      NotoSansCJKkr-Regular SDF Atlas_127: -5243540402138606036
+      NotoSansCJKkr-Regular SDF Atlas_128: -483704868353119112
+      NotoSansCJKkr-Regular SDF Atlas_129: -8706792633895681531
+      NotoSansCJKkr-Regular SDF Atlas_13: 3165382179665443458
+      NotoSansCJKkr-Regular SDF Atlas_130: -6467404814734986010
+      NotoSansCJKkr-Regular SDF Atlas_131: 880513729155788143
+      NotoSansCJKkr-Regular SDF Atlas_132: -1731512932909242361
+      NotoSansCJKkr-Regular SDF Atlas_133: 6963396232290880500
+      NotoSansCJKkr-Regular SDF Atlas_134: -8445048696892334320
+      NotoSansCJKkr-Regular SDF Atlas_135: -7176895178093900362
+      NotoSansCJKkr-Regular SDF Atlas_136: 1795721576982361990
+      NotoSansCJKkr-Regular SDF Atlas_137: -3099900140636152462
+      NotoSansCJKkr-Regular SDF Atlas_138: 3598607321427362386
+      NotoSansCJKkr-Regular SDF Atlas_139: 8915665340973260846
+      NotoSansCJKkr-Regular SDF Atlas_14: 8853662784433971724
+      NotoSansCJKkr-Regular SDF Atlas_140: 4223134731228429405
+      NotoSansCJKkr-Regular SDF Atlas_141: -1136593482428567708
+      NotoSansCJKkr-Regular SDF Atlas_142: 7972352820701588402
+      NotoSansCJKkr-Regular SDF Atlas_143: -4511983633464267472
+      NotoSansCJKkr-Regular SDF Atlas_144: -421088914887858817
+      NotoSansCJKkr-Regular SDF Atlas_145: 3908751993266333673
+      NotoSansCJKkr-Regular SDF Atlas_146: 3421315211938235207
+      NotoSansCJKkr-Regular SDF Atlas_147: 5585764331843203501
+      NotoSansCJKkr-Regular SDF Atlas_148: 508891553277545052
+      NotoSansCJKkr-Regular SDF Atlas_149: -8064105468194880125
+      NotoSansCJKkr-Regular SDF Atlas_15: 178083933750420210
+      NotoSansCJKkr-Regular SDF Atlas_150: 5970629677593459271
+      NotoSansCJKkr-Regular SDF Atlas_151: -7608071732442516063
+      NotoSansCJKkr-Regular SDF Atlas_152: -2911508227658131624
+      NotoSansCJKkr-Regular SDF Atlas_153: -5110736170990745159
+      NotoSansCJKkr-Regular SDF Atlas_154: 379080508512721309
+      NotoSansCJKkr-Regular SDF Atlas_16: -5322839335280960175
+      NotoSansCJKkr-Regular SDF Atlas_17: 4322671010991808394
+      NotoSansCJKkr-Regular SDF Atlas_18: 8104570365196633753
+      NotoSansCJKkr-Regular SDF Atlas_19: -7375825468199451999
+      NotoSansCJKkr-Regular SDF Atlas_2: -3344360208838490130
+      NotoSansCJKkr-Regular SDF Atlas_20: 7928018940282917758
+      NotoSansCJKkr-Regular SDF Atlas_21: -8040506161838660042
+      NotoSansCJKkr-Regular SDF Atlas_22: 4628537987662021388
+      NotoSansCJKkr-Regular SDF Atlas_23: -3462211835857275442
+      NotoSansCJKkr-Regular SDF Atlas_24: 3472213201868234141
+      NotoSansCJKkr-Regular SDF Atlas_25: -2596751026836333393
+      NotoSansCJKkr-Regular SDF Atlas_26: 8103335069943981899
+      NotoSansCJKkr-Regular SDF Atlas_27: -1731721584507650475
+      NotoSansCJKkr-Regular SDF Atlas_28: 9160066345934518807
+      NotoSansCJKkr-Regular SDF Atlas_29: 7838875515420042421
+      NotoSansCJKkr-Regular SDF Atlas_3: 5649779267361985735
+      NotoSansCJKkr-Regular SDF Atlas_30: 4298913440544805876
+      NotoSansCJKkr-Regular SDF Atlas_31: -1771090599356062191
+      NotoSansCJKkr-Regular SDF Atlas_32: 3186964684946610436
+      NotoSansCJKkr-Regular SDF Atlas_33: -7018220563706843479
+      NotoSansCJKkr-Regular SDF Atlas_34: 1722915530730791165
+      NotoSansCJKkr-Regular SDF Atlas_35: 6408763868668002381
+      NotoSansCJKkr-Regular SDF Atlas_36: -9004367064950472037
+      NotoSansCJKkr-Regular SDF Atlas_37: 8209578643572628877
+      NotoSansCJKkr-Regular SDF Atlas_38: 3150198331550459052
+      NotoSansCJKkr-Regular SDF Atlas_39: -5972673886884501170
+      NotoSansCJKkr-Regular SDF Atlas_4: 5228586357873749322
+      NotoSansCJKkr-Regular SDF Atlas_40: -1797651390401347901
+      NotoSansCJKkr-Regular SDF Atlas_41: -4717318854711513174
+      NotoSansCJKkr-Regular SDF Atlas_42: -7190667707080721283
+      NotoSansCJKkr-Regular SDF Atlas_43: -8377270589782059982
+      NotoSansCJKkr-Regular SDF Atlas_44: -8601868397532606534
+      NotoSansCJKkr-Regular SDF Atlas_45: 2806913179275074563
+      NotoSansCJKkr-Regular SDF Atlas_46: 8255650426678584453
+      NotoSansCJKkr-Regular SDF Atlas_47: -5374626127587844605
+      NotoSansCJKkr-Regular SDF Atlas_48: 1309962267907207520
+      NotoSansCJKkr-Regular SDF Atlas_49: 5971826869625800342
+      NotoSansCJKkr-Regular SDF Atlas_5: -9104858930740803835
+      NotoSansCJKkr-Regular SDF Atlas_50: -6627582427291406506
+      NotoSansCJKkr-Regular SDF Atlas_51: 5989836402591739252
+      NotoSansCJKkr-Regular SDF Atlas_52: 5511362455295553259
+      NotoSansCJKkr-Regular SDF Atlas_53: 7902222374227671186
+      NotoSansCJKkr-Regular SDF Atlas_54: 1607115499700601122
+      NotoSansCJKkr-Regular SDF Atlas_55: 7591516165085571090
+      NotoSansCJKkr-Regular SDF Atlas_56: -7288851829357483021
+      NotoSansCJKkr-Regular SDF Atlas_57: 1278893334111428452
+      NotoSansCJKkr-Regular SDF Atlas_58: -2874632712390094521
+      NotoSansCJKkr-Regular SDF Atlas_59: 3861006356005851143
+      NotoSansCJKkr-Regular SDF Atlas_6: -3441980644608025909
+      NotoSansCJKkr-Regular SDF Atlas_60: -3807688606961432164
+      NotoSansCJKkr-Regular SDF Atlas_61: 6296742477830849723
+      NotoSansCJKkr-Regular SDF Atlas_62: -1099388711297085846
+      NotoSansCJKkr-Regular SDF Atlas_63: 6336115331115190813
+      NotoSansCJKkr-Regular SDF Atlas_64: -2368808384575446024
+      NotoSansCJKkr-Regular SDF Atlas_65: 5584490117892387269
+      NotoSansCJKkr-Regular SDF Atlas_66: -7089748770232042997
+      NotoSansCJKkr-Regular SDF Atlas_67: 424217537356507944
+      NotoSansCJKkr-Regular SDF Atlas_68: -7520183878353856791
+      NotoSansCJKkr-Regular SDF Atlas_69: -7898198071261747755
+      NotoSansCJKkr-Regular SDF Atlas_7: 1763777997276800584
+      NotoSansCJKkr-Regular SDF Atlas_70: -5778608044783411212
+      NotoSansCJKkr-Regular SDF Atlas_71: -6709369877751373000
+      NotoSansCJKkr-Regular SDF Atlas_72: 6691403388521082623
+      NotoSansCJKkr-Regular SDF Atlas_73: -56626864263382493
+      NotoSansCJKkr-Regular SDF Atlas_74: 4508821174593668731
+      NotoSansCJKkr-Regular SDF Atlas_75: -2767691486312003641
+      NotoSansCJKkr-Regular SDF Atlas_76: 7062405328968483987
+      NotoSansCJKkr-Regular SDF Atlas_77: 6635050068022344476
+      NotoSansCJKkr-Regular SDF Atlas_78: 6738009211276926602
+      NotoSansCJKkr-Regular SDF Atlas_79: -4901782130706200695
+      NotoSansCJKkr-Regular SDF Atlas_8: -4330087138082768114
+      NotoSansCJKkr-Regular SDF Atlas_80: 327191687346532298
+      NotoSansCJKkr-Regular SDF Atlas_81: -8026263194206112703
+      NotoSansCJKkr-Regular SDF Atlas_82: 2276444248300459648
+      NotoSansCJKkr-Regular SDF Atlas_83: -13809432278166098
+      NotoSansCJKkr-Regular SDF Atlas_84: 2016163964429375321
+      NotoSansCJKkr-Regular SDF Atlas_85: 5958631782044582877
+      NotoSansCJKkr-Regular SDF Atlas_86: -8342827625589222409
+      NotoSansCJKkr-Regular SDF Atlas_87: -6640687016321679327
+      NotoSansCJKkr-Regular SDF Atlas_88: 1848076525037085195
+      NotoSansCJKkr-Regular SDF Atlas_89: -569931279007561967
+      NotoSansCJKkr-Regular SDF Atlas_9: -6493753936226375115
+      NotoSansCJKkr-Regular SDF Atlas_90: 4142713234894849648
+      NotoSansCJKkr-Regular SDF Atlas_91: 6163681484865659018
+      NotoSansCJKkr-Regular SDF Atlas_92: -1768393946687332272
+      NotoSansCJKkr-Regular SDF Atlas_93: -964017737865286004
+      NotoSansCJKkr-Regular SDF Atlas_94: -1270138301817805605
+      NotoSansCJKkr-Regular SDF Atlas_95: 9203545866625505214
+      NotoSansCJKkr-Regular SDF Atlas_96: -2334682178301895296
+      NotoSansCJKkr-Regular SDF Atlas_97: 673793670010483525
+      NotoSansCJKkr-Regular SDF Atlas_98: -4948453248067086799
+      NotoSansCJKkr-Regular SDF Atlas_99: 6806569303649867043
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

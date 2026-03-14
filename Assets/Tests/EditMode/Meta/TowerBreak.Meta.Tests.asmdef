@@ -1,0 +1,22 @@
+{
+  "name": "TowerBreak.Meta.Tests",
+  "rootNamespace": "TowerBreak.Meta.Tests",
+  "references": [
+    "TowerBreak.Meta",
+    "TowerBreak.GameData"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

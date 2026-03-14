@@ -1,0 +1,189 @@
+# Combat Loop Checklist
+
+## Reference Documents
+
+- `docs/plans/2026-03-13-tower-breaker-vertical-slice/00-overview.md`
+- `docs/plans/2026-03-13-tower-breaker-vertical-slice/02-combat-loop.md`
+- `docs/plans/2026-03-13-implementation-workflow.md`
+- `docs/plans/2026-03-13-tower-breaker-vertical-slice/archive/data-schema/README.md`
+- `docs/plans/2026-03-13-tower-breaker-vertical-slice/archive/addressables-provider/README.md`
+
+## Checklist
+
+- Done: create milestone folder and seed milestone docs
+- Done: research combat baseline, archived foundations, and available scene surface
+- Done: lock the first narrow combat checkpoint for this milestone
+- Done: add the first failing combat planning tests
+- Done: implement the first floor/wave to spawn-plan runtime slice
+- Done: verify the spawn-plan slice with build and targeted tests
+- Done: add the first presentation glue for prefab-key-based enemy spawn
+- Done: add the first runtime spawn glue that instantiates a loaded prefab
+- Done: wire the spawn planner into a scene-visible debug path
+- Done: verify `Resources` data asset loading for the debug path
+- Done: fix the duplicate-visible-template issue in the temporary debug provider
+- Done: add the first pooled enemy instantiator and verify reuse behavior
+- Done: add `CombatPooledScenePathTests` - spawn/release/reuse integration tests through `CombatDebugSpawnService`
+- Done: route the actual scene debug path through `PooledCombatInstantiator` in `CombatSampleSceneBootstrap`
+- Done: add spawn→release→reuse demonstration in bootstrap with `Debug.Log` pool_reuse verification
+- Done: add warning-level summary output so console verification remains visible when normal logs are missed
+- Done: add `CombatProviderResolver` to resolve real `IAddressableAssetProvider` from DI with debug fallback
+- Done: wire `TowerBreak.Combat.asmdef` to reference `TowerBreak.DI`
+- Done: add `CombatProviderResolverTests` (2 tests: DI resolution + debug fallback)
+- Done: author `CombatAddressableGroupSetup` Editor menu tool to create placeholder prefab and Addressables group
+- Done: fix `TowerBreak.Combat.Editor.asmdef` to reference `Unity.Addressables.Editor`
+- Done: run `TowerBreak/Setup/Author Combat Enemy Addressables` in Unity Editor → real prefab registered
+- Done: verify real Addressables spawn in SampleScene Play Mode → `EnemyBasicMelee(Clone)` visible, pool_reuse=True confirmed
+- Done: add `SpawnAllEnemiesAsync` to `CombatDebugSpawnService` - spawns all wave entries in plan order
+- Done: add `CombatMultiWaveSpawnTests` (4 tests: count/positions/release-reuse/same-prefab-distinct)
+- Done: update `CombatSampleSceneBootstrap` to demonstrate multi-enemy spawn + release + pool reuse
+- Done: add `BuildMultiSummaryMessage`/`LogMultiSummary` static helpers for console verification
+- Done: fix `00-overview.md` archived milestone list format
+- Done: fix `SpawnAllEnemiesAsync` so it honors `WaveSpawnEntry.Quantity`
+- Done: extend `CombatAddressableGroupSetup` to create+register `EnemyArmoredPusher` (Cube, 2×2) at `enemy/armored_pusher`
+- Done: add initial `CombatState` / `CombatEnemyState` model with time and wall-health transitions
+- Done: add first player attack rule for enemy damage and enemy removal on defeat
+- Done: add `CombatDebugBattleService` as a thin bridge from `CombatState` into the debug scene
+- Done: wire `Space` key in `CombatSampleSceneBootstrap` to apply the first attack rule
+- Done: add failing tests for enemy pressure accumulation, wall damage, and initial danger activation
+- Done: implement `CombatState.AdvanceEnemyPressure` with accumulated pressure and wall-hit threshold handling
+- Done: add sticky initial danger activation on first wall hit (`CombatState.IsDangerActive`)
+- Done: add `CombatPressureResult` and `CombatDebugBattleService.AdvanceEnemyPressure` for thin scene glue
+- Done: tick pressure in `CombatSampleSceneBootstrap` and log wall damage / danger activation in Play Mode
+- Done: retry `SampleScene` spawn path with `CombatDebugAddressableAssetProvider` when a combat Addressables key is missing, while keeping a loud warning
+- Done: fix debug attack input — replace `UnityEngine.Input.GetKeyDown(KeyCode.Space)` with `Keyboard.current.spaceKey.wasPressedThisFrame` (Input System)
+- Done: add `Unity.InputSystem` reference to `TowerBreak.Combat.asmdef`
+- Done: extract `IsAttackInputDown()` as testable public static seam on `CombatSampleSceneBootstrap`
+- Done: add `IsAttackInputDown_WhenNoKeyboardDevice_ReturnsFalse` to `CombatPooledScenePathTests`
+- Done (manual): verify `Space` attacks work without `InvalidOperationException` — confirmed `Attack hit enemy_id=101`, `Enemy defeated and released to pool` logs in Play Mode
+- Done (manual): pressure log `wall_damage=1 wall_health=4 danger=True` confirmed in Play Mode
+- Manual: run `TowerBreak/Setup/Author Combat Enemy Addressables` in Unity Editor to create `EnemyArmoredPusher.prefab` and register it
+- Manual: verify SampleScene Play Mode shows 3 enemies (2×BasicMelee + 1×ArmoredPusher) with no `InvalidKeyException`
+- Done: add failing tests for guard action — `ApplyPlayerGuard_ReducesPendingPressure`, `_ClampsToZero`, `_DoesNotClearDangerFlag` in `CombatStateTests`; `ApplyPlayerGuard_ReducesPendingPressureAndReturnsResult` in `CombatDebugBattleServiceTests`
+- Done: create `CombatGuardResult` readonly struct with `PressureReduced` field
+- Done: implement `CombatState.ApplyPlayerGuard(float pressureReduction)` — reduces `PendingEnemyPressure`, clamps at 0, danger flag stays sticky
+- Done: implement `CombatDebugBattleService.ApplyPlayerGuard` bridge — returns actual reduction as `CombatGuardResult`
+- Done: wire `G` key guard input in `CombatSampleSceneBootstrap` via `IsGuardInputDown()` static seam
+- Done: add `IsGuardInputDown_WhenNoKeyboardDevice_ReturnsFalse` seam test to `CombatPooledScenePathTests`
+- Done (manual): G key guard confirmed — `Guard applied pressure_reduced=2.21 pending_pressure=0.00` (clamp to available pressure works)
+- Done (manual): `wall_health=0 danger=True` observed — wall fully depleted with no battle-end behavior, motivating next Todo
+- Done: add failing tests for wall-defeat outcome in `CombatStateTests`, `CombatDebugBattleServiceTests`, and `CombatPooledScenePathTests`
+- Done: add `CombatState.IsWallDefeated` and set it when wall damage depletes `WallHealth` to `0`
+- Done: extend `CombatPressureResult` with `DefeatedWall` so the debug scene can observe the loss transition cleanly
+- Done: stop further debug-scene input/pressure progression after wall defeat and emit one loss warning log
+- Done: add failing tests for overlay status text in `CombatPooledScenePathTests`
+- Done: add `BuildOverlayStatusMessage(CombatState)` to map safe/danger/defeat state into visible debug text
+- Done: draw a minimal top-left overlay in `CombatSampleSceneBootstrap.OnGUI()` for `DANGER` / `DEFEAT`
+- Done: add failing tests for `BattleLoopController` update/defeat gating and `BattleHudPresenter` status formatting
+- Done: extract `BattleLoopController` to own pressure ticking and wall-defeat gating outside `CombatSampleSceneBootstrap`
+- Done: extract `BattleHudPresenter` and route overlay text through it
+- Done: fix controller-extraction regression so async attack cleanup no longer pauses pressure ticking / guard handling for the whole frame loop
+- Done: investigate root cause of `pool_reuse_count=1` Play Mode observation — release loop in `DemonstrateMultiSpawnAsync` iterated `plan.Entries.Count` (2) instead of total expanded instances (3), releasing `batch1[1]` under wrong key and never releasing `batch1[2]`
+- Done: add `SpawnAllEnemiesAsync_ReleaseAllWithQuantityExpansion_ReusesAllInstances` to `CombatMultiWaveSpawnTests` documenting correct quantity-expanded release pattern
+- Done: fix `DemonstrateMultiSpawnAsync` release loop to expand by `entry.Quantity` matching `SpawnAllEnemiesAsync` pattern — all 3 instances now released under correct prefab keys → `pool_reuse_count=3`
+- Done: investigate root cause of overlay not visible in Game View — `overlayStyle` was `private static GUIStyle`, persisting stale across Unity Editor Play sessions; second+ runs skipped re-initialization and rendered broken
+- Done: fix `private static GUIStyle overlayStyle` → `private GUIStyle overlayStyle` (instance field) and `static GetOverlayStyle()` → instance method so style is freshly created each Play session
+- Todo: decide whether to close `combat-loop` here and begin `meta-loop`, or spend one last narrow pass on player/enemy presenter wiring
+
+## Verification
+
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.WaveSpawnPlannerTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-wave-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-wave-green.xml"`
+- Evidence: `Logs\combat-wave-green.xml` shows `total="2" passed="2" failed="0"`
+- Passed command: `dotnet build "TowerBreak.GameData.Tests.csproj"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.WaveSpawnPlannerTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-presenter-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-presenter-green.xml"`
+- Evidence: `Logs\combat-presenter-green.xml` shows `total="3" passed="3" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.WaveSpawnPlannerTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-spawn-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-spawn-green.xml"`
+- Evidence: `Logs\combat-spawn-green.xml` shows `total="4" passed="4" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatDebugSpawnServiceTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-debug-service-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-debug-service-green.xml"`
+- Evidence: `Logs\combat-debug-service-green.xml` shows `total="2" passed="2" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatDebugSpawnServiceTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-debug-visibility-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-debug-visibility-green.xml"`
+- Evidence: `Logs\combat-debug-visibility-green.xml` shows `total="3" passed="3" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatDebugSpawnServiceTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-pooling-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-pooling-green.xml"`
+- Evidence: `Logs\combat-pooling-green.xml` shows `total="4" passed="4" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatPooledScenePathTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-pooled-scene-path.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-pooled-scene-path.xml"`
+- Evidence: `Logs\combat-pooled-scene-path.xml` shows `total="3" passed="3" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-pooled-all-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-pooled-all-green.xml"`
+- Evidence: `Logs\combat-pooled-all-green.xml` shows `total="11" passed="11" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatPooledScenePathTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-summary-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-summary-green.xml"`
+- Evidence: `Logs\combat-summary-green.xml` shows `total="5" passed="5" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-di-provider-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-di-provider-green.xml"`
+- Evidence: `Logs\combat-di-provider-green.xml` shows `total="15" passed="15" failed="0"` (includes 2 new `CombatProviderResolverTests`)
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-multiwave-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-multiwave-green.xml"`
+- Evidence: `Logs\combat-multiwave-green.xml` shows `total="19" passed="19" failed="0"` (includes 4 new `CombatMultiWaveSpawnTests`)
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatMultiWaveSpawnTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-quantity-fixed.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-quantity-fixed.xml"`
+- Evidence: `Logs\combat-quantity-fixed.xml` shows `total="5" passed="5" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-full-fixed.xml.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-full-fixed.xml"`
+- Evidence: `Logs\combat-full-fixed.xml` shows `total="20" passed="20" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-armored-pusher-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-armored-pusher-green.xml"`
+- Evidence: `Logs\combat-armored-pusher-green.xml` shows `total="20" passed="20" failed="0"` (regression check after setup tool expansion)
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatStateTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-state-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-state-green.xml"`
+- Evidence: `Logs\combat-state-green.xml` shows `total="3" passed="3" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatStateTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-attack-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-attack-green.xml"`
+- Evidence: `Logs\combat-attack-green.xml` shows `total="5" passed="5" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatDebugBattleServiceTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-debug-battle-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-debug-battle-green.xml"`
+- Evidence: `Logs\combat-debug-battle-green.xml` shows `total="3" passed="3" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "C:\Users\admin\Desktop\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatStateTests" -logFile "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-attack-green.log" -testResults "C:\Users\admin\Desktop\Fork\TowerBreak\Logs\combat-attack-green.xml"`
+- Evidence: `Logs\combat-attack-green.xml` shows `total="5" passed="5" failed="0"`
+- Expected red phase: `D:\Fork\TowerBreak\Logs\combat-pressure-red.log` showed compiler failures for missing `AdvanceEnemyPressure`, `PendingEnemyPressure`, `IsDangerActive`, and `CombatPressureResult`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatStateTests|TowerBreak.Combat.Tests.CombatDebugBattleServiceTests" -logFile "D:\Fork\TowerBreak\Logs\combat-pressure-green.log" -testResults "D:\Fork\TowerBreak\Logs\combat-pressure-green.xml"`
+- Evidence: `Logs\combat-pressure-green.xml` shows `total="11" passed="11" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "D:\Fork\TowerBreak\Logs\combat-pressure-full.log" -testResults "D:\Fork\TowerBreak\Logs\combat-pressure-full.xml"`
+- Evidence: `Logs\combat-pressure-full.xml` shows `total="31" passed="31" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatPooledScenePathTests|TowerBreak.Combat.Tests.CombatStateTests|TowerBreak.Combat.Tests.CombatDebugBattleServiceTests" -logFile "D:\Fork\TowerBreak\Logs\combat-fallback-green.log" -testResults "D:\Fork\TowerBreak\Logs\combat-fallback-green.xml"`
+- Evidence: `Logs\combat-fallback-green.xml` shows `total="19" passed="19" failed="0"`
+- Attempted command: `dotnet build "TowerBreak.GameData.Tests.csproj"`
+- Actual status: blocked because `dotnet` is not available in the current shell (`'dotnet' is not recognized as an internal or external command`)
+- Expected red phase: `IsAttackInputDown_WhenNoKeyboardDevice_ReturnsFalse` caused compile error before `IsAttackInputDown()` was added (TDD failing phase)
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "D:\Fork\TowerBreak\Logs\combat-input-fix-green.log" -testResults "D:\Fork\TowerBreak\Logs\combat-input-fix-green.xml"`
+- Evidence: `Logs\combat-input-fix-green.xml` shows `total="35" passed="35" failed="0"` (includes new `IsAttackInputDown_WhenNoKeyboardDevice_ReturnsFalse`)
+- Expected red phase: guard tests caused compile error before `ApplyPlayerGuard` / `CombatGuardResult` were added (TDD failing phase)
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "D:\Fork\TowerBreak\Logs\combat-guard-green.log" -testResults "D:\Fork\TowerBreak\Logs\combat-guard-green.xml"`
+- Evidence: `Logs\combat-guard-green.xml` shows `total="40" passed="40" failed="0"` (includes 5 new guard tests)
+- Expected red phase: `D:\Fork\TowerBreak\Logs\combat-wall-defeat-red.log` showed compiler failures for missing `IsWallDefeated`, `CombatPressureResult.DefeatedWall`, and `BuildWallDefeatMessage`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatStateTests|TowerBreak.Combat.Tests.CombatDebugBattleServiceTests|TowerBreak.Combat.Tests.CombatPooledScenePathTests" -logFile "D:\Fork\TowerBreak\Logs\combat-wall-defeat-green.log" -testResults "D:\Fork\TowerBreak\Logs\combat-wall-defeat-green.xml"`
+- Evidence: `Logs\combat-wall-defeat-green.xml` shows `total="29" passed="29" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "D:\Fork\TowerBreak\Logs\combat-wall-defeat-full.log" -testResults "D:\Fork\TowerBreak\Logs\combat-wall-defeat-full.xml"`
+- Evidence: `Logs\combat-wall-defeat-full.xml` shows `total="44" passed="44" failed="0"`
+- Expected red phase: `D:\Fork\TowerBreak\Logs\combat-overlay-red.log` showed compiler failures for missing `BuildOverlayStatusMessage`
+- Intermediate failure fixed during green phase: first `combat-overlay-green.xml` run failed because the new danger test had no active enemy pressure source, so the test setup was corrected to include one enemy before rerunning
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.CombatPooledScenePathTests" -logFile "D:\Fork\TowerBreak\Logs\combat-overlay-green.log" -testResults "D:\Fork\TowerBreak\Logs\combat-overlay-green.xml"`
+- Evidence: `Logs\combat-overlay-green.xml` shows `total="14" passed="14" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "D:\Fork\TowerBreak\Logs\combat-overlay-full.log" -testResults "D:\Fork\TowerBreak\Logs\combat-overlay-full.xml"`
+- Evidence: `Logs\combat-overlay-full.xml` shows `total="47" passed="47" failed="0"`
+- Expected red phase: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.BattleLoopControllerTests|TowerBreak.Combat.Tests.BattleHudPresenterTests" -logFile "D:\Fork\TowerBreak\Logs\combat-controller-red.log" -testResults "D:\Fork\TowerBreak\Logs\combat-controller-red.xml"` failed with compiler error `CS0246` because `BattleLoopController` did not exist yet
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.BattleLoopControllerTests|TowerBreak.Combat.Tests.BattleHudPresenterTests|TowerBreak.Combat.Tests.CombatPooledScenePathTests" -logFile "D:\Fork\TowerBreak\Logs\combat-controller-green.log" -testResults "D:\Fork\TowerBreak\Logs\combat-controller-green.xml"`
+- Evidence: `Logs\combat-controller-green.xml` shows `total="22" passed="22" failed="0"`
+- Expected red phase: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.BattleLoopControllerTests|TowerBreak.Combat.Tests.CombatPooledScenePathTests" -logFile "D:\Fork\TowerBreak\Logs\combat-controller-followup-red.log" -testResults "D:\Fork\TowerBreak\Logs\combat-controller-followup-red.xml"` failed with compiler error `CS0117` because `CombatSampleSceneBootstrap.ShouldTickCombat` did not exist yet
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests.BattleLoopControllerTests|TowerBreak.Combat.Tests.CombatPooledScenePathTests" -logFile "D:\Fork\TowerBreak\Logs\combat-controller-followup-green.log" -testResults "D:\Fork\TowerBreak\Logs\combat-controller-followup-green.xml"`
+- Evidence: `Logs\combat-controller-followup-green.xml` shows `total="21" passed="21" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "D:\Fork\TowerBreak\Logs\combat-controller-full.log" -testResults "D:\Fork\TowerBreak\Logs\combat-controller-full.xml"`
+- Evidence: `Logs\combat-controller-full.xml` shows `total="58" passed="58" failed="0"`
+- Passed command: `"C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" -batchmode -nographics -projectPath "D:\Fork\TowerBreak" -runTests -testPlatform EditMode -testFilter "TowerBreak.Combat.Tests" -logFile "D:\Fork\TowerBreak\Logs\combat-poolreuse-fix.log" -testResults "D:\Fork\TowerBreak\Logs\combat-poolreuse-fix.xml"`
+- Evidence: `Logs\combat-poolreuse-fix.xml` shows `total="59" passed="59" failed="0"` (includes new `SpawnAllEnemiesAsync_ReleaseAllWithQuantityExpansion_ReusesAllInstances`)
+
+## Manual Follow-Ups
+
+- Open SampleScene in Unity and enter Play Mode
+- Check Console for multi-spawn log lines:
+  - `[CombatDebug] Wave spawn [0]: EnemyBasicMelee(Clone) (id=<N>)`
+  - `[CombatDebug] Wave spawn [1]: EnemyBasicMelee(Clone) (id=<N>)`
+  - `[CombatDebug] Wave spawn [2]: EnemyArmoredPusher(Clone) (id=<N>)`
+  - `[CombatDebug] Released 3 instances back to pool.`
+  - `[CombatDebug] Second spawn [0]: ... pool_reuse=True`
+  - `[CombatDebug] Second spawn [1]: ... pool_reuse=True`
+  - `[CombatDebug] Second spawn [2]: ... pool_reuse=True`
+- Check for the warning summary line (all 3 instances must be reused, not just 1):
+  - `[CombatDebugSummary] wave_count=3 pool_reuse_count=3`
+- The Hierarchy should show 3 enemy clones parented under CombatSampleSceneBootstrap
+- No `InvalidKeyException: No Location found for Key=enemy/armored_pusher` in Console
+- Press `Space` (using Input System keyboard input) and confirm the Console shows attack log lines without any `InvalidOperationException` about `UnityEngine.Input`
+- If armored pusher is still missing: run `TowerBreak > Setup > Author Combat Enemy Addressables` from the menu bar to create `Assets/Prefabs/Combat/Enemies/EnemyArmoredPusher.prefab` and register it at address `enemy/armored_pusher`
+- Wait about 1 second after the second spawn batch and confirm a pressure log appears once the accumulated enemy pressure crosses the wall threshold:
+  - `[CombatDebug] Enemy pressure wall_damage=1 wall_health=4 danger=True pending_pressure=<value>`
+- Press `Space` several times and confirm defeated enemies stop contributing pressure once they are removed from `CombatState`
+- While danger is active, confirm a top-left label appears with `DANGER - Wall <value>`
+- Let the battle continue until the wall is depleted and confirm one warning appears, then combat logs stop:
+  - `[CombatDebug] Wall defeated. Battle lost. wall_health=0`
+- After wall defeat, confirm the top-left label switches to `DEFEAT - Wall 0` (if the label was previously invisible on second+ Play session, this was fixed by making `overlayStyle` an instance field)
+- Confirm the visible behavior is unchanged after controller extraction: the battle still ticks pressure, accepts `Space`/`G`, and stops on defeat even though the logic is no longer directly embedded in `CombatSampleSceneBootstrap.Update()`
+- Extra regression check: defeat one enemy with `Space` and immediately keep waiting/guarding - pressure should keep ticking while the async pool-release path completes; the battle should not visibly pause just because one attack is resolving
+- If `enemy/armored_pusher` is not authored in Addressables yet, confirm there is a one-time fallback warning and the debug prefabs still spawn so `Space` input works again

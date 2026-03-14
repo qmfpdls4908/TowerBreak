@@ -44,6 +44,51 @@ namespace TowerBreak.Combat.Tests
             Assert.That(result.TargetEnemyId, Is.EqualTo(0));
         }
 
+        [Test]
+        public void AdvanceEnemyPressure_WhenThresholdCrossed_UpdatesStateAndReturnsWallDamageResult()
+        {
+            CombatDebugBattleService service = new(CreateState());
+
+            CombatPressureResult result = service.AdvanceEnemyPressure(deltaTime: 1f, wallHitThreshold: 10f, wallDamagePerHit: 1);
+
+            Assert.That(result.DidDamageWall, Is.True);
+            Assert.That(result.WallDamageApplied, Is.EqualTo(1));
+            Assert.That(result.EnteredDanger, Is.True);
+            Assert.That(service.State.WallHealth, Is.EqualTo(4));
+            Assert.That(service.State.IsDangerActive, Is.True);
+        }
+
+        [Test]
+        public void AdvanceEnemyPressure_WhenWallFallsToZero_ReturnsWallDefeatedResult()
+        {
+            CombatDebugBattleService service = new(CombatState.CreateInitial(
+                3,
+                1,
+                new List<CombatEnemyState>
+                {
+                    new(101, 30, 4.5f),
+                    new(102, 65, 8f)
+                }));
+
+            CombatPressureResult result = service.AdvanceEnemyPressure(deltaTime: 1f, wallHitThreshold: 10f, wallDamagePerHit: 1);
+
+            Assert.That(result.DefeatedWall, Is.True);
+            Assert.That(service.State.IsWallDefeated, Is.True);
+            Assert.That(service.State.WallHealth, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void ApplyPlayerGuard_ReducesPendingPressureAndReturnsResult()
+        {
+            CombatDebugBattleService service = new(CreateState());
+            service.AdvanceEnemyPressure(deltaTime: 0.5f, wallHitThreshold: 10f, wallDamagePerHit: 1);
+
+            CombatGuardResult result = service.ApplyPlayerGuard(pressureReduction: 3f);
+
+            Assert.That(result.PressureReduced, Is.EqualTo(3f).Within(0.0001f));
+            Assert.That(service.State.PendingEnemyPressure, Is.EqualTo(3.25f).Within(0.0001f));
+        }
+
         private static CombatState CreateState()
         {
             return CombatState.CreateInitial(

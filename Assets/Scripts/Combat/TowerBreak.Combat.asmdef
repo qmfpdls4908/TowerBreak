@@ -3,7 +3,8 @@
   "rootNamespace": "TowerBreak.Combat",
   "references": [
     "TowerBreak.GameData",
-    "TowerBreak.DI"
+    "TowerBreak.DI",
+    "Unity.InputSystem"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

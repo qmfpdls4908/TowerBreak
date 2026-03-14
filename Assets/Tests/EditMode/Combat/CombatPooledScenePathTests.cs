@@ -101,6 +101,117 @@ namespace TowerBreak.Combat.Tests
             CombatSampleSceneBootstrap.LogSummary(1, 2, false);
         }
 
+        [Test]
+        public void BuildWallDefeatMessage_ContainsBattleLossSummary()
+        {
+            string message = CombatSampleSceneBootstrap.BuildWallDefeatMessage(wallHealth: 0);
+
+            Assert.That(message, Does.Contain("Wall defeated"));
+            Assert.That(message, Does.Contain("wall_health=0"));
+        }
+
+        [Test]
+        public void BuildOverlayStatusMessage_WhenDangerActive_ReturnsDangerSummary()
+        {
+            CombatState state = CombatState.CreateInitial(
+                3,
+                4,
+                new List<CombatEnemyState>
+                {
+                    new CombatEnemyState(101, 10, 1f)
+                });
+            state = state.AdvanceEnemyPressure(deltaTime: 1f, wallHitThreshold: 1f, wallDamagePerHit: 1);
+
+            string message = CombatSampleSceneBootstrap.BuildOverlayStatusMessage(state);
+
+            Assert.That(message, Does.Contain("DANGER"));
+            Assert.That(message, Does.Contain("Wall 3"));
+        }
+
+        [Test]
+        public void BuildOverlayStatusMessage_WhenWallDefeated_ReturnsDefeatSummary()
+        {
+            CombatState state = CombatState.CreateInitial(3, 1, new List<CombatEnemyState>());
+            state = state.ApplyWallDamage(1);
+
+            string message = CombatSampleSceneBootstrap.BuildOverlayStatusMessage(state);
+
+            Assert.That(message, Does.Contain("DEFEAT"));
+            Assert.That(message, Does.Contain("Wall 0"));
+        }
+
+        [Test]
+        public void BuildOverlayStatusMessage_WhenStateIsSafe_ReturnsEmpty()
+        {
+            CombatState state = CombatState.CreateInitial(3, 5, new List<CombatEnemyState>());
+
+            string message = CombatSampleSceneBootstrap.BuildOverlayStatusMessage(state);
+
+            Assert.That(message, Is.Empty);
+        }
+
+        [Test]
+        public void IsRecoverableAddressablesSpawnFailure_WhenAddressableKeyMessage_ReturnsTrue()
+        {
+            System.InvalidOperationException exception = new("Addressable key 'enemy/armored_pusher' did not resolve to asset type 'UnityEngine.GameObject'.");
+
+            bool result = CombatSampleSceneBootstrap.IsRecoverableAddressablesSpawnFailure(exception);
+
+            Assert.That(result, Is.True);
+        }
+
+        [Test]
+        public void IsRecoverableAddressablesSpawnFailure_WhenInvalidKeyInnerException_ReturnsTrue()
+        {
+            System.Exception exception = new("Outer", new System.Exception("No Location found for Key=enemy/armored_pusher"));
+
+            bool result = CombatSampleSceneBootstrap.IsRecoverableAddressablesSpawnFailure(exception);
+
+            Assert.That(result, Is.True);
+        }
+
+        [Test]
+        public void IsRecoverableAddressablesSpawnFailure_WhenUnrelatedException_ReturnsFalse()
+        {
+            System.InvalidOperationException exception = new("Some other failure");
+
+            bool result = CombatSampleSceneBootstrap.IsRecoverableAddressablesSpawnFailure(exception);
+
+            Assert.That(result, Is.False);
+        }
+
+        [Test]
+        public void IsAttackInputDown_WhenNoKeyboardDevice_ReturnsFalse()
+        {
+            bool result = CombatSampleSceneBootstrap.IsAttackInputDown();
+
+            Assert.That(result, Is.False);
+        }
+
+        [Test]
+        public void IsGuardInputDown_WhenNoKeyboardDevice_ReturnsFalse()
+        {
+            bool result = CombatSampleSceneBootstrap.IsGuardInputDown();
+
+            Assert.That(result, Is.False);
+        }
+
+        [Test]
+        public void ShouldTickCombat_WhenAttackIsInFlight_ReturnsTrue()
+        {
+            bool result = CombatSampleSceneBootstrap.ShouldTickCombat(hasBattleLoopController: true, isAttackInFlight: true);
+
+            Assert.That(result, Is.True);
+        }
+
+        [Test]
+        public void ShouldTickCombat_WhenControllerMissing_ReturnsFalse()
+        {
+            bool result = CombatSampleSceneBootstrap.ShouldTickCombat(hasBattleLoopController: false, isAttackInFlight: false);
+
+            Assert.That(result, Is.False);
+        }
+
         private static TowerBreakerGameData CreateTestGameData()
         {
             TowerBreakerGameData gameData = ScriptableObject.CreateInstance<TowerBreakerGameData>();

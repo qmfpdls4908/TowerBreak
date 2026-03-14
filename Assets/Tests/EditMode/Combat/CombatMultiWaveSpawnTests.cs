@@ -124,6 +124,48 @@ namespace TowerBreak.Combat.Tests
         }
 
         [Test]
+        public async Task SpawnAllEnemiesAsync_ReleaseAllWithQuantityExpansion_ReusesAllInstances()
+        {
+            TowerBreakerGameData gameData = CreateTwoEnemyGameData();
+            CombatDebugAddressableAssetProvider provider = new();
+            PooledCombatInstantiator pooled = new();
+            CombatDebugSpawnService service = new(provider, pooled);
+            GameObject root = new("Root");
+
+            FloorRow floor = gameData.Floors[0];
+            WaveSpawnPlan plan = WaveSpawnPlanner.CreatePlan(floor, gameData.FloorWaves, gameData.Enemies);
+
+            IReadOnlyList<GameObject> batch1 = await service.SpawnAllEnemiesAsync(
+                gameData, 1, root.transform, i => new Vector3(i * 2f, 0f, 0f));
+
+            int batchIndex = 0;
+            for (int i = 0; i < plan.Entries.Count; i++)
+            {
+                WaveSpawnEntry entry = plan.Entries[i];
+                GameObject prefab = await provider.LoadAssetAsync<GameObject>(entry.PrefabKey);
+                for (int q = 0; q < entry.Quantity; q++)
+                {
+                    pooled.Release(prefab, batch1[batchIndex]);
+                    batchIndex++;
+                }
+            }
+
+            IReadOnlyList<GameObject> batch2 = await service.SpawnAllEnemiesAsync(
+                gameData, 1, root.transform, i => new Vector3(i * 2f + 0.5f, 0f, 0f));
+
+            int reuseCount = 0;
+            for (int i = 0; i < batch2.Count; i++)
+            {
+                if (ReferenceEquals(batch1[i], batch2[i])) reuseCount++;
+            }
+
+            Assert.That(reuseCount, Is.EqualTo(batch1.Count));
+
+            Object.DestroyImmediate(root);
+            Object.DestroyImmediate(gameData);
+        }
+
+        [Test]
         public async Task SpawnAllEnemiesAsync_SamePrefabTwoEntries_WithoutRelease_AreDistinctInstances()
         {
             TowerBreakerGameData gameData = CreateSamePrefabTwoEntryGameData();

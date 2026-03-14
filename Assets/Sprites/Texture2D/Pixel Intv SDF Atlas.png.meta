@@ -1,0 +1,2431 @@
+fileFormatVersion: 2
+guid: cd8a404770f52964ea3a379e9c536e95
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6070195959923304505
+    second: Pixel Intv SDF Atlas_0
+  - first:
+      213: -428518266731300134
+    second: Pixel Intv SDF Atlas_1
+  - first:
+      213: -5113817042975385797
+    second: Pixel Intv SDF Atlas_2
+  - first:
+      213: 4478468880841627618
+    second: Pixel Intv SDF Atlas_3
+  - first:
+      213: -7944228825494684584
+    second: Pixel Intv SDF Atlas_4
+  - first:
+      213: 4885332510193773602
+    second: Pixel Intv SDF Atlas_5
+  - first:
+      213: -1664555610733232384
+    second: Pixel Intv SDF Atlas_6
+  - first:
+      213: 5134037851627178383
+    second: Pixel Intv SDF Atlas_7
+  - first:
+      213: 8406732471342010463
+    second: Pixel Intv SDF Atlas_8
+  - first:
+      213: -3988974371456934552
+    second: Pixel Intv SDF Atlas_9
+  - first:
+      213: 4259757519822405156
+    second: Pixel Intv SDF Atlas_10
+  - first:
+      213: -7820988340847068470
+    second: Pixel Intv SDF Atlas_11
+  - first:
+      213: 5016202988091834308
+    second: Pixel Intv SDF Atlas_12
+  - first:
+      213: -1741312775169649954
+    second: Pixel Intv SDF Atlas_13
+  - first:
+      213: 8830031144906322485
+    second: Pixel Intv SDF Atlas_14
+  - first:
+      213: -430942370249897613
+    second: Pixel Intv SDF Atlas_15
+  - first:
+      213: -7100183600122014803
+    second: Pixel Intv SDF Atlas_16
+  - first:
+      213: 4433598495098959979
+    second: Pixel Intv SDF Atlas_17
+  - first:
+      213: 6526580691059825236
+    second: Pixel Intv SDF Atlas_18
+  - first:
+      213: 1542928628628696647
+    second: Pixel Intv SDF Atlas_19
+  - first:
+      213: 5387937990648212043
+    second: Pixel Intv SDF Atlas_20
+  - first:
+      213: 5803502463633721916
+    second: Pixel Intv SDF Atlas_21
+  - first:
+      213: 5702039070304300692
+    second: Pixel Intv SDF Atlas_22
+  - first:
+      213: 7719196826264361405
+    second: Pixel Intv SDF Atlas_23
+  - first:
+      213: 8005396457235242925
+    second: Pixel Intv SDF Atlas_24
+  - first:
+      213: -5113524892799951619
+    second: Pixel Intv SDF Atlas_25
+  - first:
+      213: 3294990647536099385
+    second: Pixel Intv SDF Atlas_26
+  - first:
+      213: -133234811741275123
+    second: Pixel Intv SDF Atlas_27
+  - first:
+      213: -2331994180926107619
+    second: Pixel Intv SDF Atlas_28
+  - first:
+      213: 2978886553021170910
+    second: Pixel Intv SDF Atlas_29
+  - first:
+      213: 6622968526193001884
+    second: Pixel Intv SDF Atlas_30
+  - first:
+      213: -5790841477733506063
+    second: Pixel Intv SDF Atlas_31
+  - first:
+      213: 7976847134374816578
+    second: Pixel Intv SDF Atlas_32
+  - first:
+      213: 1791845043503450209
+    second: Pixel Intv SDF Atlas_33
+  - first:
+      213: -450089768770366395
+    second: Pixel Intv SDF Atlas_34
+  - first:
+      213: -4224366298346944913
+    second: Pixel Intv SDF Atlas_35
+  - first:
+      213: 4925110366249474392
+    second: Pixel Intv SDF Atlas_36
+  - first:
+      213: -3050660313990403800
+    second: Pixel Intv SDF Atlas_37
+  - first:
+      213: 3658896791738629174
+    second: Pixel Intv SDF Atlas_38
+  - first:
+      213: -3866945808340577912
+    second: Pixel Intv SDF Atlas_39
+  - first:
+      213: -6773886947592576619
+    second: Pixel Intv SDF Atlas_40
+  - first:
+      213: -4631534996093967733
+    second: Pixel Intv SDF Atlas_41
+  - first:
+      213: 6987474381709337865
+    second: Pixel Intv SDF Atlas_42
+  - first:
+      213: -1220391183300709627
+    second: Pixel Intv SDF Atlas_43
+  - first:
+      213: 4618997559800733061
+    second: Pixel Intv SDF Atlas_44
+  - first:
+      213: -8281313869630516263
+    second: Pixel Intv SDF Atlas_45
+  - first:
+      213: 6916539450636249651
+    second: Pixel Intv SDF Atlas_46
+  - first:
+      213: -6512398069435606047
+    second: Pixel Intv SDF Atlas_47
+  - first:
+      213: -6183255715590271918
+    second: Pixel Intv SDF Atlas_48
+  - first:
+      213: 8559427460934421939
+    second: Pixel Intv SDF Atlas_49
+  - first:
+      213: -6578556448062549403
+    second: Pixel Intv SDF Atlas_50
+  - first:
+      213: -2671439589314633010
+    second: Pixel Intv SDF Atlas_51
+  - first:
+      213: 4174947464650505184
+    second: Pixel Intv SDF Atlas_52
+  - first:
+      213: -2185451271801383240
+    second: Pixel Intv SDF Atlas_53
+  - first:
+      213: 2989332739667840708
+    second: Pixel Intv SDF Atlas_54
+  - first:
+      213: 7594491076570753445
+    second: Pixel Intv SDF Atlas_55
+  - first:
+      213: -6274892431155427309
+    second: Pixel Intv SDF Atlas_56
+  - first:
+      213: -1557677691885279995
+    second: Pixel Intv SDF Atlas_57
+  - first:
+      213: 3118298060440029085
+    second: Pixel Intv SDF Atlas_58
+  - first:
+      213: -3122928169880554513
+    second: Pixel Intv SDF Atlas_59
+  - first:
+      213: -8399000947678545442
+    second: Pixel Intv SDF Atlas_60
+  - first:
+      213: -6178496755251897281
+    second: Pixel Intv SDF Atlas_61
+  - first:
+      213: -533829467300678790
+    second: Pixel Intv SDF Atlas_62
+  - first:
+      213: -5438920462119217287
+    second: Pixel Intv SDF Atlas_63
+  - first:
+      213: 928131771681082094
+    second: Pixel Intv SDF Atlas_64
+  - first:
+      213: -375408977922702457
+    second: Pixel Intv SDF Atlas_65
+  - first:
+      213: 8053274504658470395
+    second: Pixel Intv SDF Atlas_66
+  - first:
+      213: -2160214793218232407
+    second: Pixel Intv SDF Atlas_67
+  - first:
+      213: 1257686063920391208
+    second: Pixel Intv SDF Atlas_68
+  - first:
+      213: -4215151334415413371
+    second: Pixel Intv SDF Atlas_69
+  - first:
+      213: 2577464108174347379
+    second: Pixel Intv SDF Atlas_70
+  - first:
+      213: 440555805892063222
+    second: Pixel Intv SDF Atlas_71
+  - first:
+      213: 1403197290888771445
+    second: Pixel Intv SDF Atlas_72
+  - first:
+      213: 7312165692095916046
+    second: Pixel Intv SDF Atlas_73
+  - first:
+      213: -2977989855357022415
+    second: Pixel Intv SDF Atlas_74
+  - first:
+      213: -6058196095067912834
+    second: Pixel Intv SDF Atlas_75
+  - first:
+      213: 8521267925670377586
+    second: Pixel Intv SDF Atlas_76
+  - first:
+      213: 3000943201864032652
+    second: Pixel Intv SDF Atlas_77
+  - first:
+      213: -918643500334521283
+    second: Pixel Intv SDF Atlas_78
+  - first:
+      213: 5162678982458550259
+    second: Pixel Intv SDF Atlas_79
+  - first:
+      213: -3625587528683559095
+    second: Pixel Intv SDF Atlas_80
+  - first:
+      213: 5493531250236321343
+    second: Pixel Intv SDF Atlas_81
+  - first:
+      213: 2741215563053465510
+    second: Pixel Intv SDF Atlas_82
+  - first:
+      213: 3715838145668269582
+    second: Pixel Intv SDF Atlas_83
+  - first:
+      213: 4983660100964483234
+    second: Pixel Intv SDF Atlas_84
+  - first:
+      213: -1945447084988344941
+    second: Pixel Intv SDF Atlas_85
+  - first:
+      213: -2665693399325490643
+    second: Pixel Intv SDF Atlas_86
+  - first:
+      213: 4139277746009617846
+    second: Pixel Intv SDF Atlas_87
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 486
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c792cb8fe452cba0800000000000000
+      internalID: -6070195959923304505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 486
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adaf6b328e89d0af0800000000000000
+      internalID: -428518266731300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 482
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b371d1b5e721809b0800000000000000
+      internalID: -5113817042975385797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 482
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e7d43c18b7b62e30800000000000000
+      internalID: 4478468880841627618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 497
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c78f939fd60c190800000000000000
+      internalID: -7944228825494684584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 471
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22c64cfc8003cc340800000000000000
+      internalID: 4885332510193773602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 452
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00fbc51cd7f46e8e0800000000000000
+      internalID: -1664555610733232384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 448
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f89c5a98934cf3740800000000000000
+      internalID: 5134037851627178383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50151454a6baa470800000000000000
+      internalID: 8406732471342010463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 445
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d1c2391f054a8c0800000000000000
+      internalID: -3988974371456934552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 445
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e305625e2bd1b30800000000000000
+      internalID: 4259757519822405156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 463
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acab6579a84467390800000000000000
+      internalID: -7820988340847068470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 417
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cf777a6a022d9540800000000000000
+      internalID: 5016202988091834308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 414
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed2d921c14d95d7e0800000000000000
+      internalID: -1741312775169649954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 414
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 532f6c3fa829a8a70800000000000000
+      internalID: 8830031144906322485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 419
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 379079e823cf40af0800000000000000
+      internalID: -430942370249897613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 419
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da35ca252a4177d90800000000000000
+      internalID: -7100183600122014803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 445
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b687411575e478d30800000000000000
+      internalID: 4433598495098959979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 382
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a5b882f82139a50800000000000000
+      internalID: 6526580691059825236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 380
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ea137b965996510800000000000000
+      internalID: 1542928628628696647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 380
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a2b645e0dc5ca40800000000000000
+      internalID: 5387937990648212043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 393
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3a0efd0ebe2a8050800000000000000
+      internalID: 5803502463633721916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 367
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ee2e0e256b12f40800000000000000
+      internalID: 5702039070304300692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 347
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db95fcc8d98102b60800000000000000
+      internalID: 7719196826264361405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 312
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daf5da7d9a1e81f60800000000000000
+      internalID: 8005396457235242925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 346
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc9a8ed33c1909b0800000000000000
+      internalID: -5113524892799951619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_26
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 312
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930af9c49882abd20800000000000000
+      internalID: 3294990647536099385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_27
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 346
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0cf17605a7a62ef0800000000000000
+      internalID: -133234811741275123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_28
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 312
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d101f9bd5a713afd0800000000000000
+      internalID: -2331994180926107619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_29
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 341
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed4c3038981275920800000000000000
+      internalID: 2978886553021170910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 273
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c95835ad8c289eb50800000000000000
+      internalID: 6622968526193001884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_31
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 282
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f3a8117b5cc2afa0800000000000000
+      internalID: -5790841477733506063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_32
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 282
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24be000a43473be60800000000000000
+      internalID: 7976847134374816578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_33
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 277
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 168419ec299edd810800000000000000
+      internalID: 1791845043503450209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_34
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 311
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 544976f6db5f0c9f0800000000000000
+      internalID: -450089768770366395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 234
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6606e9bb390065c0800000000000000
+      internalID: -4224366298346944913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_36
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 248
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 859d4e3a8c1895440800000000000000
+      internalID: 4925110366249474392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_37
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 248
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82968368b90e9a5d0800000000000000
+      internalID: -3050660313990403800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_38
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 243
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63cb5651f3307c230800000000000000
+      internalID: 3658896791738629174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_39
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 238
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8819c287649d55ac0800000000000000
+      internalID: -3866945808340577912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_40
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 272
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 591e614f5b15ef1a0800000000000000
+      internalID: -6773886947592576619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_41
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 214
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b826701c57b79bfb0800000000000000
+      internalID: -4631534996093967733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_42
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 214
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9056deecdee78f060800000000000000
+      internalID: 6987474381709337865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_43
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 209
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503b7584fac401fe0800000000000000
+      internalID: -1220391183300709627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_44
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 204
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58d9152eec9f91040800000000000000
+      internalID: 4618997559800733061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_45
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 238
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d3582f69ecd21d80800000000000000
+      internalID: -8281313869630516263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 195
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a26262cfb7cff50800000000000000
+      internalID: 6916539450636249651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_47
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 180
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ebd953c5705f95a0800000000000000
+      internalID: -6512398069435606047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_48
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 180
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c86dcdfa9a03aa0800000000000000
+      internalID: -6183255715590271918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_49
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 175
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd48b90de139c670800000000000000
+      internalID: 8559427460934421939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_50
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 170
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5625062e3c544b4a0800000000000000
+      internalID: -6578556448062549403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_51
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 204
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec26cffe8d32dead0800000000000000
+      internalID: -2671439589314633010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_52
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 185
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb396a699460f930800000000000000
+      internalID: 4174947464650505184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 156
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b65a56b5a7bba1e0800000000000000
+      internalID: -2185451271801383240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_54
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 146
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cec85fd94e3c7920800000000000000
+      internalID: 2989332739667840708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_55
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 141
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a9afd4956d056960800000000000000
+      internalID: 7594491076570753445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_56
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 136
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3188135649a1be8a0800000000000000
+      internalID: -6274892431155427309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_57
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 159
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505a0a46464026ae0800000000000000
+      internalID: -1557677691885279995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_58
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 129
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d974154809b664b20800000000000000
+      internalID: 3118298060440029085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_59
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 159
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe3753f106129a4d0800000000000000
+      internalID: -3122928169880554513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 117
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed9737d4321c07b80800000000000000
+      internalID: -8399000947678545442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_61
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 112
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c9e49afe1914aa0800000000000000
+      internalID: -6178496755251897281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_62
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 107
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7338e68de47798f0800000000000000
+      internalID: -533829467300678790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_63
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 102
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 977d7c508a21584b0800000000000000
+      internalID: -5438920462119217287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_64
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 99
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea0ecbcde261ec00800000000000000
+      internalID: 928131771681082094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_65
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 120
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783cc6906874acaf0800000000000000
+      internalID: -375408977922702457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_66
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 94
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf5c0e07e7af2cf60800000000000000
+      internalID: 8053274504658470395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_67
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 78
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9afeea347106502e0800000000000000
+      internalID: -2160214793218232407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8242fe6cfc2347110800000000000000
+      internalID: 1257686063920391208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_69
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 78
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58fc7a5b136c085c0800000000000000
+      internalID: -4215151334415413371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_70
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 73
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c0d0d43fdf4c320800000000000000
+      internalID: 2577464108174347379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_71
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 68
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ffaee9db2b2d1600800000000000000
+      internalID: 440555805892063222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_72
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 68
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57737396088297310800000000000000
+      internalID: 1403197290888771445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_73
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 64
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08ec2894f70a7560800000000000000
+      internalID: 7312165692095916046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_74
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 60
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f4abe210e0ca6d0800000000000000
+      internalID: -2977989855357022415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7581ddcfb6fceba0800000000000000
+      internalID: -6058196095067912834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_76
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 39
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2783381e700a14670800000000000000
+      internalID: 8521267925670377586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_77
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 34
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81aa3241fd75a920800000000000000
+      internalID: 3000943201864032652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_78
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 34
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d34e6578a925043f0800000000000000
+      internalID: -918643500334521283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_79
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 34
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f721d67e2585a740800000000000000
+      internalID: 5162678982458550259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_80
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 30
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 947eab21a535fadc0800000000000000
+      internalID: -3625587528683559095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_81
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 30
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3ee7dce091fc3c40800000000000000
+      internalID: 5493531250236321343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_82
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aff290f701ca0620800000000000000
+      internalID: 2741215563053465510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_83
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e06476b2b1f419330800000000000000
+      internalID: 3715838145668269582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_84
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a0864f0574892540800000000000000
+      internalID: 4983660100964483234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_85
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39553f10f226005e0800000000000000
+      internalID: -1945447084988344941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_86
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d22c91d0afd810bd0800000000000000
+      internalID: -2665693399325490643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Intv SDF Atlas_87
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b5359ddd2ba17930800000000000000
+      internalID: 4139277746009617846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pixel Intv SDF Atlas_0: -6070195959923304505
+      Pixel Intv SDF Atlas_1: -428518266731300134
+      Pixel Intv SDF Atlas_10: 4259757519822405156
+      Pixel Intv SDF Atlas_11: -7820988340847068470
+      Pixel Intv SDF Atlas_12: 5016202988091834308
+      Pixel Intv SDF Atlas_13: -1741312775169649954
+      Pixel Intv SDF Atlas_14: 8830031144906322485
+      Pixel Intv SDF Atlas_15: -430942370249897613
+      Pixel Intv SDF Atlas_16: -7100183600122014803
+      Pixel Intv SDF Atlas_17: 4433598495098959979
+      Pixel Intv SDF Atlas_18: 6526580691059825236
+      Pixel Intv SDF Atlas_19: 1542928628628696647
+      Pixel Intv SDF Atlas_2: -5113817042975385797
+      Pixel Intv SDF Atlas_20: 5387937990648212043
+      Pixel Intv SDF Atlas_21: 5803502463633721916
+      Pixel Intv SDF Atlas_22: 5702039070304300692
+      Pixel Intv SDF Atlas_23: 7719196826264361405
+      Pixel Intv SDF Atlas_24: 8005396457235242925
+      Pixel Intv SDF Atlas_25: -5113524892799951619
+      Pixel Intv SDF Atlas_26: 3294990647536099385
+      Pixel Intv SDF Atlas_27: -133234811741275123
+      Pixel Intv SDF Atlas_28: -2331994180926107619
+      Pixel Intv SDF Atlas_29: 2978886553021170910
+      Pixel Intv SDF Atlas_3: 4478468880841627618
+      Pixel Intv SDF Atlas_30: 6622968526193001884
+      Pixel Intv SDF Atlas_31: -5790841477733506063
+      Pixel Intv SDF Atlas_32: 7976847134374816578
+      Pixel Intv SDF Atlas_33: 1791845043503450209
+      Pixel Intv SDF Atlas_34: -450089768770366395
+      Pixel Intv SDF Atlas_35: -4224366298346944913
+      Pixel Intv SDF Atlas_36: 4925110366249474392
+      Pixel Intv SDF Atlas_37: -3050660313990403800
+      Pixel Intv SDF Atlas_38: 3658896791738629174
+      Pixel Intv SDF Atlas_39: -3866945808340577912
+      Pixel Intv SDF Atlas_4: -7944228825494684584
+      Pixel Intv SDF Atlas_40: -6773886947592576619
+      Pixel Intv SDF Atlas_41: -4631534996093967733
+      Pixel Intv SDF Atlas_42: 6987474381709337865
+      Pixel Intv SDF Atlas_43: -1220391183300709627
+      Pixel Intv SDF Atlas_44: 4618997559800733061
+      Pixel Intv SDF Atlas_45: -8281313869630516263
+      Pixel Intv SDF Atlas_46: 6916539450636249651
+      Pixel Intv SDF Atlas_47: -6512398069435606047
+      Pixel Intv SDF Atlas_48: -6183255715590271918
+      Pixel Intv SDF Atlas_49: 8559427460934421939
+      Pixel Intv SDF Atlas_5: 4885332510193773602
+      Pixel Intv SDF Atlas_50: -6578556448062549403
+      Pixel Intv SDF Atlas_51: -2671439589314633010
+      Pixel Intv SDF Atlas_52: 4174947464650505184
+      Pixel Intv SDF Atlas_53: -2185451271801383240
+      Pixel Intv SDF Atlas_54: 2989332739667840708
+      Pixel Intv SDF Atlas_55: 7594491076570753445
+      Pixel Intv SDF Atlas_56: -6274892431155427309
+      Pixel Intv SDF Atlas_57: -1557677691885279995
+      Pixel Intv SDF Atlas_58: 3118298060440029085
+      Pixel Intv SDF Atlas_59: -3122928169880554513
+      Pixel Intv SDF Atlas_6: -1664555610733232384
+      Pixel Intv SDF Atlas_60: -8399000947678545442
+      Pixel Intv SDF Atlas_61: -6178496755251897281
+      Pixel Intv SDF Atlas_62: -533829467300678790
+      Pixel Intv SDF Atlas_63: -5438920462119217287
+      Pixel Intv SDF Atlas_64: 928131771681082094
+      Pixel Intv SDF Atlas_65: -375408977922702457
+      Pixel Intv SDF Atlas_66: 8053274504658470395
+      Pixel Intv SDF Atlas_67: -2160214793218232407
+      Pixel Intv SDF Atlas_68: 1257686063920391208
+      Pixel Intv SDF Atlas_69: -4215151334415413371
+      Pixel Intv SDF Atlas_7: 5134037851627178383
+      Pixel Intv SDF Atlas_70: 2577464108174347379
+      Pixel Intv SDF Atlas_71: 440555805892063222
+      Pixel Intv SDF Atlas_72: 1403197290888771445
+      Pixel Intv SDF Atlas_73: 7312165692095916046
+      Pixel Intv SDF Atlas_74: -2977989855357022415
+      Pixel Intv SDF Atlas_75: -6058196095067912834
+      Pixel Intv SDF Atlas_76: 8521267925670377586
+      Pixel Intv SDF Atlas_77: 3000943201864032652
+      Pixel Intv SDF Atlas_78: -918643500334521283
+      Pixel Intv SDF Atlas_79: 5162678982458550259
+      Pixel Intv SDF Atlas_8: 8406732471342010463
+      Pixel Intv SDF Atlas_80: -3625587528683559095
+      Pixel Intv SDF Atlas_81: 5493531250236321343
+      Pixel Intv SDF Atlas_82: 2741215563053465510
+      Pixel Intv SDF Atlas_83: 3715838145668269582
+      Pixel Intv SDF Atlas_84: 4983660100964483234
+      Pixel Intv SDF Atlas_85: -1945447084988344941
+      Pixel Intv SDF Atlas_86: -2665693399325490643
+      Pixel Intv SDF Atlas_87: 4139277746009617846
+      Pixel Intv SDF Atlas_9: -3988974371456934552
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa44c9fb3bcc939409b4cdc6a7a1ec83, type: 3}
   m_Name: TowerBreakerGameData
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Floors:
   - Id: 1
     DisplayName: Floor 1
@@ -75,8 +75,79 @@ MonoBehaviour:
     HitVfxKey: vfx/enemy/hit/armored
     HitSfxKey: sfx/enemy/hit/armored
     DeathVfxKey: vfx/enemy/death/armored
-  Weapons: []
-  RewardTables: []
-  RewardEntries: []
+  Weapons:
+  - Id: 201
+    Archetype: 0
+    Rarity: 0
+    BaseAttack: 10
+    AttackSpeed: 1.2
+    PushPower: 1
+    RerollGroupId: 1
+    IconKey: icon/weapon/claw
+    AttackVfxKey: vfx/weapon/claw/attack
+    HitSfxKey: sfx/weapon/claw/hit
+    EquipSfxKey: sfx/weapon/claw/equip
+  - Id: 202
+    Archetype: 1
+    Rarity: 0
+    BaseAttack: 14
+    AttackSpeed: 0.9
+    PushPower: 1.8
+    RerollGroupId: 2
+    IconKey: icon/weapon/lance
+    AttackVfxKey: vfx/weapon/lance/attack
+    HitSfxKey: sfx/weapon/lance/hit
+    EquipSfxKey: sfx/weapon/lance/equip
+  RewardTables:
+  - Id: 1001
+    GuaranteedGold: 20
+    WeaponDropChance: 0.5
+    FallbackRewardId: 3001
+    RewardPopupSfxKey: sfx/ui/reward_popup
+  - Id: 1002
+    GuaranteedGold: 30
+    WeaponDropChance: 0.6
+    FallbackRewardId: 3002
+    RewardPopupSfxKey: sfx/ui/reward_popup
+  - Id: 1003
+    GuaranteedGold: 40
+    WeaponDropChance: 0.7
+    FallbackRewardId: 3003
+    RewardPopupSfxKey: sfx/ui/reward_popup
+  RewardEntries:
+  - RewardTableId: 1001
+    RewardId: 3001
+    RewardType: 0
+    TargetItemId: 0
+    Weight: 1
+    QuantityMin: 20
+    QuantityMax: 25
+    IconKey: icon/reward/gold
+  - RewardTableId: 1002
+    RewardId: 3002
+    RewardType: 0
+    TargetItemId: 0
+    Weight: 1
+    QuantityMin: 30
+    QuantityMax: 35
+    IconKey: icon/reward/gold
+  - RewardTableId: 1003
+    RewardId: 3003
+    RewardType: 0
+    TargetItemId: 0
+    Weight: 1
+    QuantityMin: 40
+    QuantityMax: 50
+    IconKey: icon/reward/gold
   EnhancementCosts: []
-  RerollCosts: []
+  RerollCosts:
+  - Rarity: 0
+    GoldCost: 10
+    RollCount: 3
+    MinBonus: 1
+    MaxBonus: 5
+  - Rarity: 1
+    GoldCost: 20
+    RollCount: 3
+    MinBonus: 3
+    MaxBonus: 8

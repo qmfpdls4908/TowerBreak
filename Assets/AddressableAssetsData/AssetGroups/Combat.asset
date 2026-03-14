@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Combat
   m_GUID: 06c6ec5e6c298d6459bb6ab79c2665ec
   m_SerializeEntries:
+  - m_GUID: 93199251abc8c734da5498f608ad672c
+    m_Address: enemy/armored_pusher
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b96ca5bb48b04b9449331a18045ff05c
     m_Address: enemy/basic_melee
     m_ReadOnly: 0

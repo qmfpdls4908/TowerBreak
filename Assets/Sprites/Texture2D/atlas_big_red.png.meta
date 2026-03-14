@@ -1,0 +1,1885 @@
+fileFormatVersion: 2
+guid: 781a77d9477e8e44981933a496438ef4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6933623480588466105
+    second: atlas_big_red_0
+  - first:
+      213: 7337172410834061761
+    second: atlas_big_red_1
+  - first:
+      213: 7914523417000723260
+    second: atlas_big_red_2
+  - first:
+      213: -1245615228978104294
+    second: atlas_big_red_3
+  - first:
+      213: -2661397350000007508
+    second: atlas_big_red_4
+  - first:
+      213: 3993552292244603807
+    second: atlas_big_red_5
+  - first:
+      213: -851508151569129129
+    second: atlas_big_red_6
+  - first:
+      213: -2241777765595994452
+    second: atlas_big_red_7
+  - first:
+      213: -4026538918835608666
+    second: atlas_big_red_8
+  - first:
+      213: 842974360496969086
+    second: atlas_big_red_9
+  - first:
+      213: 2080737124505499227
+    second: atlas_big_red_10
+  - first:
+      213: 2329083974005680129
+    second: atlas_big_red_11
+  - first:
+      213: -4680511059404217071
+    second: atlas_big_red_12
+  - first:
+      213: 3387030519834344606
+    second: atlas_big_red_13
+  - first:
+      213: -8581756743972884199
+    second: atlas_big_red_14
+  - first:
+      213: -4873528114279886245
+    second: atlas_big_red_15
+  - first:
+      213: 8769056773604577568
+    second: atlas_big_red_16
+  - first:
+      213: 4749910661092786064
+    second: atlas_big_red_17
+  - first:
+      213: -7375987978020069978
+    second: atlas_big_red_18
+  - first:
+      213: 8721818653732169579
+    second: atlas_big_red_19
+  - first:
+      213: -4361666913950574766
+    second: atlas_big_red_20
+  - first:
+      213: -5150110327238128643
+    second: atlas_big_red_21
+  - first:
+      213: -4784623917337622334
+    second: atlas_big_red_22
+  - first:
+      213: -2540494931026835057
+    second: atlas_big_red_23
+  - first:
+      213: -7646158448440140961
+    second: atlas_big_red_24
+  - first:
+      213: -7546348867464691991
+    second: atlas_big_red_25
+  - first:
+      213: 8920365255729060710
+    second: atlas_big_red_26
+  - first:
+      213: -2468668885362061879
+    second: atlas_big_red_27
+  - first:
+      213: 276647349850886095
+    second: atlas_big_red_28
+  - first:
+      213: -626314515266615626
+    second: atlas_big_red_29
+  - first:
+      213: 7098568871615850909
+    second: atlas_big_red_30
+  - first:
+      213: 5024348446161146283
+    second: atlas_big_red_31
+  - first:
+      213: 8144753514580460472
+    second: atlas_big_red_32
+  - first:
+      213: 3024617689859458637
+    second: atlas_big_red_33
+  - first:
+      213: -5381154372464469188
+    second: atlas_big_red_34
+  - first:
+      213: -4575145207476512174
+    second: atlas_big_red_35
+  - first:
+      213: -7768845409685330545
+    second: atlas_big_red_36
+  - first:
+      213: -7577932964844928252
+    second: atlas_big_red_37
+  - first:
+      213: 3043759236917987998
+    second: atlas_big_red_38
+  - first:
+      213: -8141560939831740886
+    second: atlas_big_red_39
+  - first:
+      213: -6788789061263330405
+    second: atlas_big_red_40
+  - first:
+      213: -3973314468271279912
+    second: atlas_big_red_41
+  - first:
+      213: 924506163314919456
+    second: atlas_big_red_42
+  - first:
+      213: -5431358183171622813
+    second: atlas_big_red_43
+  - first:
+      213: 7164905853724729669
+    second: atlas_big_red_44
+  - first:
+      213: 7333956515338453720
+    second: atlas_big_red_45
+  - first:
+      213: -7330401413042155084
+    second: atlas_big_red_46
+  - first:
+      213: -5367495930295757530
+    second: atlas_big_red_47
+  - first:
+      213: -6355802680592032044
+    second: atlas_big_red_48
+  - first:
+      213: -4529534132526477556
+    second: atlas_big_red_49
+  - first:
+      213: 5657960480767048940
+    second: atlas_big_red_50
+  - first:
+      213: -220355738368983809
+    second: atlas_big_red_51
+  - first:
+      213: 8612764277819535783
+    second: atlas_big_red_52
+  - first:
+      213: -2482471086974603972
+    second: atlas_big_red_53
+  - first:
+      213: -8159836791397242356
+    second: atlas_big_red_54
+  - first:
+      213: -3628537015403015937
+    second: atlas_big_red_55
+  - first:
+      213: -2766584871683631665
+    second: atlas_big_red_56
+  - first:
+      213: 2049504833884636166
+    second: atlas_big_red_57
+  - first:
+      213: 7056158384072965723
+    second: atlas_big_red_58
+  - first:
+      213: -4207198208600158454
+    second: atlas_big_red_59
+  - first:
+      213: 5879106223570376019
+    second: atlas_big_red_60
+  - first:
+      213: 8103648242296588141
+    second: atlas_big_red_61
+  - first:
+      213: -5629131698588837832
+    second: atlas_big_red_62
+  - first:
+      213: -9105304369673203164
+    second: atlas_big_red_63
+  - first:
+      213: 364968425063863424
+    second: atlas_big_red_64
+  - first:
+      213: 6532420191487454506
+    second: atlas_big_red_65
+  - first:
+      213: -8038738797783943627
+    second: atlas_big_red_66
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: atlas_big_red_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 228
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74887392e22d6cf90800000000000000
+      internalID: -6933623480588466105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 228
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c98f830f6fd2d560800000000000000
+      internalID: 7337172410834061761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 228
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c33c6d46d1906dd60800000000000000
+      internalID: 7914523417000723260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 228
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1871fd7c8fa6bee0800000000000000
+      internalID: -1245615228978104294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 228
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6651bf531d01bd0800000000000000
+      internalID: -2661397350000007508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 228
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f93cf2ba6a2fb6730800000000000000
+      internalID: 3993552292244603807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 228
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7516f5ef8d5de24f0800000000000000
+      internalID: -851508151569129129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 228
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca62848effa93e0e0800000000000000
+      internalID: -2241777765595994452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 196
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a3a484df2cde18c0800000000000000
+      internalID: -4026538918835608666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_9
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 197
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e751f20f6b8d2bb00800000000000000
+      internalID: 842974360496969086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_10
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 199
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b563e19f36340ec10800000000000000
+      internalID: 2080737124505499227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_11
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 201
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 108e9aac881925020800000000000000
+      internalID: 2329083974005680129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_12
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 206
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 115ace86dfb7b0fb0800000000000000
+      internalID: -4680511059404217071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_13
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 209
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9cf1220056210f20800000000000000
+      internalID: 3387030519834344606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_14
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 161
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 911feae95b977e880800000000000000
+      internalID: -8581756743972884199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_15
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 164
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b52d7794000cd5cb0800000000000000
+      internalID: -4873528114279886245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_16
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 166
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0211fe5dca2f1b970800000000000000
+      internalID: 8769056773604577568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 167
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09fb64584921be140800000000000000
+      internalID: 4749910661092786064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_18
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 168
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6addf8e730a33a990800000000000000
+      internalID: -7375987978020069978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_19
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 169
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67e41bfadf1a0970800000000000000
+      internalID: 8721818653732169579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_20
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 170
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 257d6650d0f3873c0800000000000000
+      internalID: -4361666913950574766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_21
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 171
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb86ee91f12788b0800000000000000
+      internalID: -5150110327238128643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_22
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 133
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c8c04fa5e9999db0800000000000000
+      internalID: -4784623917337622334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_23
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 133
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f89077202595ebcd0800000000000000
+      internalID: -2540494931026835057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_24
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 134
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b9f58f66363e590800000000000000
+      internalID: -7646158448440140961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_25
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 135
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee7893ffabf54790800000000000000
+      internalID: -7546348867464691991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_26
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 135
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b977e10f08bcb70800000000000000
+      internalID: 8920365255729060710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_27
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 136
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd4fe37ab68dbdd0800000000000000
+      internalID: -2468668885362061879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_28
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 137
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf4ae78c49d6d300800000000000000
+      internalID: 276647349850886095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 101
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b6ccd74442ee47f0800000000000000
+      internalID: -626314515266615626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_30
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 100
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d99ee4667ce238260800000000000000
+      internalID: 7098568871615850909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_31
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 100
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba19839aa421ab540800000000000000
+      internalID: 5024348446161146283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_32
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 63
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b3cea33b2af70170800000000000000
+      internalID: 8144753514580460472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_33
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 82
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d468f6983c999f920800000000000000
+      internalID: 3024617689859458637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_34
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 98
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3b17bbdb9c4255b0800000000000000
+      internalID: -5381154372464469188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_35
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 96
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a18888ca1d180c0800000000000000
+      internalID: -4575145207476512174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_36
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 104
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8528c0d2448f2490800000000000000
+      internalID: -7768845409685330545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_37
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 105
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40302ba3e16c5d690800000000000000
+      internalID: -7577932964844928252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_38
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 64
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9a8f4246ea9d3a20800000000000000
+      internalID: 3043759236917987998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_39
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 63
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a263228067d530f80800000000000000
+      internalID: -8141560939831740886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_40
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 64
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b93775c315069c1a0800000000000000
+      internalID: -6788789061263330405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_41
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 94
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d035c9ea83fbd8c0800000000000000
+      internalID: -3973314468271279912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_42
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 74
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0288b01157184dc00800000000000000
+      internalID: 924506163314919456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_43
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 83
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368f42c4280ff94b0800000000000000
+      internalID: -5431358183171622813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_44
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 64
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5412164a9ebde6360800000000000000
+      internalID: 7164905853724729669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_45
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 33
+        width: 59
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d209eef79277c560800000000000000
+      internalID: 7333956515338453720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_46
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 65
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1d992c0ce254a90800000000000000
+      internalID: -7330401413042155084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_47
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 64
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 625dd5db3e2d285b0800000000000000
+      internalID: -5367495930295757530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_48
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 51
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4de16d0f227abc7a0800000000000000
+      internalID: -6355802680592032044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_49
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 57
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f80c874bcd321c0800000000000000
+      internalID: -4529534132526477556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_50
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 38
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec7151841d158e40800000000000000
+      internalID: 5657960480767048940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_51
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 37
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc3c4a9f9321fcf0800000000000000
+      internalID: -220355738368983809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_52
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 37
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a17b917a7fa68770800000000000000
+      internalID: 8612764277819535783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_53
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 36
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3d63b7f2bd7c8dd0800000000000000
+      internalID: -2482471086974603972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_54
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 35
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0aaa9fbbaf62ce80800000000000000
+      internalID: -8159836791397242356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_55
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 31
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff01c8e2fc8d4adc0800000000000000
+      internalID: -3628537015403015937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_56
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 31
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc5d35a97bd1b99d0800000000000000
+      internalID: -2766584871683631665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_57
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 40
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 604c325a9cd417c10800000000000000
+      internalID: 2049504833884636166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_58
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 29
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e30994aa28ce160800000000000000
+      internalID: 7056158384072965723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_59
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f4abc15870d95c0800000000000000
+      internalID: -4207198208600158454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_60
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 3
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35553b426f7c69150800000000000000
+      internalID: 5879106223570376019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_61
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 3
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d678ec23421f57070800000000000000
+      internalID: 8103648242296588141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_62
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 3
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83898b76b8e41e1b0800000000000000
+      internalID: -5629131698588837832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_63
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 3
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42211d1fae573a180800000000000000
+      internalID: -9105304369673203164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_64
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 3
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0845a2259d0a01500800000000000000
+      internalID: 364968425063863424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_65
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 5
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2de23dcd81d7aa50800000000000000
+      internalID: 6532420191487454506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_big_red_66
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 5
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536ffeb87a9a07090800000000000000
+      internalID: -8038738797783943627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      atlas_big_red_0: -6933623480588466105
+      atlas_big_red_1: 7337172410834061761
+      atlas_big_red_10: 2080737124505499227
+      atlas_big_red_11: 2329083974005680129
+      atlas_big_red_12: -4680511059404217071
+      atlas_big_red_13: 3387030519834344606
+      atlas_big_red_14: -8581756743972884199
+      atlas_big_red_15: -4873528114279886245
+      atlas_big_red_16: 8769056773604577568
+      atlas_big_red_17: 4749910661092786064
+      atlas_big_red_18: -7375987978020069978
+      atlas_big_red_19: 8721818653732169579
+      atlas_big_red_2: 7914523417000723260
+      atlas_big_red_20: -4361666913950574766
+      atlas_big_red_21: -5150110327238128643
+      atlas_big_red_22: -4784623917337622334
+      atlas_big_red_23: -2540494931026835057
+      atlas_big_red_24: -7646158448440140961
+      atlas_big_red_25: -7546348867464691991
+      atlas_big_red_26: 8920365255729060710
+      atlas_big_red_27: -2468668885362061879
+      atlas_big_red_28: 276647349850886095
+      atlas_big_red_29: -626314515266615626
+      atlas_big_red_3: -1245615228978104294
+      atlas_big_red_30: 7098568871615850909
+      atlas_big_red_31: 5024348446161146283
+      atlas_big_red_32: 8144753514580460472
+      atlas_big_red_33: 3024617689859458637
+      atlas_big_red_34: -5381154372464469188
+      atlas_big_red_35: -4575145207476512174
+      atlas_big_red_36: -7768845409685330545
+      atlas_big_red_37: -7577932964844928252
+      atlas_big_red_38: 3043759236917987998
+      atlas_big_red_39: -8141560939831740886
+      atlas_big_red_4: -2661397350000007508
+      atlas_big_red_40: -6788789061263330405
+      atlas_big_red_41: -3973314468271279912
+      atlas_big_red_42: 924506163314919456
+      atlas_big_red_43: -5431358183171622813
+      atlas_big_red_44: 7164905853724729669
+      atlas_big_red_45: 7333956515338453720
+      atlas_big_red_46: -7330401413042155084
+      atlas_big_red_47: -5367495930295757530
+      atlas_big_red_48: -6355802680592032044
+      atlas_big_red_49: -4529534132526477556
+      atlas_big_red_5: 3993552292244603807
+      atlas_big_red_50: 5657960480767048940
+      atlas_big_red_51: -220355738368983809
+      atlas_big_red_52: 8612764277819535783
+      atlas_big_red_53: -2482471086974603972
+      atlas_big_red_54: -8159836791397242356
+      atlas_big_red_55: -3628537015403015937
+      atlas_big_red_56: -2766584871683631665
+      atlas_big_red_57: 2049504833884636166
+      atlas_big_red_58: 7056158384072965723
+      atlas_big_red_59: -4207198208600158454
+      atlas_big_red_6: -851508151569129129
+      atlas_big_red_60: 5879106223570376019
+      atlas_big_red_61: 8103648242296588141
+      atlas_big_red_62: -5629131698588837832
+      atlas_big_red_63: -9105304369673203164
+      atlas_big_red_64: 364968425063863424
+      atlas_big_red_65: 6532420191487454506
+      atlas_big_red_66: -8038738797783943627
+      atlas_big_red_7: -2241777765595994452
+      atlas_big_red_8: -4026538918835608666
+      atlas_big_red_9: 842974360496969086
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 8eb5fedf90eddb3468950dfebd1665d8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9196822437095808623
+    second: dustexplosion1_6_0
+  - first:
+      213: -3956618308193966858
+    second: dustexplosion1_6_1
+  - first:
+      213: 8749410684259623219
+    second: dustexplosion1_6_2
+  - first:
+      213: 6568502700287057246
+    second: dustexplosion1_6_3
+  - first:
+      213: 3231621226561248440
+    second: dustexplosion1_6_4
+  - first:
+      213: 3701361242033980196
+    second: dustexplosion1_6_5
+  - first:
+      213: 6144180699360432233
+    second: dustexplosion1_6_6
+  - first:
+      213: -81175957118234806
+    second: dustexplosion1_6_7
+  - first:
+      213: -4645348608691675636
+    second: dustexplosion1_6_8
+  - first:
+      213: -8846440201695722663
+    second: dustexplosion1_6_9
+  - first:
+      213: 8633137392777359580
+    second: dustexplosion1_6_10
+  - first:
+      213: -5153908975180956570
+    second: dustexplosion1_6_11
+  - first:
+      213: -1940291751180608039
+    second: dustexplosion1_6_12
+  - first:
+      213: 8048149957125087879
+    second: dustexplosion1_6_13
+  - first:
+      213: -1213767560397559087
+    second: dustexplosion1_6_14
+  - first:
+      213: 631553042068871779
+    second: dustexplosion1_6_15
+  - first:
+      213: 7237978748861779474
+    second: dustexplosion1_6_16
+  - first:
+      213: 3272099570857783677
+    second: dustexplosion1_6_17
+  - first:
+      213: 6940426904775700295
+    second: dustexplosion1_6_18
+  - first:
+      213: 8771949149140740035
+    second: dustexplosion1_6_19
+  - first:
+      213: -6281215063908585484
+    second: dustexplosion1_6_20
+  - first:
+      213: -4690902834536501762
+    second: dustexplosion1_6_21
+  - first:
+      213: 7808008610653037663
+    second: dustexplosion1_6_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dustexplosion1_6_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 12
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 191ef8668b25e5080800000000000000
+      internalID: -9196822437095808623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 26
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f4aa4c9c944719c0800000000000000
+      internalID: -3956618308193966858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 33
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3316d4539a62c6970800000000000000
+      internalID: 8749410684259623219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 26
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5dddcc8762082b50800000000000000
+      internalID: 6568502700287057246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 4
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bc9bc9326609dc20800000000000000
+      internalID: 3231621226561248440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_5
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 17
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42385d06070ed5330800000000000000
+      internalID: 3701361242033980196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_6
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 21
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9609035fac3844550800000000000000
+      internalID: 6144180699360432233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_7
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 19
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f4aa7a5ea9fdef0800000000000000
+      internalID: -81175957118234806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_8
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 14
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ed3117d08688fb0800000000000000
+      internalID: -4645348608691675636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_9
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 22
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953013bc1812b3580800000000000000
+      internalID: -8846440201695722663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_10
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 15
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd0f2a9e7b01fc770800000000000000
+      internalID: 8633137392777359580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_11
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 8
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c34a9f713a978b0800000000000000
+      internalID: -5153908975180956570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_12
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 11
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd5242bee2b215e0800000000000000
+      internalID: -1940291751180608039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782248dbeb5c0bf60800000000000000
+      internalID: 8048149957125087879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_14
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 11
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da6c9aa5d4d72fe0800000000000000
+      internalID: -1213767560397559087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_15
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 5
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a1559452ab3c800800000000000000
+      internalID: 631553042068871779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_16
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 8
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e8bb9d257727460800000000000000
+      internalID: 7237978748861779474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_17
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71bfae2935d86d20800000000000000
+      internalID: 3272099570857783677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74f28b87f79515060800000000000000
+      internalID: 6940426904775700295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_19
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c7e25e76493cb970800000000000000
+      internalID: 8771949149140740035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_20
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff65edbd24a4d8a0800000000000000
+      internalID: -6281215063908585484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_21
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efd2497b9b096eeb0800000000000000
+      internalID: -4690902834536501762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dustexplosion1_6_22
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 2
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f546a29767e9b5c60800000000000000
+      internalID: 7808008610653037663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dustexplosion1_6_0: -9196822437095808623
+      dustexplosion1_6_1: -3956618308193966858
+      dustexplosion1_6_10: 8633137392777359580
+      dustexplosion1_6_11: -5153908975180956570
+      dustexplosion1_6_12: -1940291751180608039
+      dustexplosion1_6_13: 8048149957125087879
+      dustexplosion1_6_14: -1213767560397559087
+      dustexplosion1_6_15: 631553042068871779
+      dustexplosion1_6_16: 7237978748861779474
+      dustexplosion1_6_17: 3272099570857783677
+      dustexplosion1_6_18: 6940426904775700295
+      dustexplosion1_6_19: 8771949149140740035
+      dustexplosion1_6_2: 8749410684259623219
+      dustexplosion1_6_20: -6281215063908585484
+      dustexplosion1_6_21: -4690902834536501762
+      dustexplosion1_6_22: 7808008610653037663
+      dustexplosion1_6_3: 6568502700287057246
+      dustexplosion1_6_4: 3231621226561248440
+      dustexplosion1_6_5: 3701361242033980196
+      dustexplosion1_6_6: 6144180699360432233
+      dustexplosion1_6_7: -81175957118234806
+      dustexplosion1_6_8: -4645348608691675636
+      dustexplosion1_6_9: -8846440201695722663
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

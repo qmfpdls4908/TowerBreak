@@ -1,16 +1,25 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace TowerBreak.Combat
 {
     public sealed class CombatState
     {
-        private CombatState(int playerHealth, int wallHealth, float elapsedTime, IReadOnlyList<CombatEnemyState> enemies)
+        private CombatState(
+            int playerHealth,
+            int wallHealth,
+            float elapsedTime,
+            float pendingEnemyPressure,
+            bool isDangerActive,
+            bool isWallDefeated,
+            IReadOnlyList<CombatEnemyState> enemies)
         {
             PlayerHealth = playerHealth;
             WallHealth = wallHealth;
             ElapsedTime = elapsedTime;
+            PendingEnemyPressure = pendingEnemyPressure;
+            IsDangerActive = isDangerActive;
+            IsWallDefeated = isWallDefeated;
             Enemies = enemies;
         }
 
@@ -19,6 +28,12 @@ namespace TowerBreak.Combat
         public int WallHealth { get; }
 
         public float ElapsedTime { get; }
+
+        public float PendingEnemyPressure { get; }
+
+        public bool IsDangerActive { get; }
+
+        public bool IsWallDefeated { get; }
 
         public IReadOnlyList<CombatEnemyState> Enemies { get; }
 
@@ -29,12 +44,12 @@ namespace TowerBreak.Combat
                 throw new ArgumentNullException(nameof(enemies));
             }
 
-            return new CombatState(playerHealth, wallHealth, 0f, new List<CombatEnemyState>(enemies));
+            return new CombatState(playerHealth, wallHealth, 0f, 0f, false, wallHealth <= 0, new List<CombatEnemyState>(enemies));
         }
 
         public CombatState AdvanceTime(float deltaTime)
         {
-            return new CombatState(PlayerHealth, WallHealth, ElapsedTime + deltaTime, Enemies);
+            return new CombatState(PlayerHealth, WallHealth, ElapsedTime + deltaTime, PendingEnemyPressure, IsDangerActive, IsWallDefeated, Enemies);
         }
 
         public CombatState ApplyWallDamage(int damage)
@@ -45,7 +60,7 @@ namespace TowerBreak.Combat
                 nextWallHealth = 0;
             }
 
-            return new CombatState(PlayerHealth, nextWallHealth, ElapsedTime, Enemies);
+            return new CombatState(PlayerHealth, nextWallHealth, ElapsedTime, PendingEnemyPressure, IsDangerActive, nextWallHealth == 0, Enemies);
         }
 
         public CombatState ApplyPlayerAttack(int enemyId, int attackDamage)
@@ -68,7 +83,72 @@ namespace TowerBreak.Combat
                 }
             }
 
-            return new CombatState(PlayerHealth, WallHealth, ElapsedTime, updatedEnemies);
+            return new CombatState(PlayerHealth, WallHealth, ElapsedTime, PendingEnemyPressure, IsDangerActive, IsWallDefeated, updatedEnemies);
+        }
+
+        public CombatState ApplyPlayerGuard(float pressureReduction)
+        {
+            if (pressureReduction < 0f)
+            {
+                throw new ArgumentException("Pressure reduction must be zero or greater.", nameof(pressureReduction));
+            }
+
+            float nextPendingEnemyPressure = PendingEnemyPressure - pressureReduction;
+            if (nextPendingEnemyPressure < 0f)
+            {
+                nextPendingEnemyPressure = 0f;
+            }
+
+            return new CombatState(PlayerHealth, WallHealth, ElapsedTime, nextPendingEnemyPressure, IsDangerActive, IsWallDefeated, Enemies);
+        }
+
+        public CombatState AdvanceEnemyPressure(float deltaTime, float wallHitThreshold, int wallDamagePerHit)
+        {
+            if (deltaTime < 0f)
+            {
+                throw new ArgumentException("Delta time must be zero or greater.", nameof(deltaTime));
+            }
+
+            if (wallHitThreshold <= 0f)
+            {
+                throw new ArgumentException("Wall hit threshold must be greater than zero.", nameof(wallHitThreshold));
+            }
+
+            if (wallDamagePerHit <= 0)
+            {
+                throw new ArgumentException("Wall damage per hit must be greater than zero.", nameof(wallDamagePerHit));
+            }
+
+            float totalEnemyPressure = 0f;
+            for (int i = 0; i < Enemies.Count; i++)
+            {
+                totalEnemyPressure += Enemies[i].Pressure;
+            }
+
+            float nextPendingEnemyPressure = PendingEnemyPressure + totalEnemyPressure * deltaTime;
+            int wallHitCount = (int)(nextPendingEnemyPressure / wallHitThreshold);
+            if (wallHitCount > 0)
+            {
+                nextPendingEnemyPressure -= wallHitCount * wallHitThreshold;
+            }
+
+            int nextWallHealth = WallHealth - wallHitCount * wallDamagePerHit;
+            if (nextWallHealth < 0)
+            {
+                nextWallHealth = 0;
+            }
+
+            bool nextDangerActive = IsDangerActive || wallHitCount > 0;
+            bool nextWallDefeated = IsWallDefeated || nextWallHealth == 0;
+
+            return new CombatState(
+                PlayerHealth,
+                nextWallHealth,
+                ElapsedTime,
+                nextPendingEnemyPressure,
+                nextDangerActive,
+                nextWallDefeated,
+                Enemies);
         }
     }
 }

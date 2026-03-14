@@ -157,12 +157,32 @@ The MVP is complete when all of these are true:
 
 ## 5A. Milestone status board
 
-- Active milestone: `combat-loop`
+- Active milestone: **none — vertical slice MVP complete**
 - Archived milestones:
   - `data-schema` → `docs/plans/2026-03-13-tower-breaker-vertical-slice/archive/data-schema/`
   - `addressables-provider` → `docs/plans/2026-03-13-tower-breaker-vertical-slice/archive/addressables-provider/`
-- Current blocker: attack now exists as a pure combat rule, but it is not yet connected to a scene-visible trigger or minimal input path
-- Next recommended action: connect `ApplyPlayerAttack` to a minimal scene-visible trigger, then add enemy pressure / wall state progression
+  - `combat-loop` → `docs/plans/2026-03-13-tower-breaker-vertical-slice/archive/combat-loop/`
+  - `meta-loop` → `docs/plans/2026-03-13-tower-breaker-vertical-slice/archive/meta-loop/`
+  - `ui-flow` → `docs/plans/2026-03-13-tower-breaker-vertical-slice/archive/ui-flow/`
+  - `integration` → `docs/plans/2026-03-13-tower-breaker-vertical-slice/archive/integration/` *(ready for archive)*
+- Current progress: **ALL PHASES COMPLETE** — vertical slice integration verified
+- Phase completion:
+  - Phase 1: Research and Documentation ✓
+  - Phase 2: Core Infrastructure ✓ (15/15 tests)
+  - Phase 3: Title -> Lobby Integration ✓ (15/15 tests)
+  - Phase 4: Lobby -> Battle Integration ✓ (12/12 tests)
+  - Phase 5: Battle -> Reward Integration ✓ (15/15 tests)
+  - Phase 6: Reward -> Growth -> Lobby Integration ✓ (37/37 tests)
+  - Phase 7: Full Loop Integration Test ✓ (11/11 tests)
+  - Phase 8: Final Verification ✓ (323/323 tests across all suites)
+- Final verified test counts:
+  - UIFlow: **90/90** (`Logs/integration-uiflow-results.xml`)
+  - Combat: **59/59** (`Logs/integration-combat-results.xml`)
+  - Meta: **84/84** (`Logs/integration-meta-results.xml`)
+  - Core: **90/90** (`Logs/integration-core-results.xml`)
+  - **Total: 323/323 passing**
+- Build note: `dotnet build TowerBreak.sln` deferred — `dotnet` not on PATH; Unity batchmode confirms compile success
+- Next recommended action: archive `integration` milestone folder; begin phase-2 backlog (floor 4+ content, demonization, enhancement depth)
 
 ## 6. Implementation notes for the engineer
 

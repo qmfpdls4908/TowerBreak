@@ -1,0 +1,22 @@
+{
+  "name": "TowerBreak.Core",
+  "rootNamespace": "TowerBreak.Core",
+  "references": [
+    "TowerBreak.UIFlow",
+    "TowerBreak.Combat",
+    "TowerBreak.Meta",
+    "TowerBreak.GameData",
+    "TowerBreak.DI",
+    "TowerBreak.EventBus",
+    "Unity.InputSystem"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

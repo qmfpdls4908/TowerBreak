@@ -62,5 +62,34 @@ namespace TowerBreak.Combat.Tests
             // Assert
             Assert.That(spriteRenderer.color, Is.EqualTo(Color.red));
         }
+
+        [Test]
+        public void Die_CreatesFragments()
+        {
+            // Arrange
+            var enemyData = new EnemyRow 
+            { 
+                Health = 0 
+            };
+            
+            var gameObject = new GameObject("TestEnemy");
+            var spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Sprite.Create(
+                new Texture2D(64, 64), 
+                new Rect(0, 0, 64, 64), 
+                new Vector2(0.5f, 0.5f)
+            );
+            
+            var controller = gameObject.AddComponent<EnemyController>();
+            controller.Initialize(enemyData);
+            
+            int initialChildCount = gameObject.transform.childCount;
+            
+            // Act
+            controller.TakeDamage(10);
+            
+            // Assert
+            Assert.That(gameObject.transform.childCount, Is.GreaterThan(initialChildCount));
+        }
     }
 }

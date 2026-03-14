@@ -82,7 +82,46 @@ namespace TowerBreak.Combat
 
         private void Die()
         {
+            CreateFragments();
             Destroy(gameObject);
+        }
+
+        private void CreateFragments()
+        {
+            if (spriteRenderer.sprite == null) return;
+            
+            // Create 4 fragments
+            for (int i = 0; i < 4; i++)
+            {
+                CreateFragment(i);
+            }
+        }
+
+        private void CreateFragment(int index)
+        {
+            GameObject fragment = new GameObject($"Fragment_{index}");
+            fragment.transform.position = transform.position;
+            fragment.transform.SetParent(transform);
+            
+            // Add SpriteRenderer with portion of original sprite
+            SpriteRenderer fragRenderer = fragment.AddComponent<SpriteRenderer>();
+            fragRenderer.sprite = spriteRenderer.sprite;
+            fragRenderer.color = spriteRenderer.color;
+            
+            // Add Rigidbody2D for physics
+            Rigidbody2D rb = fragment.AddComponent<Rigidbody2D>();
+            
+            // Add Fragment script
+            EnemyFragment fragScript = fragment.AddComponent<EnemyFragment>();
+            
+            // Apply random force
+            Vector2 randomDirection = new Vector2(
+                Random.Range(-1f, 1f),
+                Random.Range(-1f, 1f)
+            ).normalized;
+            
+            float randomForce = Random.Range(3f, 8f);
+            fragScript.Initialize(randomDirection * randomForce);
         }
 
         private void MoveLeft()

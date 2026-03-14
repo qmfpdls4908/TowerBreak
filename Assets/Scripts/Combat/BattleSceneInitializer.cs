@@ -42,6 +42,7 @@ namespace TowerBreak.Combat
         private const float WallHitThreshold = 10f;
         private const int WallDamagePerHit = 1;
         private const float GuardPressureReduction = 5f;
+        private const string CurrentFloorKey = "CurrentBattleFloor";
         
         private void Awake()
         {
@@ -54,6 +55,9 @@ namespace TowerBreak.Combat
             {
                 Debug.LogError("[BattleSceneInitializer] StageManager not found!");
             }
+            
+            // 저장된 층 로드
+            LoadCurrentFloor();
         }
         
         private void OnGUI()
@@ -607,7 +611,10 @@ namespace TowerBreak.Combat
         private void HandleGameComplete()
         {
             Debug.Log("[Battle] GAME COMPLETE! All floors cleared!");
-
+            
+            // 저장 데이터 삭제
+            ClearSavedFloor();
+            
             // 로비로 이동
             UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
         }
@@ -615,12 +622,64 @@ namespace TowerBreak.Combat
         private void AdvanceToNextFloor()
         {
             Debug.Log($"[Battle] Advancing to floor {currentFloor + 1}...");
-
-            // 다음 층 설정
+            
+            // 다음 층 저장
             currentFloor++;
-
-            // 씬 리로드하여 새 층 로드
+            SaveCurrentFloor();
+            
+            // 씬 리로드
             UnityEngine.SceneManagement.SceneManager.LoadScene("Battle");
+        }
+
+        private void LoadCurrentFloor()
+        {
+            if (PlayerPrefs.HasKey(CurrentFloorKey))
+            {
+                currentFloor = PlayerPrefs.GetInt(CurrentFloorKey);
+                Debug.Log($"[Battle] Loaded saved floor: {currentFloor}");
+            }
+            else
+            {
+                currentFloor = 1;
+                Debug.Log("[Battle] No saved floor, starting from floor 1");
+            }
+        }
+
+        private void SaveCurrentFloor()
+        {
+            PlayerPrefs.SetInt(CurrentFloorKey, currentFloor);
+            PlayerPrefs.Save();
+            Debug.Log($"[Battle] Saved current floor: {currentFloor}");
+        }
+
+        private void ClearSavedFloor()
+        {
+            if (PlayerPrefs.HasKey(CurrentFloorKey))
+            {
+                PlayerPrefs.DeleteKey(CurrentFloorKey);
+                PlayerPrefs.Save();
+                Debug.Log("[Battle] Cleared saved floor data");
+            }
+        }
+
+        private void HandleFloorFail()
+        {
+            Debug.Log($"[Battle] Floor {currentFloor} failed!");
+            
+            // 저장 데이터 삭제 (처음부터 다시 시작)
+            ClearSavedFloor();
+            
+            // FloorStage에 실패 표시
+            var floorStage = GetCurrentFloorStage();
+            if (floorStage != null)
+            {
+                floorStage.MarkAsFailed();
+            }
+            
+            // TODO: 게임 오버 화면 표시
+            
+            // 로비로 이동
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
         }
 
         private void DrawFloorClearPopup()

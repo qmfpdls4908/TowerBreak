@@ -22,6 +22,26 @@ namespace TowerBreak.Combat
             }
 
             enemyData = data;
+            
+            // 적 종류별 색상 설정
+            if (spriteRenderer != null)
+            {
+                switch (data.Archetype)
+                {
+                    case EnemyArchetype.BasicMelee:
+                        spriteRenderer.color = Color.red;
+                        Debug.Log($"[EnemyController] Initialized BasicMelee (Red) - HP: {data.Health}");
+                        break;
+                    case EnemyArchetype.ArmoredPusher:
+                        spriteRenderer.color = Color.blue;
+                        Debug.Log($"[EnemyController] Initialized ArmoredPusher (Blue) - HP: {data.Health}");
+                        break;
+                    default:
+                        spriteRenderer.color = Color.gray;
+                        Debug.Log($"[EnemyController] Initialized Unknown (Gray) - HP: {data.Health}");
+                        break;
+                }
+            }
         }
 
         private void Awake()
@@ -30,6 +50,19 @@ namespace TowerBreak.Combat
             if (spriteRenderer == null)
             {
                 spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+            }
+            
+            // 스프라이트가 없으면 기본 스프라이트 설정
+            if (spriteRenderer.sprite == null)
+            {
+                // Unity 기본 스프라이트 사용
+                spriteRenderer.sprite = Sprite.Create(
+                    Texture2D.whiteTexture,
+                    new Rect(0, 0, 1, 1),
+                    new Vector2(0.5f, 0.5f),
+                    100f
+                );
+                Debug.Log("[EnemyController] Created default white sprite");
             }
         }
 
@@ -71,7 +104,8 @@ namespace TowerBreak.Combat
         private void HandleDebugInput()
         {
 #if UNITY_EDITOR
-            if (Input.GetKeyDown(KeyCode.K))
+            var keyboard = UnityEngine.InputSystem.Keyboard.current;
+            if (keyboard != null && keyboard.kKey.wasPressedThisFrame)
             {
                 // For testing: instantly kill the enemy
                 if (enemyData != null)
@@ -131,11 +165,11 @@ namespace TowerBreak.Combat
             
             // Apply random force
             Vector2 randomDirection = new Vector2(
-                Random.Range(-1f, 1f),
-                Random.Range(-1f, 1f)
+                UnityEngine.Random.Range(-1f, 1f),
+                UnityEngine.Random.Range(-1f, 1f)
             ).normalized;
             
-            float randomForce = Random.Range(3f, 8f);
+            float randomForce = UnityEngine.Random.Range(3f, 8f);
             fragScript.Initialize(randomDirection * randomForce);
         }
 

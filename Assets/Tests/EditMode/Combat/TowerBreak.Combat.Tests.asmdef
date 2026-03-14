@@ -5,7 +5,8 @@
     "UnityEngine.TestRunner",
     "UnityEditor.TestRunner",
     "TowerBreak.Combat",
-    "TowerBreak.GameData"
+    "TowerBreak.GameData",
+    "TowerBreak.DI"
   ],
   "includePlatforms": [
     "Editor"

@@ -129,8 +129,11 @@ namespace TowerBreak.Combat
                 spawnPointsObj.transform.SetParent(transform);
                 spawnPointsObj.transform.localPosition = Vector3.zero;
                 enemySpawnPoints = spawnPointsObj.transform;
-                
-                // 기본 스폰 포인트 생성 (중앙에 여러 위치)
+            }
+            
+            // 스폰 포인트가 없으면 기본 생성
+            if (enemySpawnPoints.childCount == 0)
+            {
                 CreateDefaultSpawnPoints();
             }
         }
@@ -150,16 +153,10 @@ namespace TowerBreak.Combat
         
         private void CreateDefaultSpawnPoints()
         {
-            // 여러 적 스폰 위치 생성
-            for (int i = 0; i < 5; i++)
-            {
-                GameObject point = new GameObject($"SpawnPoint_{i}");
-                point.transform.SetParent(enemySpawnPoints);
-                
-                // 중앙을 기준으로 좌우로 배치
-                float xOffset = (i - 2) * 1.5f;
-                point.transform.localPosition = new Vector3(xOffset, 0f, 0f);
-            }
+            // 단일 스폰 포인트 생성 (중앙)
+            GameObject point = new GameObject("SpawnPoint_0");
+            point.transform.SetParent(enemySpawnPoints);
+            point.transform.localPosition = Vector3.zero;
         }
         
         public Vector3 GetSpawnPosition(int index)

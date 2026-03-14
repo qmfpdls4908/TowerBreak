@@ -1748,6 +1748,7 @@ MonoBehaviour:
   currentFloor: 1
   enemySpawnParent: {fileID: 0}
   playerPrefabPath: Prefabs/Combat/Player
+  stageManager: {fileID: 2000000002}
 --- !u!4 &1124364349
 Transform:
   m_ObjectHideFlags: 0

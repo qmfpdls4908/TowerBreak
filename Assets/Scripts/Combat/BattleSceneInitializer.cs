@@ -18,6 +18,7 @@ namespace TowerBreak.Combat
         [SerializeField] private int currentFloor = 1;
         [SerializeField] private Transform enemySpawnParent;
         [SerializeField] private string playerPrefabPath = "Prefabs/Combat/Player";
+        [SerializeField] private StageManager stageManager;
         
         private BattleLoopController battleLoopController;
         private List<GameObject> spawnedEnemies = new();
@@ -40,6 +41,19 @@ namespace TowerBreak.Combat
         private const float WallHitThreshold = 10f;
         private const int WallDamagePerHit = 1;
         private const float GuardPressureReduction = 5f;
+        
+        private void Awake()
+        {
+            if (stageManager == null)
+            {
+                stageManager = FindFirstObjectByType<StageManager>();
+            }
+            
+            if (stageManager == null)
+            {
+                Debug.LogError("[BattleSceneInitializer] StageManager not found!");
+            }
+        }
         
         private void OnGUI()
         {
@@ -132,6 +146,12 @@ namespace TowerBreak.Combat
         {
             Debug.Log($"[Battle] Initializing battle scene for floor {currentFloor}...");
             
+            // StageManager와 층 동기화
+            if (stageManager != null && stageManager.CurrentFloor != currentFloor)
+            {
+                stageManager.SetFloor(currentFloor);
+            }
+            
             // GameData 로드
             gameData = Resources.Load<TowerBreakerGameData>("TowerBreakerGameData");
             if (gameData == null)
@@ -194,50 +214,12 @@ namespace TowerBreak.Combat
                 // 적 스폰 서비스 생성
                 var spawnService = new CombatDebugSpawnService(provider, pooled);
                 
-                // 적 스폰 - 화면 중앙에 배치
-                var enemies = await spawnService.SpawnAllEnemiesAsync(
-                    gameData, 
-                    currentFloor, 
-                    enemySpawnParent,
-                    index => new Vector3(index * 2f - 3f, 0f, 0f)  // 중앙 정렬
-                );
+                // FloorStage에서 적 스폰
+                var currentFloorStage = GetCurrentFloorStage();
+                var enemies = await SpawnEnemiesAtFloorStage(spawnService, gameData, currentFloor, currentFloorStage);
                 
                 spawnedEnemies = new List<GameObject>(enemies);
-                Debug.Log($"[Battle] Spawned {spawnedEnemies.Count} enemies");
-                
-                // 스폰된 적에 시각적 요소 추가
-                for (int i = 0; i < spawnedEnemies.Count; i++)
-                {
-                    var enemy = spawnedEnemies[i];
-                    if (enemy != null)
-                    {
-                        // SpriteRenderer 확인/추가
-                        var sr = enemy.GetComponent<SpriteRenderer>();
-                        if (sr == null)
-                        {
-                            sr = enemy.AddComponent<SpriteRenderer>();
-                            sr.sprite = Sprite.Create(
-                                Texture2D.whiteTexture,
-                                new Rect(0, 0, 1, 1),
-                                new Vector2(0.5f, 0.5f),
-                                100f
-                            );
-                            sr.color = Color.red;
-                            Debug.Log($"[Battle] Added SpriteRenderer to enemy {i}");
-                        }
-                        
-                        // EnemyController 확인/추가
-                        var controller = enemy.GetComponent<EnemyController>();
-                        if (controller == null)
-                        {
-                            controller = enemy.AddComponent<EnemyController>();
-                            Debug.Log($"[Battle] Added EnemyController to enemy {i}");
-                        }
-                        
-                        // 스케일 조정 (너무 작으면 보이지 않음)
-                        enemy.transform.localScale = new Vector3(1f, 1f, 1f);
-                    }
-                }
+                Debug.Log($"[Battle] Spawned {spawnedEnemies.Count} enemies at FloorStage positions");
                 
                 // BattleLoopController 초기화
                 InitializeBattle(gameData, floor);
@@ -268,10 +250,13 @@ namespace TowerBreak.Combat
                 return;
             }
             
+            // FloorStage에서 벽 위치 가져오기
+            Vector3 wallPosition = GetPlayerSpawnPosition();
+            
             // 프리팹 인스턴스화
             GameObject playerObject = Instantiate(playerPrefab, transform);
             playerObject.name = "Player";
-            playerObject.transform.position = new Vector3(-6f, 0f, 0f);
+            playerObject.transform.position = wallPosition;
             
             // PlayerController 가져오기
             playerController = playerObject.GetComponent<PlayerController>();
@@ -287,16 +272,19 @@ namespace TowerBreak.Combat
                 playerController.SetWeapon(weapon);
             }
             
-            Debug.Log($"[Battle] Player created from prefab at position: {playerObject.transform.position}");
+            Debug.Log($"[Battle] Player created from prefab at wall position: {playerObject.transform.position}");
         }
         
         private void CreatePlayerFallback(WeaponRow weapon)
         {
             Debug.Log("[Battle] Creating player from code (fallback)...");
             
+            // FloorStage에서 벽 위치 가져오기
+            Vector3 wallPosition = GetPlayerSpawnPosition();
+            
             GameObject playerObject = new GameObject("Player");
             playerObject.transform.SetParent(transform);
-            playerObject.transform.position = new Vector3(-6f, 0f, 0f);
+            playerObject.transform.position = wallPosition;
             
             // SpriteRenderer 추가
             var spriteRenderer = playerObject.AddComponent<SpriteRenderer>();
@@ -312,7 +300,21 @@ namespace TowerBreak.Combat
                 playerController.SetWeapon(weapon);
             }
             
-            Debug.Log($"[Battle] Player created from code at position: {playerObject.transform.position}");
+            Debug.Log($"[Battle] Player created from code at wall position: {playerObject.transform.position}");
+        }
+        
+        private Vector3 GetPlayerSpawnPosition()
+        {
+            var floorStage = GetCurrentFloorStage();
+            if (floorStage != null)
+            {
+                Vector3 wallPos = floorStage.GetWallPosition();
+                Debug.Log($"[Battle] Using FloorStage wall position: {wallPos}");
+                return wallPos;
+            }
+            
+            Debug.Log("[Battle] FloorStage not found, using default position");
+            return new Vector3(-6f, 0f, 0f);
         }
         
         private Sprite CreatePlayerSprite()
@@ -359,8 +361,10 @@ namespace TowerBreak.Combat
                     controller.Initialize(enemyRow);
                 }
             }
-            const int DefaultWallHealth = 100;
-            var combatState = CombatState.CreateInitial(DefaultWallHealth, DefaultWallHealth, combatEnemies);
+            // FloorStage에서 벽 체력 가져오기
+            int wallHealth = GetWallHealthForFloor();
+            
+            var combatState = CombatState.CreateInitial(wallHealth, wallHealth, combatEnemies);
             
             // BattleDebugService 생성
             var battleService = new CombatDebugBattleService(combatState);
@@ -373,7 +377,7 @@ namespace TowerBreak.Combat
                 WallDamagePerHit
             );
             
-            Debug.Log($"[Battle] Initialized with {combatEnemies.Count} enemies, Wall HP: {DefaultWallHealth}");
+            Debug.Log($"[Battle] Initialized with {combatEnemies.Count} enemies, Wall HP: {wallHealth}");
         }
         
         private void Update()
@@ -601,6 +605,132 @@ namespace TowerBreak.Combat
                 }
             }
             return maxId + 1;
+        }
+        
+        private int GetWallHealthForFloor()
+        {
+            var floorStage = GetCurrentFloorStage();
+            
+            if (floorStage != null && floorStage.IsBossFloor)
+            {
+                return 150;
+            }
+            
+            return 100;
+        }
+        
+        private FloorStage GetCurrentFloorStage()
+        {
+            if (stageManager == null) return null;
+            
+            FloorStage[] allFloors = stageManager.GetComponentsInChildren<FloorStage>();
+            foreach (var floor in allFloors)
+            {
+                if (floor.IsCurrentFloor)
+                {
+                    return floor;
+                }
+            }
+            
+            if (allFloors.Length > 0)
+            {
+                return allFloors[0];
+            }
+            
+            return null;
+        }
+        
+        private async Task<List<GameObject>> SpawnEnemiesAtFloorStage(
+            CombatDebugSpawnService spawnService,
+            TowerBreakerGameData gameData,
+            int floorNumber,
+            FloorStage floorStage)
+        {
+            var enemies = new List<GameObject>();
+            
+            if (floorStage != null && floorStage.EnemySpawnPoints != null)
+            {
+                Transform spawnParent = floorStage.EnemySpawnPoints;
+                
+                var floor = gameData.Floors[floorNumber - 1];
+                var floorWaves = gameData.FloorWaves.FindAll(w => w.FloorId == floor.Id);
+                
+                int enemyIndex = 0;
+                foreach (var wave in floorWaves)
+                {
+                    var enemyRow = gameData.Enemies.Find(e => e.Id == wave.EnemyId);
+                    if (enemyRow != null)
+                    {
+                        for (int i = 0; i < wave.Quantity; i++)
+                        {
+                            // 단일 스폰 포인트 사용 (index 0)
+                            Vector3 spawnPosition = floorStage.GetSpawnPosition(0);
+                            
+                            GameObject enemy = await SpawnEnemyAtPosition(enemyRow, spawnPosition, spawnParent);
+                            if (enemy != null)
+                            {
+                                enemies.Add(enemy);
+                                enemyIndex++;
+                            }
+                        }
+                    }
+                }
+                
+                Debug.Log($"[Battle] Spawned {enemies.Count} enemies at FloorStage {floorNumber}");
+            }
+            else
+            {
+                Debug.LogWarning("[Battle] FloorStage not found, using default spawn");
+                var fallbackEnemies = await spawnService.SpawnAllEnemiesAsync(
+                    gameData, 
+                    floorNumber, 
+                    enemySpawnParent,
+                    index => new Vector3(index * 2f - 3f, 0f, 0f)
+                );
+                enemies = new List<GameObject>(fallbackEnemies);
+            }
+            
+            return enemies;
+        }
+        
+        private async Task<GameObject> SpawnEnemyAtPosition(EnemyRow enemyRow, Vector3 position, Transform parent)
+        {
+            GameObject enemyPrefab = await provider.LoadAssetAsync<GameObject>(enemyRow.PrefabKey);
+            if (enemyPrefab == null)
+            {
+                enemyPrefab = CreateFallbackEnemyPrefab();
+            }
+            
+            GameObject enemy = Instantiate(enemyPrefab, parent);
+            enemy.transform.position = position;
+            enemy.name = $"Enemy_{enemyRow.Id}";
+            
+            var controller = enemy.GetComponent<EnemyController>();
+            if (controller == null)
+            {
+                controller = enemy.AddComponent<EnemyController>();
+            }
+            controller.Initialize(enemyRow);
+            
+            return enemy;
+        }
+        
+        private GameObject CreateFallbackEnemyPrefab()
+        {
+            GameObject enemy = new GameObject("Enemy");
+            
+            var sr = enemy.AddComponent<SpriteRenderer>();
+            sr.sprite = Sprite.Create(
+                Texture2D.whiteTexture,
+                new Rect(0, 0, 1, 1),
+                new Vector2(0.5f, 0.5f),
+                100f
+            );
+            sr.color = Color.red;
+            
+            enemy.AddComponent<EnemyController>();
+            
+            return enemy;
         }
     }
 }

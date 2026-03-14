@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 using TowerBreak.DI;
 using TowerBreak.GameData.Addressables;
+using TowerBreak.Meta.State;
 
 namespace TowerBreak.Core
 {
@@ -29,6 +30,15 @@ namespace TowerBreak.Core
             var sceneLoader = new SceneLoader();
             container.Register<ISceneLoader>(sceneLoader);
             
+            // Player State 등록
+            var walletState = new PlayerWalletState();
+            var inventoryState = new PlayerInventoryState();
+            container.Register<PlayerWalletState>(walletState);
+            container.Register<PlayerInventoryState>(inventoryState);
+            
+            // 테스트용: 기본 무기 장착 (Claw, ID: 1)
+            SetupDefaultEquipment(inventoryState);
+            
             Debug.Log("[Bootstrap] DI Container initialized successfully");
             
             // 초기화 완료 후 Title Scene 로드
@@ -37,6 +47,17 @@ namespace TowerBreak.Core
                 Debug.Log("[Bootstrap] Loading Title scene...");
                 sceneLoader.LoadScene("Title");
             }
+        }
+        
+        private void SetupDefaultEquipment(PlayerInventoryState inventory)
+        {
+            // 테스트용 기본 무기 추가 및 장착
+            // Claw (WeaponId: 201), Lance (WeaponId: 202) 중 Claw 장착
+            var defaultWeapon = new OwnedEquipment(instanceId: 1, weaponId: 201);
+            inventory.AddEquipment(defaultWeapon);
+            inventory.EquipWeapon(defaultWeapon.InstanceId);
+            
+            Debug.Log("[Bootstrap] Default equipment setup: Claw equipped");
         }
     }
 }

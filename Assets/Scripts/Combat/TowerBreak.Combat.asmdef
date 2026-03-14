@@ -4,7 +4,8 @@
   "references": [
     "TowerBreak.GameData",
     "TowerBreak.DI",
-    "Unity.InputSystem"
+    "Unity.InputSystem",
+    "TowerBreak.Meta"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

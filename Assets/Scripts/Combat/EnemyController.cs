@@ -9,6 +9,10 @@ namespace TowerBreak.Combat
     {
         private EnemyRow enemyData;
         private SpriteRenderer spriteRenderer;
+        private bool isFlashing = false;
+        private float flashTimer = 0f;
+        private const float FLASH_DURATION = 0.2f;
+        private Color originalColor;
 
         public void Initialize(EnemyRow data)
         {
@@ -29,9 +33,56 @@ namespace TowerBreak.Combat
             }
         }
 
+        private void Start()
+        {
+            originalColor = spriteRenderer.color;
+        }
+
+        public void TakeDamage(int damage)
+        {
+            if (enemyData == null) return;
+            
+            enemyData.Health -= damage;
+            
+            if (enemyData.Health <= 0)
+            {
+                Die();
+            }
+            else
+            {
+                StartFlash();
+            }
+        }
+
+        private void StartFlash()
+        {
+            isFlashing = true;
+            flashTimer = 0f;
+            spriteRenderer.color = Color.red;
+        }
+
         private void Update()
         {
             MoveLeft();
+            UpdateFlash();
+        }
+
+        private void UpdateFlash()
+        {
+            if (!isFlashing) return;
+            
+            flashTimer += Time.deltaTime;
+            
+            if (flashTimer >= FLASH_DURATION)
+            {
+                isFlashing = false;
+                spriteRenderer.color = originalColor;
+            }
+        }
+
+        private void Die()
+        {
+            Destroy(gameObject);
         }
 
         private void MoveLeft()

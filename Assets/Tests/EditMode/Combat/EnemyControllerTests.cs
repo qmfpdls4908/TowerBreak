@@ -39,5 +39,28 @@ namespace TowerBreak.Combat.Tests
             // Assert
             Assert.That(gameObject.transform.position.x, Is.LessThan(initialPosition.x));
         }
+
+        [Test]
+        public void TakeDamage_TriggersRedFlash()
+        {
+            // Arrange
+            var enemyData = new EnemyRow 
+            { 
+                Health = 100 
+            };
+            
+            var gameObject = new GameObject("TestEnemy");
+            var controller = gameObject.AddComponent<EnemyController>();
+            var spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+            controller.Initialize(enemyData);
+            
+            Color originalColor = spriteRenderer.color;
+            
+            // Act
+            controller.TakeDamage(10);
+            
+            // Assert
+            Assert.That(spriteRenderer.color, Is.EqualTo(Color.red));
+        }
     }
 }

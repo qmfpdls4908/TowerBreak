@@ -17,5 +17,27 @@ namespace TowerBreak.Combat.Tests
                 var controller = new EnemyController(null);
             });
         }
+
+        [Test]
+        public void Update_MovesLeft_BasedOnMoveSpeed()
+        {
+            // Arrange
+            var enemyData = new EnemyRow 
+            { 
+                MoveSpeed = 5f 
+            };
+            
+            var gameObject = new GameObject("TestEnemy");
+            var controller = gameObject.AddComponent<EnemyController>();
+            controller.Initialize(enemyData);
+            
+            Vector3 initialPosition = gameObject.transform.position;
+            
+            // Act
+            controller.Update();
+            
+            // Assert
+            Assert.That(gameObject.transform.position.x, Is.LessThan(initialPosition.x));
+        }
     }
 }

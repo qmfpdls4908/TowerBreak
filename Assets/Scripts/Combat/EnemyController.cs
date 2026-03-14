@@ -28,5 +28,18 @@ namespace TowerBreak.Combat
                 spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             }
         }
+
+        private void Update()
+        {
+            MoveLeft();
+        }
+
+        private void MoveLeft()
+        {
+            if (enemyData == null) return;
+            
+            float moveDistance = enemyData.MoveSpeed * Time.deltaTime;
+            transform.Translate(Vector3.left * moveDistance);
+        }
     }
 }

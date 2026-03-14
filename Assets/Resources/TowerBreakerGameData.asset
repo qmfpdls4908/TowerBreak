@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa44c9fb3bcc939409b4cdc6a7a1ec83, type: 3}
   m_Name: TowerBreakerGameData
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   Floors:
   - Id: 1
     DisplayName: Floor 1
@@ -25,6 +25,18 @@ MonoBehaviour:
     RecommendedPower: 18
     BattleBackdropKey: env/floor02/backdrop
     BattleBgmKey: bgm/floor02
+  - Id: 3
+    DisplayName: Floor 3
+    RewardTableId: 1003
+    RecommendedPower: 28
+    BattleBackdropKey: env/floor03/backdrop
+    BattleBgmKey: bgm/floor03
+  - Id: 3
+    DisplayName: Floor 3
+    RewardTableId: 1003
+    RecommendedPower: 28
+    BattleBackdropKey: env/floor03/backdrop
+    BattleBgmKey: bgm/floor03
   - Id: 3
     DisplayName: Floor 3
     RewardTableId: 1003

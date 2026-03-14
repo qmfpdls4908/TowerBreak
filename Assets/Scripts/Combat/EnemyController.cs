@@ -65,6 +65,21 @@ namespace TowerBreak.Combat
         {
             MoveLeft();
             UpdateFlash();
+            HandleDebugInput();
+        }
+
+        private void HandleDebugInput()
+        {
+#if UNITY_EDITOR
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                // For testing: instantly kill the enemy
+                if (enemyData != null)
+                {
+                    TakeDamage(enemyData.Health);
+                }
+            }
+#endif
         }
 
         private void UpdateFlash()

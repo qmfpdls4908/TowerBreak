@@ -9,8 +9,13 @@ namespace TowerBreak.Core
     {
         [SerializeField] private int currentFloor = 1;
         
+        private const string CurrentFloorKey = "CurrentBattleFloor";
+        
         private void Start()
         {
+            // 로비 진입 시 층 데이터 초기화
+            ResetFloorProgress();
+            
             Debug.Log("[Lobby] Initializing lobby scene...");
             
             // GameData 로드
@@ -36,6 +41,16 @@ namespace TowerBreak.Core
             // TODO: 플레이어 세션 상태 로드
             
             Debug.Log("[Lobby] Initialization complete. Press 'B' to start battle!");
+        }
+        
+        private void ResetFloorProgress()
+        {
+            if (PlayerPrefs.HasKey(CurrentFloorKey))
+            {
+                PlayerPrefs.DeleteKey(CurrentFloorKey);
+                PlayerPrefs.Save();
+                Debug.Log("[Lobby] Reset floor progress for new game");
+            }
         }
         
         private void Update()

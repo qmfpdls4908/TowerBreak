@@ -36,7 +36,8 @@ namespace TowerBreak.Combat
         private bool showRewardPopup = false;
         private string rewardMessage = "";
         private bool isGameComplete = false;
-        
+        private bool isFloorClearPopupShown = false;
+
         private const float PressureTickInterval = 0.5f;
         private const float WallHitThreshold = 10f;
         private const int WallDamagePerHit = 1;
@@ -57,9 +58,16 @@ namespace TowerBreak.Combat
         
         private void OnGUI()
         {
+            // 기존 reward popup 처리
             if (showRewardPopup)
             {
                 DrawRewardPopup();
+            }
+
+            // 층 클리어 팝업
+            if (isFloorClearPopupShown)
+            {
+                DrawFloorClearPopup();
             }
         }
         
@@ -400,11 +408,12 @@ namespace TowerBreak.Combat
             // 플레이어 입력 처리
             HandlePlayerInput();
             
-            // 승리 조건 체크
-            if (battleLoopController.State.Enemies.Count == 0 && spawnedEnemies.Count > 0)
+            // 승리 조건 체크 - 모든 적 처치
+            if (battleLoopController.State.Enemies.Count == 0 && spawnedEnemies.Count > 0 && !victoryHandled)
             {
-                Debug.Log("[Battle] 🎉 VICTORY! All enemies defeated!");
-                HandleVictory();
+                Debug.Log("[Battle] VICTORY! All enemies defeated!");
+                victoryHandled = true;
+                HandleFloorClear(); // 층 클리어 처리
                 return;
             }
         }
@@ -559,7 +568,111 @@ namespace TowerBreak.Combat
             showRewardPopup = true;
             Debug.Log("[Battle] Reward popup displayed");
         }
-        
+
+        private void HandleFloorClear()
+        {
+            Debug.Log($"[Battle] Floor {currentFloor} cleared!");
+
+            // FloorStage에 클리어 표시
+            var floorStage = GetCurrentFloorStage();
+            if (floorStage != null)
+            {
+                floorStage.MarkAsCompleted();
+            }
+
+            // 마지막 층(보스) 체크
+            if (stageManager != null && currentFloor >= stageManager.TotalFloors)
+            {
+                ShowGameCompletePopup();
+                return;
+            }
+
+            // 층 클리어 팝업 표시
+            ShowFloorClearPopup();
+        }
+
+        private void ShowFloorClearPopup()
+        {
+            isFloorClearPopupShown = true;
+            Debug.Log("[Battle] Showing floor clear popup - Press 'Continue' to advance");
+        }
+
+        private void ShowGameCompletePopup()
+        {
+            // TODO: 게임 완료 팝업 표시
+            Debug.Log("[Battle] Showing game complete popup");
+            HandleGameComplete();
+        }
+
+        private void HandleGameComplete()
+        {
+            Debug.Log("[Battle] GAME COMPLETE! All floors cleared!");
+
+            // 로비로 이동
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
+        }
+
+        private void AdvanceToNextFloor()
+        {
+            Debug.Log($"[Battle] Advancing to floor {currentFloor + 1}...");
+
+            // 다음 층 설정
+            currentFloor++;
+
+            // 씬 리로드하여 새 층 로드
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Battle");
+        }
+
+        private void DrawFloorClearPopup()
+        {
+            // 배경 (반투명)
+            GUI.color = new Color(0, 0, 0, 0.8f);
+            GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Texture2D.whiteTexture);
+            GUI.color = Color.white;
+
+            // 팝업 창
+            float popupWidth = 400;
+            float popupHeight = 250;
+            Rect popupRect = new Rect(
+                (Screen.width - popupWidth) / 2,
+                (Screen.height - popupHeight) / 2,
+                popupWidth,
+                popupHeight
+            );
+
+            GUI.Box(popupRect, "");
+
+            // 제목
+            GUIStyle titleStyle = new GUIStyle(GUI.skin.label);
+            titleStyle.fontSize = 32;
+            titleStyle.alignment = TextAnchor.MiddleCenter;
+            titleStyle.normal.textColor = Color.green;
+            GUI.Label(new Rect(popupRect.x, popupRect.y + 30, popupWidth, 50), "FLOOR CLEAR!", titleStyle);
+
+            // 층 정보
+            GUIStyle contentStyle = new GUIStyle(GUI.skin.label);
+            contentStyle.fontSize = 24;
+            contentStyle.alignment = TextAnchor.MiddleCenter;
+            contentStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(popupRect.x, popupRect.y + 90, popupWidth, 40), $"Floor {currentFloor} Completed", contentStyle);
+
+            // 버튼 스타일
+            GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
+            buttonStyle.fontSize = 24;
+            buttonStyle.alignment = TextAnchor.MiddleCenter;
+
+            float buttonWidth = 180;
+            float buttonHeight = 50;
+            float buttonY = popupRect.y + popupHeight - 90;
+
+            // 계속하기 버튼
+            if (GUI.Button(new Rect(popupRect.x + (popupWidth - buttonWidth) / 2, buttonY, buttonWidth, buttonHeight), "계속하기", buttonStyle))
+            {
+                isFloorClearPopupShown = false;
+                AdvanceToNextFloor();
+            }
+        }
+
         private WeaponRow GetEquippedWeapon()
         {
             if (inventoryState == null || inventoryState.EquippedWeaponInstanceId == null)

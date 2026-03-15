@@ -104,8 +104,8 @@ namespace TowerBreak.Combat
             // 애니메이션 트리거 실행
             if (animator != null)
             {
-                animator.SetTrigger("Attack");
-                Debug.Log("[Player] Attack animation triggered");
+                animator.SetTrigger("attack");
+                Debug.Log("[Player] attack animation triggered");
             }
             else
             {
@@ -159,8 +159,8 @@ namespace TowerBreak.Combat
             // 방어 애니메이션
             if (animator != null)
             {
-                animator.SetTrigger("Block");
-                Debug.Log("[Player] Block animation triggered");
+                animator.SetTrigger("block");
+                Debug.Log("[Player] block animation triggered");
             }
             
             // 가드 시 스턴 해제
@@ -182,8 +182,8 @@ namespace TowerBreak.Combat
             // 이동 애니메이션
             if (animator != null)
             {
-                animator.SetTrigger("Run");
-                Debug.Log("[Player] Run animation triggered");
+                animator.SetTrigger("run");
+                Debug.Log("[Player] run animation triggered");
             }
             
             float moveDistance = dashDistance;

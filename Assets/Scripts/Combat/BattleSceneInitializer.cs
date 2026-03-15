@@ -10,6 +10,7 @@ using TowerBreak.DI;
 using TowerBreak.Meta.State;
 using TowerBreak.Meta.Rewards;
 using TowerBreak.Meta.Progression;
+using TowerBreak.EventBus;
 
 namespace TowerBreak.Combat
 {
@@ -159,9 +160,33 @@ namespace TowerBreak.Combat
             Debug.Log($"[Battle] Initializing battle scene for floor {currentFloor}...");
             
             // StageManager와 층 동기화
-            if (stageManager != null && stageManager.CurrentFloor != currentFloor)
+            if (stageManager != null)
             {
-                stageManager.SetFloor(currentFloor);
+                // StageManager가 아직 초기화되지 않았으면 InitializeStage 호출
+                if (stageManager.TotalFloors == 0)
+                {
+                    stageManager.InitializeStage();
+                }
+                
+                // 현재 층이 StageManager와 다르면 업데이트
+                if (stageManager.CurrentFloor != currentFloor)
+                {
+                    // 층 유효성 검사
+                    if (currentFloor > 0 && currentFloor <= stageManager.TotalFloors)
+                    {
+                        stageManager.SetFloor(currentFloor);
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"[Battle] Invalid floor {currentFloor}, resetting to floor 1");
+                        currentFloor = 1;
+                        SaveCurrentFloor();
+                        stageManager.SetFloor(1);
+                    }
+                }
+                
+                // StageManager 초기화 대기 (비동기) - FloorStage 생성 시간 확보
+                await Task.Delay(500);
             }
             
             // GameData 로드
@@ -178,6 +203,14 @@ namespace TowerBreak.Combat
             {
                 Debug.LogWarning("[Battle] PlayerInventoryState not found in DI container. Using default weapon.");
             }
+            
+            // EventBus 인스턴스 생성 및 DI 등록
+            var container = DIGlobalContext.EnsureContainer();
+            var playerActionEventBus = new EventBus<PlayerActionEvent>();
+            var playerDamagedEventBus = new EventBus<PlayerDamagedEvent>();
+            container.Register(playerActionEventBus);
+            container.Register(playerDamagedEventBus);
+            Debug.Log("[Battle] EventBus instances registered to DI container");
             
             // 장착된 무기 정보 로드
             equippedWeapon = GetEquippedWeapon();
@@ -239,8 +272,11 @@ namespace TowerBreak.Combat
                 // 플레이어 생성 (무기 정보 전달)
                 CreatePlayer(equippedWeapon);
                 
+                // UI 인스톨러 초기화 (BattleInputView와 PlayerController 연결)
+                InitializeBattleUI();
+                
                 Debug.Log("[Battle] Battle ready!");
-                Debug.Log($"[Battle] Controls: SPACE = Attack ({GetCurrentAttackPower()} damage) | G = Guard | Left Shift = Dash");
+                Debug.Log($"[Battle] Controls: SPACE = Attack ({GetCurrentAttackPower()} damage) | G = Guard | Left Shift = Dash | UI Buttons");
             }
             catch (Exception ex)
             {
@@ -413,9 +449,14 @@ namespace TowerBreak.Combat
             HandlePlayerInput();
             
             // 승리 조건 체크 - 모든 적 처치
-            if (battleLoopController.State.Enemies.Count == 0 && spawnedEnemies.Count > 0 && !victoryHandled)
+            // spawnedEnemies.Count == 0: 실제로 스폰된 모든 적이 파괴됨
+            // battleLoopController.State.Enemies.Count == 0: 전투 시스템에서 모든 적이 제거됨
+            bool allSpawnedEnemiesDefeated = spawnedEnemies.Count == 0;
+            bool allLogicEnemiesDefeated = battleLoopController.State.Enemies.Count == 0;
+            
+            if ((allSpawnedEnemiesDefeated || allLogicEnemiesDefeated) && !victoryHandled)
             {
-                Debug.Log("[Battle] VICTORY! All enemies defeated!");
+                Debug.Log($"[Battle] VICTORY! All enemies defeated! (Spawned: {allSpawnedEnemiesDefeated}, Logic: {allLogicEnemiesDefeated})");
                 victoryHandled = true;
                 HandleFloorClear(); // 층 클리어 처리
                 return;
@@ -432,7 +473,7 @@ namespace TowerBreak.Combat
             // Space: 공격
             if (keyboard.spaceKey.wasPressedThisFrame)
             {
-                playerController.PerformAttack();
+                playerController.PerformAction(PlayerActionType.Attack);
                 if (!isAttackInFlight)
                 {
                     int damage = GetCurrentAttackPower();
@@ -442,13 +483,42 @@ namespace TowerBreak.Combat
             // G: 가드
             else if (keyboard.gKey.wasPressedThisFrame)
             {
-                playerController.PerformGuard();
+                playerController.PerformAction(PlayerActionType.Guard);
                 HandleGuard();
             }
             // Left Shift: 대시
             else if (keyboard.leftShiftKey.wasPressedThisFrame)
             {
-                playerController.PerformDash();
+                playerController.PerformAction(PlayerActionType.Dash);
+            }
+        }
+        
+        private void InitializeBattleUI()
+        {
+            // BattleUIInstaller가 씬에 있는지 확인
+            var uiInstaller = FindFirstObjectByType<BattleUIInstaller>();
+            if (uiInstaller == null)
+            {
+                // Canvas 찾기
+                var canvas = FindFirstObjectByType<UnityEngine.Canvas>();
+                if (canvas == null)
+                {
+                    Debug.LogWarning("[Battle] Canvas not found. UI buttons will not work.");
+                    return;
+                }
+                
+                // 없으면 Canvas에 생성
+                var installerObject = new GameObject("BattleUIInstaller");
+                installerObject.transform.SetParent(canvas.transform);
+                uiInstaller = installerObject.AddComponent<BattleUIInstaller>();
+                Debug.Log("[Battle] BattleUIInstaller created on Canvas");
+            }
+            
+            // BattleUIInstaller에 PlayerController 전달하여 초기화
+            if (uiInstaller != null && playerController != null)
+            {
+                uiInstaller.Initialize(playerController);
+                Debug.Log("[Battle] BattleUIInstaller initialized with PlayerController");
             }
         }
         
@@ -583,6 +653,9 @@ namespace TowerBreak.Combat
             {
                 floorStage.MarkAsCompleted();
             }
+            
+            // 보상 계산
+            CalculateAndApplyRewards();
 
             // 마지막 층(보스) 체크
             if (stageManager != null && currentFloor >= stageManager.TotalFloors)
@@ -594,6 +667,57 @@ namespace TowerBreak.Combat
             // 층 클리어 팝업 표시
             ShowFloorClearPopup();
         }
+        
+        private void CalculateAndApplyRewards()
+        {
+            try
+            {
+                var floor = gameData.Floors[currentFloor - 1];
+                var random = new System.Random();
+                currentReward = RewardResolver.Resolve(floor, gameData.RewardTables, gameData.RewardEntries, random);
+                
+                // 보상 적용
+                var wallet = DIContainer.ResolveFromRegistered<PlayerWalletState>();
+                if (wallet != null)
+                {
+                    int nextInstanceId = GetNextInstanceId();
+                    Debug.Log($"[Battle] Applying reward: Gold={currentReward.GoldAmount}, Weapons={currentReward.GrantedWeaponIds.Count}");
+                    for (int i = 0; i < currentReward.GrantedWeaponIds.Count; i++)
+                    {
+                        Debug.Log($"[Battle] Weapon reward {i + 1}: WeaponId={currentReward.GrantedWeaponIds[i]}");
+                    }
+                    BattleRewardService.Apply(currentReward, wallet, inventoryState, () => nextInstanceId++);
+                    Debug.Log($"[Battle] Reward applied successfully");
+                }
+                else
+                {
+                    Debug.LogWarning("[Battle] PlayerWalletState not found, cannot apply rewards");
+                }
+                
+                Debug.Log($"[Battle] Reward calculated: {currentReward.GoldAmount} gold");
+            }
+            catch (System.InvalidOperationException ex) when (ex.Message.Contains("Weapon drop"))
+            {
+                // 무기 드랍 실패 시 골드만 보상
+                Debug.LogWarning($"[Battle] Weapon drop failed, using fallback gold reward: {ex.Message}");
+                var floor = gameData.Floors[currentFloor - 1];
+                var rewardTable = gameData.RewardTables.Find(t => t.Id == floor.RewardTableId);
+                int goldAmount = rewardTable?.GuaranteedGold ?? 20;
+                currentReward = new RewardBundle(goldAmount, new System.Collections.Generic.List<int>());
+                
+                // 골드 보상만 적용
+                var wallet = DIContainer.ResolveFromRegistered<PlayerWalletState>();
+                if (wallet != null)
+                {
+                    wallet.AddGold(goldAmount);
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogWarning($"[Battle] Reward calculation failed: {ex.Message}");
+                currentReward = new RewardBundle(20, new System.Collections.Generic.List<int>());
+            }
+        }
 
         private void ShowFloorClearPopup()
         {
@@ -603,9 +727,9 @@ namespace TowerBreak.Combat
 
         private void ShowGameCompletePopup()
         {
-            // TODO: 게임 완료 팝업 표시
             Debug.Log("[Battle] Showing game complete popup");
-            HandleGameComplete();
+            isFloorClearPopupShown = true;
+            isGameComplete = true;
         }
 
         private void HandleGameComplete()
@@ -717,18 +841,65 @@ namespace TowerBreak.Combat
 
             // 버튼 스타일
             GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
-            buttonStyle.fontSize = 24;
+            buttonStyle.fontSize = 22;
             buttonStyle.alignment = TextAnchor.MiddleCenter;
 
-            float buttonWidth = 180;
-            float buttonHeight = 50;
-            float buttonY = popupRect.y + popupHeight - 90;
-
-            // 계속하기 버튼
-            if (GUI.Button(new Rect(popupRect.x + (popupWidth - buttonWidth) / 2, buttonY, buttonWidth, buttonHeight), "계속하기", buttonStyle))
+            // 보상 정보 표시
+            if (currentReward != null)
             {
-                isFloorClearPopupShown = false;
-                AdvanceToNextFloor();
+                GUIStyle rewardStyle = new GUIStyle(GUI.skin.label);
+                rewardStyle.fontSize = 20;
+                rewardStyle.alignment = TextAnchor.MiddleCenter;
+                rewardStyle.normal.textColor = Color.yellow;
+
+                // 골드 표시
+                GUI.Label(new Rect(popupRect.x, popupRect.y + 125, popupWidth, 30), $"Gold: +{currentReward.GoldAmount}", rewardStyle);
+
+                // 무기 드랍 표시
+                if (currentReward.GrantedWeaponIds != null && currentReward.GrantedWeaponIds.Count > 0)
+                {
+                    string weaponNames = GetWeaponNames(currentReward.GrantedWeaponIds);
+                    GUI.Label(new Rect(popupRect.x, popupRect.y + 155, popupWidth, 30), $"Weapon: {weaponNames}", rewardStyle);
+                }
+            }
+            
+            // 버튼들
+            float buttonWidth = 140;
+            float buttonHeight = 45;
+            float buttonY = popupRect.y + popupHeight - 70;
+            
+            if (isGameComplete)
+            {
+                // 게임 완료 - 축하 메시지와 나가기 버튼만
+                GUIStyle completeStyle = new GUIStyle(GUI.skin.label);
+                completeStyle.fontSize = 28;
+                completeStyle.alignment = TextAnchor.MiddleCenter;
+                completeStyle.normal.textColor = Color.yellow;
+                GUI.Label(new Rect(popupRect.x, popupRect.y + 80, popupWidth, 40), "GAME COMPLETE!", completeStyle);
+                
+                // 나가기 버튼 (중앙)
+                if (GUI.Button(new Rect(popupRect.x + (popupWidth - buttonWidth) / 2, buttonY, buttonWidth, buttonHeight), "나가기", buttonStyle))
+                {
+                    isFloorClearPopupShown = false;
+                    HandleGameComplete();
+                }
+            }
+            else
+            {
+                // 계속하기 버튼
+                if (GUI.Button(new Rect(popupRect.x + 30, buttonY, buttonWidth, buttonHeight), "계속하기", buttonStyle))
+                {
+                    isFloorClearPopupShown = false;
+                    AdvanceToNextFloor();
+                }
+                
+                // 나가기 버튼
+                if (GUI.Button(new Rect(popupRect.x + popupWidth - buttonWidth - 30, buttonY, buttonWidth, buttonHeight), "나가기", buttonStyle))
+                {
+                    isFloorClearPopupShown = false;
+                    ClearSavedFloor();
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
+                }
             }
         }
 
@@ -777,6 +948,26 @@ namespace TowerBreak.Combat
                 }
             }
             return maxId + 1;
+        }
+
+        private string GetWeaponNames(System.Collections.Generic.IReadOnlyList<int> weaponIds)
+        {
+            if (weaponIds == null || weaponIds.Count == 0)
+            {
+                return "None";
+            }
+
+            var names = new System.Collections.Generic.List<string>();
+            foreach (int weaponId in weaponIds)
+            {
+                var weapon = gameData.Weapons.Find(w => w.Id == weaponId);
+                if (weapon != null)
+                {
+                    names.Add(weapon.Archetype.ToString());
+                }
+            }
+
+            return names.Count > 0 ? string.Join(", ", names) : "Unknown";
         }
         
         private int GetWallHealthForFloor()

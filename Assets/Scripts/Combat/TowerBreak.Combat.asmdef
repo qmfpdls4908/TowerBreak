@@ -5,7 +5,8 @@
     "TowerBreak.GameData",
     "TowerBreak.DI",
     "Unity.InputSystem",
-    "TowerBreak.Meta"
+    "TowerBreak.Meta",
+    "TowerBreak.EventBus"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

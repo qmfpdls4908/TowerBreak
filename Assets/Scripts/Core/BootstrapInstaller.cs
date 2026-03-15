@@ -39,6 +39,11 @@ namespace TowerBreak.Core
             // 테스트용: 기본 무기 장착 (Claw, ID: 1)
             SetupDefaultEquipment(inventoryState);
             
+            // PlayerSessionState 등록
+            var sessionState = new PlayerSessionState(inventoryState, walletState);
+            sessionState.StartNewRun(); // 새 게임 시작
+            container.Register<PlayerSessionState>(sessionState);
+            
             Debug.Log("[Bootstrap] DI Container initialized successfully");
             
             // 초기화 완료 후 Title Scene 로드

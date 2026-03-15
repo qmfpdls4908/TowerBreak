@@ -13,10 +13,14 @@ namespace TowerBreak.UIFlow.Tests
             public int OpenChallengeCount;
             public int OpenEquipmentCount;
             public int OpenRerollCount;
+            public int CloseEquipmentCount;
+            public int CloseRerollCount;
 
             public void OpenChallenge() => OpenChallengeCount++;
             public void OpenEquipment() => OpenEquipmentCount++;
             public void OpenReroll() => OpenRerollCount++;
+            public void CloseEquipment() => CloseEquipmentCount++;
+            public void CloseReroll() => CloseRerollCount++;
         }
 
         private sealed class FakeStateReader : ILobbyStateReader

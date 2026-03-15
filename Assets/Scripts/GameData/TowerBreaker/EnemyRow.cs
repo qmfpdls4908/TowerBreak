@@ -38,6 +38,12 @@ namespace TowerBreak.GameData.TowerBreaker
         [Column("HitSfxKey")]
         public string HitSfxKey;
 
+        [Column("IsBoss")]
+        public bool IsBoss;
+
+        [Column("PushBackDistance")]
+        public float PushBackDistance;
+
         [Column("DeathVfxKey")]
         public string DeathVfxKey;
     }

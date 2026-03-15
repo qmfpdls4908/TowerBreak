@@ -1,7 +1,13 @@
 {
   "name": "TowerBreak.UIFlow",
   "rootNamespace": "TowerBreak.UIFlow",
-  "references": [],
+  "references": [
+    "Unity.TextMeshPro",
+    "TowerBreak.GameData",
+    "TowerBreak.Meta",
+    "TowerBreak.EventBus",
+    "TowerBreak.DI"
+  ],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,

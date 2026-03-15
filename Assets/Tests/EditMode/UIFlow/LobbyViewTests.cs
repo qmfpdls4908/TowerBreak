@@ -13,6 +13,8 @@ namespace TowerBreak.UIFlow.Tests
             public void OpenChallenge() { }
             public void OpenEquipment() { }
             public void OpenReroll() { }
+            public void CloseEquipment() { }
+            public void CloseReroll() { }
         }
 
         private sealed class FakeStateReader : ILobbyStateReader
@@ -27,59 +29,77 @@ namespace TowerBreak.UIFlow.Tests
         }
 
         [Test]
-        public void Refresh_NullPresenter_ThrowsArgumentNullException()
+        public void Initialize_NullPresenter_ThrowsArgumentNullException()
         {
             var view = new LobbyView();
 
-            Assert.Throws<ArgumentNullException>(() => view.Refresh(null));
+            Assert.Throws<ArgumentNullException>(() => view.Initialize(null));
         }
 
         [Test]
-        public void Refresh_SetsDisplayedFloorId()
+        public void Initialize_SetsDisplayedFloorId()
         {
             var state = new FakeStateReader { FloorId = 2 };
             var presenter = new LobbyPresenter(new FakeRouter(), state);
             var view = new LobbyView();
 
-            view.Refresh(presenter);
+            view.Initialize(presenter);
 
             Assert.That(view.DisplayedFloorId, Is.EqualTo(2));
         }
 
         [Test]
-        public void Refresh_SetsDisplayedGold()
+        public void Initialize_SetsDisplayedGold()
         {
             var state = new FakeStateReader { GoldAmount = 250 };
             var presenter = new LobbyPresenter(new FakeRouter(), state);
             var view = new LobbyView();
 
-            view.Refresh(presenter);
+            view.Initialize(presenter);
 
             Assert.That(view.DisplayedGold, Is.EqualTo(250));
         }
 
         [Test]
-        public void Refresh_WhenNoWeapon_SetsIsWeaponEquippedFalse()
+        public void Initialize_WhenNoWeapon_SetsIsWeaponEquippedFalse()
         {
             var state = new FakeStateReader { WeaponId = null };
             var presenter = new LobbyPresenter(new FakeRouter(), state);
             var view = new LobbyView();
 
-            view.Refresh(presenter);
+            view.Initialize(presenter);
 
             Assert.That(view.IsWeaponEquipped, Is.False);
         }
 
         [Test]
-        public void Refresh_WhenWeaponEquipped_SetsIsWeaponEquippedTrue()
+        public void Initialize_WhenWeaponEquipped_SetsIsWeaponEquippedTrue()
         {
             var state = new FakeStateReader { WeaponId = 5 };
             var presenter = new LobbyPresenter(new FakeRouter(), state);
             var view = new LobbyView();
 
-            view.Refresh(presenter);
+            view.Initialize(presenter);
 
             Assert.That(view.IsWeaponEquipped, Is.True);
+        }
+
+        [Test]
+        public void Refresh_UpdatesDisplayedValues()
+        {
+            var state = new FakeStateReader { FloorId = 1, GoldAmount = 100 };
+            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var view = new LobbyView();
+
+            view.Initialize(presenter);
+            Assert.That(view.DisplayedFloorId, Is.EqualTo(1));
+
+            state.FloorId = 5;
+            state.GoldAmount = 500;
+            view.Refresh();
+
+            Assert.That(view.DisplayedFloorId, Is.EqualTo(5));
+            Assert.That(view.DisplayedGold, Is.EqualTo(500));
         }
     }
 }

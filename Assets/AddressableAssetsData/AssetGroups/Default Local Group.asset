@@ -14,7 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Default Local Group
   m_GUID: e71458b6d74ebfd40ab5abe828b3feb4
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 61d3a41a6b2373247a96e175b2cf9c90
+    m_Address: Assets/Prefabs/Combat/Enemies/EnemyBossOverlord.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84972f4d695fc2e4eb75606de7a1dabf
+    m_Address: Assets/Prefabs/Combat/Enemies/EnemyBomber.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a12da986f32720429d740aa89af6bab
+    m_Address: Assets/Prefabs/Combat/Enemies/EnemyBossDestroyer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5be484058bf2e2d44a409afe871d5a76, type: 2}
   m_SchemaSet:

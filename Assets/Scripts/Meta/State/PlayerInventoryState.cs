@@ -39,6 +39,11 @@ namespace TowerBreak.Meta.State
             equippedWeaponInstanceId = instanceId;
         }
 
+        public void UnequipWeapon()
+        {
+            equippedWeaponInstanceId = null;
+        }
+
         public bool TryGetEquipment(int instanceId, out OwnedEquipment equipment)
         {
             equipment = this.equipment.FirstOrDefault(e => e.InstanceId == instanceId);

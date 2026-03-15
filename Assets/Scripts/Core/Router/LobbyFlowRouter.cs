@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using TowerBreak.Core;
 using TowerBreak.UIFlow.Lobby;
 
@@ -8,11 +9,13 @@ namespace TowerBreak.Core.Router
     {
         private readonly ISceneLoader _sceneLoader;
         private readonly PlayerSessionState _sessionState;
+        private readonly LobbySceneInitializer _lobbyInitializer;
 
-        public LobbyFlowRouter(ISceneLoader sceneLoader, PlayerSessionState sessionState)
+        public LobbyFlowRouter(ISceneLoader sceneLoader, PlayerSessionState sessionState, LobbySceneInitializer lobbyInitializer = null)
         {
             _sceneLoader = sceneLoader ?? throw new ArgumentNullException(nameof(sceneLoader));
             _sessionState = sessionState ?? throw new ArgumentNullException(nameof(sessionState));
+            _lobbyInitializer = lobbyInitializer;
         }
 
         public void OpenChallenge()
@@ -28,12 +31,26 @@ namespace TowerBreak.Core.Router
 
         public void OpenEquipment()
         {
-            // TODO: Open equipment screen (Phase 2)
+            Debug.Log("[LobbyFlowRouter] Opening equipment screen");
+            _lobbyInitializer?.CreateEquipmentUI();
+        }
+
+        public void CloseEquipment()
+        {
+            Debug.Log("[LobbyFlowRouter] Closing equipment screen");
+            _lobbyInitializer?.CloseEquipmentUI();
         }
 
         public void OpenReroll()
         {
-            // TODO: Open reroll screen (Phase 2)
+            Debug.Log("[LobbyFlowRouter] Opening reroll screen");
+            // TODO: Reroll 화면 활성화
+        }
+
+        public void CloseReroll()
+        {
+            Debug.Log("[LobbyFlowRouter] Closing reroll screen");
+            // TODO: Reroll 화면 비활성화
         }
     }
 }

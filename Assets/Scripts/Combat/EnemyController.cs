@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 
 using TowerBreak.GameData.TowerBreaker;
+using TowerBreak.EventBus;
+using TowerBreak.DI;
 
 namespace TowerBreak.Combat
 {
@@ -13,6 +15,9 @@ namespace TowerBreak.Combat
         private float flashTimer = 0f;
         private const float FLASH_DURATION = 0.2f;
         private Color originalColor;
+        private bool isTouchingPlayer = false;
+        private EventBus<PlayerActionEvent> playerActionEventBus;
+        private EventBus<PlayerDamagedEvent> playerDamagedEventBus;
 
         public void Initialize(EnemyRow data)
         {
@@ -69,6 +74,73 @@ namespace TowerBreak.Combat
         private void Start()
         {
             originalColor = spriteRenderer.color;
+            
+            // EventBus 인스턴스를 DI에서 가져오기
+            playerActionEventBus = DIContainer.ResolveFromRegistered<EventBus<PlayerActionEvent>>();
+            playerDamagedEventBus = DIContainer.ResolveFromRegistered<EventBus<PlayerDamagedEvent>>();
+            
+            if (playerActionEventBus != null)
+            {
+                // 가드 이벤트 구독
+                playerActionEventBus.Subscribe(OnPlayerAction);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            // 가드 이벤트 구독 취소
+            if (playerActionEventBus != null)
+            {
+                playerActionEventBus.Unsubscribe(OnPlayerAction);
+            }
+        }
+
+        private void OnPlayerAction(PlayerActionEvent evt)
+        {
+            // 플레이어가 가드를 사용하고, 몬스터가 플레이어와 닿아있을 때 밀림
+            if (isTouchingPlayer)
+            {
+                PushBack();
+            }
+        }
+
+        private void PushBack()
+        {
+            if (enemyData == null) return;
+            
+            // 오른쪽으로 밀림
+            float pushDistance = enemyData.PushBackDistance;
+            transform.Translate(Vector3.right * pushDistance);
+            
+            Debug.Log($"[EnemyController] Pushed back by {pushDistance}");
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            // 플레이어와 충돌 시작
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                isTouchingPlayer = true;
+            }
+            
+            // 벽과 충돌 시 플레이어 데미지 체크
+            if (collision.gameObject.CompareTag("Wall") && isTouchingPlayer)
+            {
+                // 플레이어에게 데미지 이벤트 발행
+                if (playerDamagedEventBus != null)
+                {
+                    playerDamagedEventBus.Publish(new PlayerDamagedEvent(enemyData.Pressure));
+                }
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            // 플레이어와 충돌 종료
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                isTouchingPlayer = false;
+            }
         }
 
         public void TakeDamage(int damage)

@@ -25,6 +25,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84972f4d695fc2e4eb75606de7a1dabf
+    m_Address: enemy/bomber
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a12da986f32720429d740aa89af6bab
+    m_Address: enemy/boss_destroyer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61d3a41a6b2373247a96e175b2cf9c90
+    m_Address: enemy/boss_overlord
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5be484058bf2e2d44a409afe871d5a76, type: 2}
   m_SchemaSet:

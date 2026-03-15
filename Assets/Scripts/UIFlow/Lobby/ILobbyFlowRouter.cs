@@ -4,6 +4,8 @@ namespace TowerBreak.UIFlow.Lobby
     {
         void OpenChallenge();
         void OpenEquipment();
+        void CloseEquipment();
         void OpenReroll();
+        void CloseReroll();
     }
 }

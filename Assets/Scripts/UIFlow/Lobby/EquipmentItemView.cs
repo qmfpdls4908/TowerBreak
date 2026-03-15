@@ -13,6 +13,7 @@ namespace TowerBreak.UIFlow.Lobby
         [SerializeField] private Button enhanceButton;
         [SerializeField] private TextMeshProUGUI enhanceCostText;
         [SerializeField] private GameObject equippedIndicator;
+        [SerializeField] private Image weaponImage;
 
         private int instanceId;
         private System.Action<int> onEquipCallback;
@@ -26,6 +27,16 @@ namespace TowerBreak.UIFlow.Lobby
 
             Debug.Log($"[EquipmentItemView] Setting up: WeaponName={info.WeaponName}, InstanceId={info.InstanceId}, Level={info.EnhancementLevel}");
             
+            if (weaponImage != null && info.WeaponIcon != null)
+            {
+                weaponImage.sprite = info.WeaponIcon;
+                weaponImage.enabled = true;
+            }
+            else if (weaponImage != null)
+            {
+                weaponImage.enabled = false;
+            }
+
             if (nameText != null)
             {
                 Debug.Log($"[EquipmentItemView] Setting nameText to: {info.WeaponName}");

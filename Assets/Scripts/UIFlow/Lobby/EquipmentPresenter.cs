@@ -140,6 +140,16 @@ namespace TowerBreak.UIFlow.Lobby
             int nextCost = costRow?.GoldCost ?? 0;
             bool canEnhance = costRow != null && _wallet.Gold >= nextCost;
 
+            Sprite icon = null;
+            if (!string.IsNullOrEmpty(weapon.IconKey))
+            {
+                icon = Resources.Load<Sprite>(weapon.IconKey);
+                if (icon == null)
+                {
+                    Debug.LogWarning($"[EquipmentPresenter] Weapon icon not found for IconKey: {weapon.IconKey}");
+                }
+            }
+
             return new EquipmentDisplayInfo
             {
                 InstanceId = ownedEquipment.InstanceId,
@@ -148,7 +158,8 @@ namespace TowerBreak.UIFlow.Lobby
                 AttackPower = EquipmentEnhancementService.GetCurrentAttackPower(weapon, ownedEquipment.EnhancementLevel),
                 EnhancementLevel = ownedEquipment.EnhancementLevel,
                 NextEnhancementCost = nextCost,
-                CanEnhance = canEnhance
+                CanEnhance = canEnhance,
+                WeaponIcon = icon
             };
         }
     }

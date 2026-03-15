@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b85bdcbcef8d1744890107f750570e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TowerBreak.Core::TowerBreak.Core.BootstrapInstaller
-  autoLoadLobbyScene: 1
+  autoLoadTitleScene: 1
 --- !u!1 &907125095
 GameObject:
   m_ObjectHideFlags: 0

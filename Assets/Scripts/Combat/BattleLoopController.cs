@@ -51,7 +51,7 @@ namespace TowerBreak.Combat
                 throw new ArgumentException("Delta time must be zero or greater.", nameof(deltaTime));
             }
 
-            if (State.IsWallDefeated)
+            if (State.IsWallDefeated || State.IsPlayerDefeated)
             {
                 return default;
             }
@@ -76,7 +76,7 @@ namespace TowerBreak.Combat
 
         public CombatAttackResult ApplyAttackToFirstEnemy(int attackDamage)
         {
-            if (State.IsWallDefeated)
+            if (State.IsWallDefeated || State.IsPlayerDefeated)
             {
                 return new CombatAttackResult(false, 0, false);
             }
@@ -86,7 +86,7 @@ namespace TowerBreak.Combat
 
         public CombatGuardResult ApplyPlayerGuard(float pressureReduction)
         {
-            if (State.IsWallDefeated)
+            if (State.IsWallDefeated || State.IsPlayerDefeated)
             {
                 return new CombatGuardResult(0f);
             }

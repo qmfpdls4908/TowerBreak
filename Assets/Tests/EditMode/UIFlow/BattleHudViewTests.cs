@@ -15,12 +15,14 @@ namespace TowerBreak.UIFlow.Tests
             public int Wave;
             public bool DangerActive;
             public bool WallDefeated;
+            public bool PlayerDefeated;
 
             public int PlayerHealth => Health;
             public int FloorId => Floor;
             public int WaveNumber => Wave;
             public bool IsDangerActive => DangerActive;
             public bool IsWallDefeated => WallDefeated;
+            public bool IsPlayerDefeated => PlayerDefeated;
         }
 
         [Test]

@@ -17,13 +17,13 @@ namespace TowerBreak.UIFlow.Battle
 
         public string WaveLabel => $"Wave {_state.WaveNumber}";
 
-        public bool IsDangerBannerVisible => _state.IsDangerActive || _state.IsWallDefeated;
+        public bool IsDangerBannerVisible => _state.IsDangerActive || _state.IsWallDefeated || _state.IsPlayerDefeated;
 
         public string DangerBannerText
         {
             get
             {
-                if (_state.IsWallDefeated)
+                if (_state.IsWallDefeated || _state.IsPlayerDefeated)
                 {
                     return "DEFEAT";
                 }

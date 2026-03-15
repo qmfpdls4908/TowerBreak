@@ -28,6 +28,7 @@ namespace TowerBreak.Combat
         
         public PlayerActionType CurrentAction { get; private set; } = PlayerActionType.None;
         public bool IsActionInProgress => CurrentAction != PlayerActionType.None;
+        public bool IsTouchingWall { get; private set; } = false;
         
         private void Awake()
         {
@@ -193,6 +194,24 @@ namespace TowerBreak.Combat
             if (weaponObject != null)
             {
                 Destroy(weaponObject);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Wall"))
+            {
+                IsTouchingWall = true;
+                Debug.Log("[PlayerController] Touching wall");
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Wall"))
+            {
+                IsTouchingWall = false;
+                Debug.Log("[PlayerController] Left wall");
             }
         }
     }

@@ -12,6 +12,7 @@ namespace TowerBreak.Combat
             float pendingEnemyPressure,
             bool isDangerActive,
             bool isWallDefeated,
+            bool isPlayerDefeated,
             IReadOnlyList<CombatEnemyState> enemies)
         {
             PlayerHealth = playerHealth;
@@ -20,6 +21,7 @@ namespace TowerBreak.Combat
             PendingEnemyPressure = pendingEnemyPressure;
             IsDangerActive = isDangerActive;
             IsWallDefeated = isWallDefeated;
+            IsPlayerDefeated = isPlayerDefeated;
             Enemies = enemies;
         }
 
@@ -35,6 +37,8 @@ namespace TowerBreak.Combat
 
         public bool IsWallDefeated { get; }
 
+        public bool IsPlayerDefeated { get; }
+
         public IReadOnlyList<CombatEnemyState> Enemies { get; }
 
         public static CombatState CreateInitial(int playerHealth, int wallHealth, IReadOnlyList<CombatEnemyState> enemies)
@@ -44,12 +48,12 @@ namespace TowerBreak.Combat
                 throw new ArgumentNullException(nameof(enemies));
             }
 
-            return new CombatState(playerHealth, wallHealth, 0f, 0f, false, wallHealth <= 0, new List<CombatEnemyState>(enemies));
+            return new CombatState(playerHealth, wallHealth, 0f, 0f, false, wallHealth <= 0, playerHealth <= 0, new List<CombatEnemyState>(enemies));
         }
 
         public CombatState AdvanceTime(float deltaTime)
         {
-            return new CombatState(PlayerHealth, WallHealth, ElapsedTime + deltaTime, PendingEnemyPressure, IsDangerActive, IsWallDefeated, Enemies);
+            return new CombatState(PlayerHealth, WallHealth, ElapsedTime + deltaTime, PendingEnemyPressure, IsDangerActive, IsWallDefeated, IsPlayerDefeated, Enemies);
         }
 
         public CombatState ApplyWallDamage(int damage)
@@ -60,7 +64,7 @@ namespace TowerBreak.Combat
                 nextWallHealth = 0;
             }
 
-            return new CombatState(PlayerHealth, nextWallHealth, ElapsedTime, PendingEnemyPressure, IsDangerActive, nextWallHealth == 0, Enemies);
+            return new CombatState(PlayerHealth, nextWallHealth, ElapsedTime, PendingEnemyPressure, IsDangerActive, nextWallHealth == 0, IsPlayerDefeated, Enemies);
         }
 
         public CombatState ApplyPlayerAttack(int enemyId, int attackDamage)
@@ -83,7 +87,7 @@ namespace TowerBreak.Combat
                 }
             }
 
-            return new CombatState(PlayerHealth, WallHealth, ElapsedTime, PendingEnemyPressure, IsDangerActive, IsWallDefeated, updatedEnemies);
+            return new CombatState(PlayerHealth, WallHealth, ElapsedTime, PendingEnemyPressure, IsDangerActive, IsWallDefeated, IsPlayerDefeated, updatedEnemies);
         }
 
         public CombatState ApplyPlayerGuard(float pressureReduction)
@@ -99,7 +103,7 @@ namespace TowerBreak.Combat
                 nextPendingEnemyPressure = 0f;
             }
 
-            return new CombatState(PlayerHealth, WallHealth, ElapsedTime, nextPendingEnemyPressure, IsDangerActive, IsWallDefeated, Enemies);
+            return new CombatState(PlayerHealth, WallHealth, ElapsedTime, nextPendingEnemyPressure, IsDangerActive, IsWallDefeated, IsPlayerDefeated, Enemies);
         }
 
         public CombatState AdvanceEnemyPressure(float deltaTime, float wallHitThreshold, int wallDamagePerHit)
@@ -148,6 +152,33 @@ namespace TowerBreak.Combat
                 nextPendingEnemyPressure,
                 nextDangerActive,
                 nextWallDefeated,
+                IsPlayerDefeated,
+                Enemies);
+        }
+
+        public CombatState ApplyPlayerDamage(int damage)
+        {
+            if (damage < 0)
+            {
+                throw new ArgumentException("Damage must be zero or greater.", nameof(damage));
+            }
+
+            int nextPlayerHealth = PlayerHealth - damage;
+            if (nextPlayerHealth < 0)
+            {
+                nextPlayerHealth = 0;
+            }
+
+            bool nextPlayerDefeated = IsPlayerDefeated || nextPlayerHealth == 0;
+
+            return new CombatState(
+                nextPlayerHealth,
+                WallHealth,
+                ElapsedTime,
+                PendingEnemyPressure,
+                IsDangerActive,
+                IsWallDefeated,
+                nextPlayerDefeated,
                 Enemies);
         }
     }

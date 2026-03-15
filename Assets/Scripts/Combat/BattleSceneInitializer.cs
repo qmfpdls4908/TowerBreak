@@ -612,11 +612,27 @@ namespace TowerBreak.Combat
         {
             Debug.Log($"[Battle] 💀 Enemy {enemyId} defeated!");
             
-            // 처치된 적 GameObject 찾기 및 제거
-            var enemyToRemove = spawnedEnemies.FirstOrDefault();
-            if (enemyToRemove != null)
+            // 처치된 적의 인덱스 찾기
+            int defeatedEnemyIndex = -1;
+            var currentEnemies = battleLoopController.State.Enemies;
+            
+            // 이전 상태와 비교하여 어떤 인덱스가 제거되었는지 찾기
+            // spawnedEnemies는 combatEnemies와 같은 순서로 생성되었으므로
+            // combatEnemies에서 enemyId를 찾아 인덱스를 확인
+            for (int i = 0; i < spawnedEnemies.Count; i++)
             {
-                spawnedEnemies.Remove(enemyToRemove);
+                var controller = spawnedEnemies[i].GetComponent<EnemyController>();
+                if (controller != null && controller.EnemyId == enemyId)
+                {
+                    defeatedEnemyIndex = i;
+                    break;
+                }
+            }
+            
+            if (defeatedEnemyIndex >= 0 && defeatedEnemyIndex < spawnedEnemies.Count)
+            {
+                var enemyToRemove = spawnedEnemies[defeatedEnemyIndex];
+                spawnedEnemies.RemoveAt(defeatedEnemyIndex);
                 
                 // 파괴 효과
                 var controller = enemyToRemove.GetComponent<EnemyController>();
@@ -627,6 +643,24 @@ namespace TowerBreak.Combat
                 else
                 {
                     Destroy(enemyToRemove);
+                }
+            }
+            else
+            {
+                // fallback: 첫 번째 적 제거 (기존 동작)
+                var enemyToRemove = spawnedEnemies.FirstOrDefault();
+                if (enemyToRemove != null)
+                {
+                    spawnedEnemies.Remove(enemyToRemove);
+                    var controller = enemyToRemove.GetComponent<EnemyController>();
+                    if (controller != null)
+                    {
+                        controller.TakeDamage(int.MaxValue);
+                    }
+                    else
+                    {
+                        Destroy(enemyToRemove);
+                    }
                 }
             }
             

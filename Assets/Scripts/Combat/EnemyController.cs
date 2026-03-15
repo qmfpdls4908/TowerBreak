@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 using TowerBreak.GameData.TowerBreaker;
@@ -14,10 +15,21 @@ namespace TowerBreak.Combat
         private bool isFlashing = false;
         private float flashTimer = 0f;
         private const float FLASH_DURATION = 0.2f;
-        private Color originalColor;
+        private Dictionary<SpriteRenderer, Color> originalColors = new Dictionary<SpriteRenderer, Color>();
         private bool isTouchingPlayer = false;
+        private bool isStopped = false;
         private EventBus<PlayerActionEvent> playerActionEventBus;
-        private EventBus<PlayerDamagedEvent> playerDamagedEventBus;
+
+        public int EnemyId { get; private set; }
+
+        [Header("Body Parts")]
+        [SerializeField] private SpriteRenderer headRenderer;
+        [SerializeField] private SpriteRenderer bodyRenderer;
+        [SerializeField] private SpriteRenderer leftLegRenderer;
+        [SerializeField] private SpriteRenderer rightLegRenderer;
+        [SerializeField] private SpriteRenderer swordRenderer;
+
+        private List<SpriteRenderer> allRenderers = new List<SpriteRenderer>();
 
         public void Initialize(EnemyRow data)
         {
@@ -27,6 +39,7 @@ namespace TowerBreak.Combat
             }
 
             enemyData = data;
+            EnemyId = data.Id;
             
             // 적 종류별 색상 설정
             if (spriteRenderer != null)
@@ -56,7 +69,7 @@ namespace TowerBreak.Combat
             {
                 spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             }
-            
+
             // 스프라이트가 없으면 기본 스프라이트 설정
             if (spriteRenderer.sprite == null)
             {
@@ -69,20 +82,61 @@ namespace TowerBreak.Combat
                 );
                 Debug.Log("[EnemyController] Created default white sprite");
             }
+
+            // Collect all body part renderers
+            CollectBodyPartRenderers();
+        }
+
+        private void CollectBodyPartRenderers()
+        {
+            allRenderers.Clear();
+
+            // Add main renderer
+            if (spriteRenderer != null)
+            {
+                allRenderers.Add(spriteRenderer);
+            }
+
+            // Add body part renderers if assigned
+            if (headRenderer != null) allRenderers.Add(headRenderer);
+            if (bodyRenderer != null) allRenderers.Add(bodyRenderer);
+            if (leftLegRenderer != null) allRenderers.Add(leftLegRenderer);
+            if (rightLegRenderer != null) allRenderers.Add(rightLegRenderer);
+            if (swordRenderer != null) allRenderers.Add(swordRenderer);
+
+            // Auto-find renderers in children if not assigned
+            if (allRenderers.Count <= 1)
+            {
+                SpriteRenderer[] childRenderers = GetComponentsInChildren<SpriteRenderer>();
+                foreach (SpriteRenderer renderer in childRenderers)
+                {
+                    if (renderer != spriteRenderer && !allRenderers.Contains(renderer))
+                    {
+                        allRenderers.Add(renderer);
+                    }
+                }
+            }
+
+            Debug.Log($"[EnemyController] Collected {allRenderers.Count} renderers for flash effect");
         }
 
         private void Start()
         {
-            originalColor = spriteRenderer.color;
-            
             // EventBus 인스턴스를 DI에서 가져오기
             playerActionEventBus = DIContainer.ResolveFromRegistered<EventBus<PlayerActionEvent>>();
-            playerDamagedEventBus = DIContainer.ResolveFromRegistered<EventBus<PlayerDamagedEvent>>();
             
             if (playerActionEventBus != null)
             {
                 // 가드 이벤트 구독
                 playerActionEventBus.Subscribe(OnPlayerAction);
+            }
+
+            // CombatManager Singleton 확인
+            if (CombatManager.Instance == null)
+            {
+                Debug.LogWarning("[EnemyController] CombatManager not found! Creating one...");
+                GameObject combatManagerGO = new GameObject("CombatManager");
+                combatManagerGO.AddComponent<CombatManager>();
             }
         }
 
@@ -121,15 +175,12 @@ namespace TowerBreak.Combat
             if (collision.gameObject.CompareTag("Player"))
             {
                 isTouchingPlayer = true;
-            }
-            
-            // 벽과 충돌 시 플레이어 데미지 체크
-            if (collision.gameObject.CompareTag("Wall") && isTouchingPlayer)
-            {
-                // 플레이어에게 데미지 이벤트 발행
-                if (playerDamagedEventBus != null)
+                isStopped = false;
+                
+                // CombatManager에게 몬스터가 밀기 시작했음을 알림
+                if (CombatManager.Instance != null)
                 {
-                    playerDamagedEventBus.Publish(new PlayerDamagedEvent(enemyData.Pressure));
+                    CombatManager.Instance.SetMonsterPushing(true);
                 }
             }
         }
@@ -140,7 +191,19 @@ namespace TowerBreak.Combat
             if (collision.gameObject.CompareTag("Player"))
             {
                 isTouchingPlayer = false;
+                
+                // CombatManager에게 몬스터가 밀기를 멈췄음을 알림
+                if (CombatManager.Instance != null)
+                {
+                    CombatManager.Instance.SetMonsterPushing(false);
+                }
             }
+        }
+
+        public void StopPushing()
+        {
+            isStopped = true;
+            Debug.Log("[EnemyController] Stopped by CombatManager");
         }
 
         public void TakeDamage(int damage)
@@ -161,9 +224,23 @@ namespace TowerBreak.Combat
 
         private void StartFlash()
         {
+            if (isFlashing) return; // Prevent multiple flashes
+
             isFlashing = true;
             flashTimer = 0f;
-            spriteRenderer.color = Color.red;
+
+            // Save current colors before flashing
+            originalColors.Clear();
+            foreach (SpriteRenderer renderer in allRenderers)
+            {
+                if (renderer != null)
+                {
+                    originalColors[renderer] = renderer.color;
+                    renderer.color = Color.red;
+                }
+            }
+
+            Debug.Log("[EnemyController] Flash effect started - saved original colors");
         }
 
         private void Update()
@@ -191,13 +268,26 @@ namespace TowerBreak.Combat
         private void UpdateFlash()
         {
             if (!isFlashing) return;
-            
+
             flashTimer += Time.deltaTime;
-            
+
             if (flashTimer >= FLASH_DURATION)
             {
                 isFlashing = false;
-                spriteRenderer.color = originalColor;
+
+                // Restore original colors for each body part
+                foreach (var kvp in originalColors)
+                {
+                    SpriteRenderer renderer = kvp.Key;
+                    Color originalColor = kvp.Value;
+                    if (renderer != null)
+                    {
+                        renderer.color = originalColor;
+                    }
+                }
+                originalColors.Clear();
+
+                Debug.Log("[EnemyController] Flash effect ended - restored original colors");
             }
         }
 
@@ -248,9 +338,88 @@ namespace TowerBreak.Combat
         private void MoveLeft()
         {
             if (enemyData == null) return;
-            
+
+            // CombatManager에서 멈춤 명령을 받았으면 이동하지 않음
+            if (isStopped)
+            {
+                return;
+            }
+
             float moveDistance = enemyData.MoveSpeed * Time.deltaTime;
-            transform.Translate(Vector3.left * moveDistance);
+
+            if (isTouchingPlayer)
+            {
+                // 플레이어와 충돌 중이면 플레이어를 밀고 함께 이동
+                MoveAndPushPlayer(moveDistance);
+            }
+            else
+            {
+                // 평상시 왼쪽으로 이동
+                transform.Translate(Vector3.left * moveDistance);
+            }
+        }
+
+        private void MoveAndPushPlayer(float moveDistance)
+        {
+            // CombatManager에서 멈춤 명령을 받았으면 이동하지 않음
+            if (isStopped)
+            {
+                return;
+            }
+
+            // 플레이어 찾기
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                // 플레이어를 밀기 전에 몬스터 이동
+                transform.Translate(Vector3.left * moveDistance);
+
+                // 플레이어를 몬스터와 함께 왼쪽으로 밀기
+                float playerMoveDistance = moveDistance * 0.8f;
+                player.transform.Translate(Vector3.left * playerMoveDistance);
+            }
+            else
+            {
+                // 플레이어가 없으면 그냥 이동
+                transform.Translate(Vector3.left * moveDistance);
+            }
+        }
+
+        // Editor 테스트용: 초기화 여부 확인
+        public bool IsInitialized()
+        {
+            return enemyData != null;
+        }
+
+        // Editor 테스트용: 현재 체력 반환
+        public int GetCurrentHealth()
+        {
+            return enemyData?.Health ?? 0;
+        }
+
+        // Body Part Renderers - public for Editor access
+        public SpriteRenderer HeadRenderer => headRenderer;
+        public SpriteRenderer BodyRenderer => bodyRenderer;
+        public SpriteRenderer LeftLegRenderer => leftLegRenderer;
+        public SpriteRenderer RightLegRenderer => rightLegRenderer;
+        public SpriteRenderer SwordRenderer => swordRenderer;
+
+        // Set color for all body parts (public for Editor)
+        public void SetBodyPartsColor(Color color)
+        {
+            foreach (SpriteRenderer renderer in allRenderers)
+            {
+                if (renderer != null)
+                {
+                    renderer.color = color;
+                }
+            }
+        }
+
+        // Re-collect body parts (call after adding new parts in Editor)
+        public void RefreshBodyParts()
+        {
+            CollectBodyPartRenderers();
         }
     }
 }

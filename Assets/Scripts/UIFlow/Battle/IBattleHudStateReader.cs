@@ -7,5 +7,6 @@ namespace TowerBreak.UIFlow.Battle
         int WaveNumber { get; }
         bool IsDangerActive { get; }
         bool IsWallDefeated { get; }
+        bool IsPlayerDefeated { get; }
     }
 }

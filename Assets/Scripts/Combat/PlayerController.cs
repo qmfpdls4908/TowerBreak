@@ -178,8 +178,8 @@ namespace TowerBreak.Combat
                 Debug.Log("[Player] block animation triggered");
             }
             
-            // 붙어있는 적들을 뒤로 밀어내기
-            PushBackTouchingEnemies();
+            // 모든 적을 뒤로 밀어내고, 나도 뒤로 빠짐
+            PushBackAllEnemiesAndRetreat();
             
             // 가드 시 스턴 해제
             if (IsStunned)
@@ -189,30 +189,25 @@ namespace TowerBreak.Combat
         }
         
         /// <summary>
-        /// 붙어있는 모든 적을 뒤로(오른쪽으로) 밀어냄
+        /// 방어: 모든 적을 뒤로(오른쪽) 밀어내고, 플레이어도 뒤로(왼쪽) 빠짐
         /// </summary>
-        private void PushBackTouchingEnemies()
+        private void PushBackAllEnemiesAndRetreat()
         {
-            if (touchingEnemies.Count == 0)
-            {
-                Debug.Log("[Player] No enemies to push back");
-                return;
-            }
+            float enemyPushDistance = 2f;
+            float playerRetreatDistance = 1f;
             
-            // 리스트 복사 (밀어내면서 리스트가 변할 수 있으므로)
-            var enemiesToPush = new List<EnemyController>(touchingEnemies);
-            
-            foreach (var enemy in enemiesToPush)
+            // 씬의 모든 적을 밀어냄
+            EnemyController[] allEnemies = FindObjectsOfType<EnemyController>();
+            foreach (var enemy in allEnemies)
             {
                 if (enemy == null) continue;
-                
-                // 적을 오른쪽으로 밀어냄
-                float pushDistance = 2f;
-                enemy.transform.Translate(Vector3.right * pushDistance);
-                Debug.Log($"[Player] Pushed back enemy {enemy.gameObject.name} by {pushDistance} units");
+                enemy.transform.Translate(Vector3.right * enemyPushDistance);
             }
+            Debug.Log($"[Player] Guard pushed back {allEnemies.Length} enemies by {enemyPushDistance} units!");
             
-            Debug.Log($"[Player] Guard pushed back {enemiesToPush.Count} enemies!");
+            // 플레이어도 뒤로(왼쪽) 빠짐
+            transform.position += new Vector3(-playerRetreatDistance, 0f, 0f);
+            Debug.Log($"[Player] Player retreated {playerRetreatDistance} units!");
         }
         
         /// <summary>

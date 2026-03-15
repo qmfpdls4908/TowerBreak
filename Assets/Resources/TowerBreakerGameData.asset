@@ -53,7 +53,7 @@ MonoBehaviour:
   Enemies:
   - Id: 101
     Archetype: 0
-    Health: -2147483615
+    Health: 30
     Pressure: 4.5
     MoveSpeed: 0.5
     AttackCadence: 1.2

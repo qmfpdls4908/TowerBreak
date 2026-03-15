@@ -11,6 +11,7 @@ namespace TowerBreak.Combat
     public sealed class EnemyController : MonoBehaviour
     {
         private EnemyRow enemyData;
+        private int currentHealth;  // 각 몬스터별 개별 체력
         private SpriteRenderer spriteRenderer;
         private bool isFlashing = false;
         private float flashTimer = 0f;
@@ -21,6 +22,7 @@ namespace TowerBreak.Combat
         private EventBus<PlayerActionEvent> playerActionEventBus;
 
         public int EnemyId { get; private set; }
+        public int CurrentHealth => currentHealth;
 
         [Header("Body Parts")]
         [SerializeField] private SpriteRenderer headRenderer;
@@ -40,6 +42,7 @@ namespace TowerBreak.Combat
 
             enemyData = data;
             EnemyId = data.Id;
+            currentHealth = data.Health;  // 각 몬스터별 개별 체력 초기화
             
             // 적 종류별 색상 설정
             if (spriteRenderer != null)
@@ -48,15 +51,15 @@ namespace TowerBreak.Combat
                 {
                     case EnemyArchetype.BasicMelee:
                         spriteRenderer.color = Color.red;
-                        Debug.Log($"[EnemyController] Initialized BasicMelee (Red) - HP: {data.Health}");
+                        Debug.Log($"[EnemyController] Initialized BasicMelee (Red) - HP: {currentHealth}");
                         break;
                     case EnemyArchetype.ArmoredPusher:
                         spriteRenderer.color = Color.blue;
-                        Debug.Log($"[EnemyController] Initialized ArmoredPusher (Blue) - HP: {data.Health}");
+                        Debug.Log($"[EnemyController] Initialized ArmoredPusher (Blue) - HP: {currentHealth}");
                         break;
                     default:
                         spriteRenderer.color = Color.gray;
-                        Debug.Log($"[EnemyController] Initialized Unknown (Gray) - HP: {data.Health}");
+                        Debug.Log($"[EnemyController] Initialized Unknown (Gray) - HP: {currentHealth}");
                         break;
                 }
             }
@@ -210,9 +213,10 @@ namespace TowerBreak.Combat
         {
             if (enemyData == null) return;
             
-            enemyData.Health -= damage;
+            currentHealth -= damage;
+            Debug.Log($"[EnemyController] {gameObject.name} took {damage} damage. Remaining HP: {currentHealth}");
             
-            if (enemyData.Health <= 0)
+            if (currentHealth <= 0)
             {
                 Die();
             }
@@ -247,22 +251,6 @@ namespace TowerBreak.Combat
         {
             MoveLeft();
             UpdateFlash();
-            HandleDebugInput();
-        }
-
-        private void HandleDebugInput()
-        {
-#if UNITY_EDITOR
-            var keyboard = UnityEngine.InputSystem.Keyboard.current;
-            if (keyboard != null && keyboard.kKey.wasPressedThisFrame)
-            {
-                // For testing: instantly kill the enemy
-                if (enemyData != null)
-                {
-                    TakeDamage(enemyData.Health);
-                }
-            }
-#endif
         }
 
         private void UpdateFlash()
@@ -391,10 +379,10 @@ namespace TowerBreak.Combat
             return enemyData != null;
         }
 
-        // Editor 테스트용: 현재 체력 반환
+        // 현재 체력 반환
         public int GetCurrentHealth()
         {
-            return enemyData?.Health ?? 0;
+            return currentHealth;
         }
 
         // Body Part Renderers - public for Editor access

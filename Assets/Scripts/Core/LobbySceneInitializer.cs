@@ -11,19 +11,15 @@ namespace TowerBreak.Core
 {
     public sealed class LobbySceneInitializer : MonoBehaviour
     {
-        [Header("UI References")]
-        [SerializeField] private LobbyView lobbyViewPrefab;
-        [SerializeField] private EquipmentView equipmentViewPrefab;
-        [SerializeField] private EnhancementView enhancementViewPrefab;
-        [SerializeField] private Transform uiParent;
+        [Header("UI References (Scene Objects)")]
+        [SerializeField] private LobbyView lobbyView;
+        [SerializeField] private EquipmentView equipmentView;
+        [SerializeField] private EnhancementView enhancementView;
 
         [Header("Settings")]
         [SerializeField] private int currentFloor = 1;
 
         private const string CurrentFloorKey = "CurrentBattleFloor";
-        private LobbyView lobbyView;
-        private EquipmentView equipmentView;
-        private EnhancementView enhancementView;
         private LobbyPresenter lobbyPresenter;
 
         private void Start()
@@ -91,16 +87,11 @@ namespace TowerBreak.Core
 
         private void CreateLobbyUI()
         {
-            if (lobbyViewPrefab == null)
+            if (lobbyView == null)
             {
-                Debug.LogError("[Lobby] LobbyView prefab is not assigned!");
+                Debug.LogError("[Lobby] LobbyView is not assigned in scene!");
                 return;
             }
-
-            // UI 인스턴스화
-            Transform parent = uiParent ?? transform;
-            lobbyView = Instantiate(lobbyViewPrefab, parent);
-            lobbyView.name = "LobbyUI";
 
             // 프레젠터 연결
             if (lobbyPresenter != null)
@@ -112,7 +103,7 @@ namespace TowerBreak.Core
                 Debug.LogWarning("[Lobby] LobbyPresenter is null, UI will not be functional");
             }
 
-            Debug.Log("[Lobby] Lobby UI created");
+            Debug.Log("[Lobby] Lobby UI initialized");
         }
 
         private void ResetFloorProgress()
@@ -127,15 +118,13 @@ namespace TowerBreak.Core
 
         public void CreateEquipmentUI()
         {
-            if (equipmentViewPrefab == null)
+            if (equipmentView == null)
             {
-                Debug.LogError("[Lobby] EquipmentView prefab is not assigned!");
+                Debug.LogError("[Lobby] EquipmentView is not assigned in scene!");
                 return;
             }
 
-            Transform parent = uiParent ?? transform;
-            equipmentView = Instantiate(equipmentViewPrefab, parent);
-            equipmentView.name = "EquipmentUI";
+            equipmentView.gameObject.SetActive(true);
 
             // EquipmentPresenter 생성 및 연결
             try
@@ -154,7 +143,7 @@ namespace TowerBreak.Core
                 );
 
                 equipmentView.Initialize(equipmentPresenter);
-                Debug.Log("[Lobby] Equipment UI created");
+                Debug.Log("[Lobby] Equipment UI initialized");
             }
             catch (System.Exception ex)
             {
@@ -166,23 +155,20 @@ namespace TowerBreak.Core
         {
             if (equipmentView != null)
             {
-                Destroy(equipmentView.gameObject);
-                equipmentView = null;
+                equipmentView.gameObject.SetActive(false);
                 Debug.Log("[Lobby] Equipment UI closed");
             }
         }
 
         public void CreateEnhancementUI()
         {
-            if (enhancementViewPrefab == null)
+            if (enhancementView == null)
             {
-                Debug.LogError("[Lobby] EnhancementView prefab is not assigned!");
+                Debug.LogError("[Lobby] EnhancementView is not assigned in scene!");
                 return;
             }
 
-            Transform parent = uiParent ?? transform;
-            enhancementView = Instantiate(enhancementViewPrefab, parent);
-            enhancementView.name = "EnhancementUI";
+            enhancementView.gameObject.SetActive(true);
 
             try
             {
@@ -202,7 +188,7 @@ namespace TowerBreak.Core
                 );
 
                 enhancementView.Initialize(enhancementPresenter);
-                Debug.Log("[Lobby] Enhancement UI created");
+                Debug.Log("[Lobby] Enhancement UI initialized");
             }
             catch (System.Exception ex)
             {
@@ -214,8 +200,7 @@ namespace TowerBreak.Core
         {
             if (enhancementView != null)
             {
-                Destroy(enhancementView.gameObject);
-                enhancementView = null;
+                enhancementView.gameObject.SetActive(false);
                 Debug.Log("[Lobby] Enhancement UI closed");
             }
             

@@ -80,6 +80,13 @@ namespace TowerBreak.Combat
 
             Debug.Log($"[CombatManager] Player damaged! HP: {playerHealth}/{playerMaxHealth}");
 
+            // 플레이어 스턴 처리
+            var playerController = FindObjectOfType<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.TakeDamage(damage);
+            }
+
             // 이벤트 발행
             if (playerDamagedEventBus != null)
             {

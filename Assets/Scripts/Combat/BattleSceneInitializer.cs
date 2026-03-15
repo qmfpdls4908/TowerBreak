@@ -449,6 +449,9 @@ namespace TowerBreak.Combat
             // 플레이어 입력 처리
             HandlePlayerInput();
             
+            // UI 버튼 상태 업데이트
+            UpdateUIButtonStates();
+            
             // 승리 조건 체크 - 모든 적 처치
             // spawnedEnemies.Count == 0: 실제로 스폰된 모든 적이 파괴됨
             // battleLoopController.State.Enemies.Count == 0: 전투 시스템에서 모든 적이 제거됨
@@ -475,11 +478,6 @@ namespace TowerBreak.Combat
             if (keyboard.spaceKey.wasPressedThisFrame)
             {
                 playerController.PerformAction(PlayerActionType.Attack);
-                if (!isAttackInFlight)
-                {
-                    int damage = GetCurrentAttackPower();
-                    _ = HandleAttackAsync(damage);
-                }
             }
             // G: 가드
             else if (keyboard.gKey.wasPressedThisFrame)
@@ -548,13 +546,7 @@ namespace TowerBreak.Combat
             Debug.Log("[BattleSceneInitializer] Attack button clicked");
             if (playerController == null) return;
             
-            // Space 키와 동일한 동작
             playerController.PerformAction(PlayerActionType.Attack);
-            if (!isAttackInFlight)
-            {
-                int damage = GetCurrentAttackPower();
-                _ = HandleAttackAsync(damage);
-            }
         }
         
         private void OnGuardButtonClicked()
@@ -565,6 +557,9 @@ namespace TowerBreak.Combat
             // G 키와 동일한 동작
             playerController.PerformAction(PlayerActionType.Guard);
             HandleGuard();
+            
+            // 가드 시 몬스터 이동 재개
+            ResumeAllMonsters();
         }
         
         private void OnDashButtonClicked()
@@ -574,6 +569,44 @@ namespace TowerBreak.Combat
             
             // Left Shift 키와 동일한 동작
             playerController.PerformAction(PlayerActionType.Dash);
+            
+            // 대시 시 몬스터 이동 재개
+            ResumeAllMonsters();
+        }
+        
+        private void ResumeAllMonsters()
+        {
+            foreach (var enemy in spawnedEnemies)
+            {
+                var controller = enemy.GetComponent<EnemyController>();
+                if (controller != null)
+                {
+                    controller.StopPushing();
+                }
+            }
+            Debug.Log("[BattleSceneInitializer] All monsters resumed");
+        }
+        
+        private void UpdateUIButtonStates()
+        {
+            if (uiInstaller == null || playerController == null) return;
+            
+            // 공격 버튼: 스턴 상태거나 액션 중이면 비활성화
+            if (uiInstaller.AttackButton != null)
+            {
+                uiInstaller.AttackButton.interactable = playerController.CanAttack;
+            }
+            
+            // 가드/대시 버튼: 액션 중이 아니면 활성화
+            if (uiInstaller.GuardButton != null)
+            {
+                uiInstaller.GuardButton.interactable = playerController.CanPerformAction(PlayerActionType.Guard);
+            }
+            
+            if (uiInstaller.DashButton != null)
+            {
+                uiInstaller.DashButton.interactable = playerController.CanPerformAction(PlayerActionType.Dash);
+            }
         }
         
         private async Task HandleAttackAsync(int damage)

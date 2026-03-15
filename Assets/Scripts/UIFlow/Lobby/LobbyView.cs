@@ -101,19 +101,19 @@ namespace TowerBreak.UIFlow.Lobby
             }
         }
 
-        private void OnChallengeClicked()
+        public void OnChallengeClicked()
         {
             Debug.Log("[LobbyView] Challenge button clicked");
             presenter?.OnOpenChallenge();
         }
 
-        private void OnEquipmentClicked()
+        public void OnEquipmentClicked()
         {
             Debug.Log("[LobbyView] Equipment button clicked");
             presenter?.OnOpenEquipment();
         }
 
-        private void OnRerollClicked()
+        public void OnRerollClicked()
         {
             Debug.Log("[LobbyView] Reroll button clicked");
             presenter?.OnOpenReroll();

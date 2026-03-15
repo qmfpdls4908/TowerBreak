@@ -6,7 +6,8 @@
     "TowerBreak.DI",
     "Unity.InputSystem",
     "TowerBreak.Meta",
-    "TowerBreak.EventBus"
+    "TowerBreak.EventBus",
+    "Unity.TextMeshPro"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

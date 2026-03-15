@@ -511,6 +511,12 @@ MonoBehaviour:
   actionDuration: 0.3
   dashDuration: 0.15
   dashDistance: 2
+  weaponSpriteRenderer: {fileID: 8330627943601850592}
+  shakeIntensity: 0.2
+  shakeDuration: 0.15
+  guardPushDuration: 0.2
+  enemyPushDistance: 2
+  playerRetreatDistance: 1
 --- !u!61 &-2755911591288705134
 BoxCollider2D:
   m_ObjectHideFlags: 0

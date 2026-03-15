@@ -479,10 +479,18 @@ namespace TowerBreak.Combat
             var keyboard = UnityEngine.InputSystem.Keyboard.current;
             if (keyboard == null) return;
             
-            // Space: 공격
-            if (keyboard.spaceKey.wasPressedThisFrame)
+            // Space: 공격 (누르고 있으면 계속 공격)
+            if (keyboard.spaceKey.isPressed)
             {
-                playerController.PerformAction(PlayerActionType.Attack);
+                playerController.SetAttackHeld(true);
+                if (!playerController.IsActionInProgress)
+                {
+                    playerController.PerformAction(PlayerActionType.Attack);
+                }
+            }
+            else if (keyboard.spaceKey.wasReleasedThisFrame)
+            {
+                playerController.SetAttackHeld(false);
             }
             // G: 가드
             else if (keyboard.gKey.wasPressedThisFrame)
@@ -534,7 +542,38 @@ namespace TowerBreak.Combat
         {
             if (uiInstaller.AttackButton != null)
             {
-                uiInstaller.AttackButton.onClick.AddListener(OnAttackButtonClicked);
+                // 공격 버튼: 누르고 있으면 계속 공격 (EventTrigger 사용)
+                var attackEventTrigger = uiInstaller.AttackButton.gameObject.GetComponent<UnityEngine.EventSystems.EventTrigger>();
+                if (attackEventTrigger == null)
+                {
+                    attackEventTrigger = uiInstaller.AttackButton.gameObject.AddComponent<UnityEngine.EventSystems.EventTrigger>();
+                }
+                
+                // PointerDown - 공격 시작
+                var pointerDown = new UnityEngine.EventSystems.EventTrigger.Entry();
+                pointerDown.eventID = UnityEngine.EventSystems.EventTriggerType.PointerDown;
+                pointerDown.callback.AddListener((data) => {
+                    if (playerController != null)
+                    {
+                        playerController.SetAttackHeld(true);
+                        // 첫 공격 즉시 실행
+                        playerController.PerformAction(PlayerActionType.Attack);
+                    }
+                });
+                attackEventTrigger.triggers.Add(pointerDown);
+                
+                // PointerUp - 공격 중지
+                var pointerUp = new UnityEngine.EventSystems.EventTrigger.Entry();
+                pointerUp.eventID = UnityEngine.EventSystems.EventTriggerType.PointerUp;
+                pointerUp.callback.AddListener((data) => {
+                    if (playerController != null)
+                    {
+                        playerController.SetAttackHeld(false);
+                    }
+                });
+                attackEventTrigger.triggers.Add(pointerUp);
+                
+                Debug.Log("[Battle] Attack button hold-to-attack enabled");
             }
             if (uiInstaller.GuardButton != null)
             {

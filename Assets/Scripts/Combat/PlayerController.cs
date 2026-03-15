@@ -21,6 +21,7 @@ namespace TowerBreak.Combat
         private float actionTimer = 0f;
         private WeaponRow currentWeapon;
         private List<EnemyController> touchingEnemies = new List<EnemyController>();
+        private bool isAttackHeld = false;  // 공격 버튼 누르고 있는지
         
         public PlayerActionType CurrentAction { get; private set; } = PlayerActionType.None;
         public bool IsActionInProgress => CurrentAction != PlayerActionType.None;
@@ -39,6 +40,20 @@ namespace TowerBreak.Combat
                     ResetAction();
                 }
             }
+            
+            // 공격 버튼을 누르고 있으면 계속 공격
+            if (isAttackHeld && !IsActionInProgress && !IsStunned)
+            {
+                PerformAction(PlayerActionType.Attack);
+            }
+        }
+        
+        /// <summary>
+        /// 공격 버튼 홀드 상태 설정 (BattleSceneInitializer에서 호출)
+        /// </summary>
+        public void SetAttackHeld(bool held)
+        {
+            isAttackHeld = held;
         }
         
         public bool CanPerformAction(PlayerActionType actionType)
@@ -163,11 +178,41 @@ namespace TowerBreak.Combat
                 Debug.Log("[Player] block animation triggered");
             }
             
+            // 붙어있는 적들을 뒤로 밀어내기
+            PushBackTouchingEnemies();
+            
             // 가드 시 스턴 해제
             if (IsStunned)
             {
                 RecoverFromStun();
             }
+        }
+        
+        /// <summary>
+        /// 붙어있는 모든 적을 뒤로(오른쪽으로) 밀어냄
+        /// </summary>
+        private void PushBackTouchingEnemies()
+        {
+            if (touchingEnemies.Count == 0)
+            {
+                Debug.Log("[Player] No enemies to push back");
+                return;
+            }
+            
+            // 리스트 복사 (밀어내면서 리스트가 변할 수 있으므로)
+            var enemiesToPush = new List<EnemyController>(touchingEnemies);
+            
+            foreach (var enemy in enemiesToPush)
+            {
+                if (enemy == null) continue;
+                
+                // 적을 오른쪽으로 밀어냄
+                float pushDistance = 2f;
+                enemy.transform.Translate(Vector3.right * pushDistance);
+                Debug.Log($"[Player] Pushed back enemy {enemy.gameObject.name} by {pushDistance} units");
+            }
+            
+            Debug.Log($"[Player] Guard pushed back {enemiesToPush.Count} enemies!");
         }
         
         /// <summary>

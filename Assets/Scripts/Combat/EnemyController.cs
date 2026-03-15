@@ -222,6 +222,9 @@ namespace TowerBreak.Combat
             currentHealth -= damage;
             Debug.Log($"[EnemyController] {gameObject.name} took {damage} damage. Remaining HP: {currentHealth}");
             
+            // 데미지 팝업 표시
+            DamagePopup.Create(transform.position, damage);
+            
             if (currentHealth <= 0)
             {
                 Die();

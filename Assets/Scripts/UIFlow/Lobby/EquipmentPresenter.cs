@@ -57,10 +57,13 @@ namespace TowerBreak.UIFlow.Lobby
             return _inventory.EquippedWeaponInstanceId == instanceId;
         }
 
-        public bool TryEnhanceWeapon(int instanceId)
+        public bool TryEnhanceWeapon(int instanceId, out string failReason)
         {
+            failReason = null;
+
             if (!_inventory.TryGetEquipment(instanceId, out var ownedEquipment))
             {
+                failReason = "장비를 찾을 수 없습니다.";
                 Debug.LogWarning($"[EquipmentPresenter] Cannot enhance: equipment {instanceId} not found");
                 return false;
             }
@@ -68,7 +71,25 @@ namespace TowerBreak.UIFlow.Lobby
             var weapon = _gameData.Weapons.Find(w => w.Id == ownedEquipment.WeaponId);
             if (weapon == null)
             {
+                failReason = "무기 정보를 찾을 수 없습니다.";
                 Debug.LogWarning($"[EquipmentPresenter] Cannot enhance: weapon {ownedEquipment.WeaponId} not found");
+                return false;
+            }
+
+            int nextLevel = ownedEquipment.EnhancementLevel + 1;
+            var costRow = EquipmentEnhancementService.FindEnhancementCost(nextLevel, _gameData.EnhancementCosts);
+
+            if (costRow == null)
+            {
+                failReason = "최대 강화 레벨입니다.";
+                Debug.Log($"[EquipmentPresenter] Failed to enhance weapon {instanceId}: max level");
+                return false;
+            }
+
+            if (_wallet.Gold < costRow.GoldCost)
+            {
+                failReason = $"골드가 부족합니다. (필요: {costRow.GoldCost}G / 보유: {_wallet.Gold}G)";
+                Debug.Log($"[EquipmentPresenter] Failed to enhance weapon {instanceId}: insufficient gold");
                 return false;
             }
 
@@ -84,7 +105,8 @@ namespace TowerBreak.UIFlow.Lobby
             }
             else
             {
-                Debug.Log($"[EquipmentPresenter] Failed to enhance weapon {instanceId}: insufficient gold or max level");
+                failReason = "강화에 실패했습니다.";
+                Debug.Log($"[EquipmentPresenter] Failed to enhance weapon {instanceId}: unknown reason");
             }
 
             return success;

@@ -19,6 +19,9 @@ namespace TowerBreak.UIFlow.Lobby
         [SerializeField] private TextMeshProUGUI currentWeaponText;
         [SerializeField] private Button unequipButton;
 
+        [Header("Notice Popup")]
+        [SerializeField] private NoticePopupView noticePopup;
+
         private EquipmentPresenter presenter;
         private List<GameObject> equipmentItems = new();
         private bool isInitialized = false;
@@ -180,14 +183,26 @@ namespace TowerBreak.UIFlow.Lobby
         private void OnEnhanceClicked(int instanceId)
         {
             Debug.Log($"[EquipmentView] Enhance clicked for instance {instanceId}");
-            bool success = presenter?.TryEnhanceWeapon(instanceId) ?? false;
+
+            string failReason = null;
+            bool success = false;
+
+            if (presenter != null)
+            {
+                success = presenter.TryEnhanceWeapon(instanceId, out failReason);
+            }
+
             if (success)
             {
                 Debug.Log($"[EquipmentView] Enhancement successful for instance {instanceId}");
             }
             else
             {
-                Debug.Log($"[EquipmentView] Enhancement failed for instance {instanceId}");
+                Debug.Log($"[EquipmentView] Enhancement failed for instance {instanceId}: {failReason}");
+                if (noticePopup != null && !string.IsNullOrEmpty(failReason))
+                {
+                    noticePopup.Show(failReason);
+                }
             }
             Refresh();
         }

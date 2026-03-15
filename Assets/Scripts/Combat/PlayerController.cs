@@ -11,6 +11,13 @@ namespace TowerBreak.Combat
         [SerializeField] private float dashDuration = 0.15f;
         [SerializeField] private float dashDistance = 2f;
         
+        [Header("Weapon Display")]
+        [SerializeField] private SpriteRenderer weaponSpriteRenderer;
+        
+        [Header("Screen Shake")]
+        [SerializeField] private float shakeIntensity = 0.2f;
+        [SerializeField] private float shakeDuration = 0.15f;
+        
         private float actionTimer = 0f;
         private WeaponRow currentWeapon;
         private List<EnemyController> touchingEnemies = new List<EnemyController>();
@@ -71,7 +78,7 @@ namespace TowerBreak.Combat
                     PerformGuard();
                     break;
                 case PlayerActionType.Dash:
-                    PerformDash();
+                    PerformAdvance();
                     break;
             }
         }
@@ -80,9 +87,6 @@ namespace TowerBreak.Combat
         {
             Debug.Log($"[Player] Took {damage} damage! Stunned!");
             IsStunned = true;
-            
-            // TODO: 피격 애니메이션
-            // GetComponent<Animator>()?.SetTrigger("Hit");
         }
         
         public void RecoverFromStun()
@@ -106,6 +110,13 @@ namespace TowerBreak.Combat
             else
             {
                 Debug.LogError("[Player] Animator is null! Cannot play attack animation.");
+            }
+            
+            // 화면 흔들림
+            if (ScreenShake.Instance != null)
+            {
+                ScreenShake.Instance.Shake(shakeDuration, shakeIntensity);
+                Debug.Log("[Player] Screen shake triggered");
             }
             
             // 충돌 중인 몬스터에게 데미지
@@ -150,37 +161,70 @@ namespace TowerBreak.Combat
             {
                 RecoverFromStun();
             }
-            
-            // TODO: 애니메이션 트리거 호출
-            // GetComponent<Animator>()?.SetTrigger("Guard");
         }
         
-        private void PerformDash()
+        /// <summary>
+        /// 신발 버튼: 앞으로 전진 (몬스터를 뚫고 지나갈 수 없음)
+        /// Raycast로 앞에 몬스터가 있는지 확인 후 이동
+        /// </summary>
+        private void PerformAdvance()
         {
             CurrentAction = PlayerActionType.Dash;
             actionTimer = dashDuration;
-            Vector3 dashPosition = transform.position + new Vector3(dashDistance, 0f, 0f);
-            transform.position = dashPosition;
-            Debug.Log("[Player] Dash!");
+            
+            // 앞(오른쪽)으로 Raycast를 쏴서 몬스터/장애물 체크
+            float moveDistance = dashDistance;
+            
+            // BoxCast로 플레이어 크기만큼 앞을 체크
+            Collider2D playerCollider = GetComponent<Collider2D>();
+            Vector2 castSize = playerCollider != null 
+                ? playerCollider.bounds.size 
+                : new Vector2(0.5f, 0.5f);
+            
+            RaycastHit2D hit = Physics2D.BoxCast(
+                transform.position,
+                castSize * 0.9f,  // 약간 작게 해서 오차 방지
+                0f,
+                Vector2.right,
+                moveDistance,
+                LayerMask.GetMask("Default")  // 몬스터/벽 레이어
+            );
+            
+            if (hit.collider != null)
+            {
+                // 몬스터나 장애물이 있으면 그 바로 앞에서 멈춤
+                EnemyController enemy = hit.collider.GetComponent<EnemyController>();
+                if (enemy != null)
+                {
+                    // 몬스터 앞까지만 이동 (약간의 여유 거리)
+                    float safeDistance = hit.distance - 0.1f;
+                    if (safeDistance > 0)
+                    {
+                        transform.position += new Vector3(safeDistance, 0f, 0f);
+                        Debug.Log($"[Player] Advanced {safeDistance:F2} units (blocked by monster)");
+                    }
+                    else
+                    {
+                        Debug.Log("[Player] Cannot advance - monster too close!");
+                    }
+                    return;
+                }
+            }
+            
+            // 앞에 아무것도 없으면 풀 거리 이동
+            transform.position += new Vector3(moveDistance, 0f, 0f);
+            Debug.Log($"[Player] Advanced {moveDistance} units forward!");
             
             // 대시 시 스턴 해제
             if (IsStunned)
             {
                 RecoverFromStun();
             }
-            
-            // TODO: 애니메이션 트리거 호출
-            // GetComponent<Animator>()?.SetTrigger("Dash");
         }
         
         private void ResetAction()
         {
             CurrentAction = PlayerActionType.None;
-            
-            // TODO: 애니메이션 리셋
-            // GetComponent<Animator>()?.ResetTrigger("Attack");
-            // GetComponent<Animator>()?.ResetTrigger("Guard");
-            // GetComponent<Animator>()?.ResetTrigger("Dash");
         }
         
         public void SetWeapon(WeaponRow weapon)
@@ -190,6 +234,21 @@ namespace TowerBreak.Combat
             
             currentWeapon = weapon;
             Debug.Log($"[PlayerController] Weapon equipped: {weapon.Archetype}");
+            
+            // 무기 스프라이트 변경
+            if (weaponSpriteRenderer != null && !string.IsNullOrEmpty(weapon.IconKey))
+            {
+                Sprite weaponSprite = Resources.Load<Sprite>(weapon.IconKey);
+                if (weaponSprite != null)
+                {
+                    weaponSpriteRenderer.sprite = weaponSprite;
+                    Debug.Log($"[PlayerController] Weapon sprite set from IconKey: {weapon.IconKey}");
+                }
+                else
+                {
+                    Debug.LogWarning($"[PlayerController] Weapon sprite not found for IconKey: {weapon.IconKey}");
+                }
+            }
         }
         
         public WeaponRow CurrentWeapon => currentWeapon;

@@ -243,11 +243,18 @@ namespace TowerBreak.Combat
             const int DefaultWallHealth = 100;
             Debug.Log($"[Battle] Floor {currentFloor}: {waveCount} waves, Wall HP: {DefaultWallHealth}/{DefaultWallHealth}");
             
-            // 카메라 정보 로그
+            // 카메라 정보 로그 + ScreenShake 컴포넌트 부착
             var mainCamera = Camera.main;
             if (mainCamera != null)
             {
                 Debug.Log($"[Battle] Camera: OrthographicSize={mainCamera.orthographicSize}, Pos={mainCamera.transform.position}");
+                
+                // ScreenShake 컴포넌트 자동 부착
+                if (mainCamera.GetComponent<ScreenShake>() == null)
+                {
+                    mainCamera.gameObject.AddComponent<ScreenShake>();
+                    Debug.Log("[Battle] ScreenShake component added to camera");
+                }
             }
             else
             {

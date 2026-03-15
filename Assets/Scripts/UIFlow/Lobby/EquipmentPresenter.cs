@@ -140,6 +140,9 @@ namespace TowerBreak.UIFlow.Lobby
             int nextCost = costRow?.GoldCost ?? 0;
             bool canEnhance = costRow != null && _wallet.Gold >= nextCost;
 
+            // 무기 타입에 따라 이미지 경로 설정
+            string spritePath = GetWeaponSpritePath(weapon.Archetype);
+
             return new EquipmentDisplayInfo
             {
                 InstanceId = ownedEquipment.InstanceId,
@@ -148,8 +151,22 @@ namespace TowerBreak.UIFlow.Lobby
                 AttackPower = EquipmentEnhancementService.GetCurrentAttackPower(weapon, ownedEquipment.EnhancementLevel),
                 EnhancementLevel = ownedEquipment.EnhancementLevel,
                 NextEnhancementCost = nextCost,
-                CanEnhance = canEnhance
+                CanEnhance = canEnhance,
+                WeaponSpritePath = spritePath
             };
+        }
+
+        private string GetWeaponSpritePath(WeaponArchetype archetype)
+        {
+            switch (archetype)
+            {
+                case WeaponArchetype.Claw:
+                    return "Sprites/Player/claw_player";
+                case WeaponArchetype.Lance:
+                    return "Sprites/Player/lance_player";
+                default:
+                    return null;
+            }
         }
     }
 }

@@ -507,6 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec2dac3d1f1b1b4f80086684eec77d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TowerBreak.Combat::TowerBreak.Combat.PlayerController
+  animator: {fileID: 5061324321644989167}
   actionDuration: 0.3
   dashDuration: 0.15
   dashDistance: 2

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -6,6 +7,7 @@ namespace TowerBreak.UIFlow.Lobby
 {
     public class EquipmentItemView : MonoBehaviour
     {
+        [SerializeField] private Image weaponImage;
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private TextMeshProUGUI attackText;
         [SerializeField] private TextMeshProUGUI levelText;
@@ -44,6 +46,28 @@ namespace TowerBreak.UIFlow.Lobby
             if (levelText != null)
             {
                 levelText.text = $"Lv.{info.EnhancementLevel}";
+            }
+
+            // 무기 이미지 로드 및 표시
+            if (weaponImage != null && !string.IsNullOrEmpty(info.WeaponSpritePath))
+            {
+                Sprite weaponSprite = Resources.Load<Sprite>(info.WeaponSpritePath);
+                if (weaponSprite != null)
+                {
+                    weaponImage.sprite = weaponSprite;
+                    weaponImage.gameObject.SetActive(true);
+                    weaponImage.SetNativeSize();
+                    Debug.Log($"[EquipmentItemView] Loaded weapon sprite: {info.WeaponSpritePath}");
+                }
+                else
+                {
+                    Debug.LogWarning($"[EquipmentItemView] Failed to load weapon sprite: {info.WeaponSpritePath}");
+                    weaponImage.gameObject.SetActive(false);
+                }
+            }
+            else if (weaponImage != null)
+            {
+                weaponImage.gameObject.SetActive(false);
             }
 
             if (equippedIndicator != null)

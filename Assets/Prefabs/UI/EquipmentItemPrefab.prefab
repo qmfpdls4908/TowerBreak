@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee297185ca83754084f1adbb3e9e61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TowerBreak.UIFlow::TowerBreak.UIFlow.Lobby.EquipmentItemView
+  weaponImage: {fileID: 2486927453435046043}
   nameText: {fileID: 4330674111075387683}
   attackText: {fileID: 7325052082874993975}
   levelText: {fileID: 0}
@@ -129,7 +130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -353, y: -2}
+  m_AnchoredPosition: {x: -242, y: -2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6950500975935683736
@@ -266,7 +267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 178, y: -2}
+  m_AnchoredPosition: {x: -426, y: -2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1768958735982337161

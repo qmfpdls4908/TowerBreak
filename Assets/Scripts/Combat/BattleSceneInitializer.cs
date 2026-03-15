@@ -209,9 +209,15 @@ namespace TowerBreak.Combat
             var container = DIGlobalContext.EnsureContainer();
             var playerActionEventBus = new EventBus<PlayerActionEvent>();
             var playerDamagedEventBus = new EventBus<PlayerDamagedEvent>();
+            var enemyDeathEventBus = new EventBus<EnemyDeathEvent>();
             container.Register(playerActionEventBus);
             container.Register(playerDamagedEventBus);
+            container.Register(enemyDeathEventBus);
             Debug.Log("[Battle] EventBus instances registered to DI container");
+            
+            // EnemyDeathEvent 구독
+            enemyDeathEventBus.Subscribe(OnEnemyDeath);
+            Debug.Log("[Battle] Subscribed to EnemyDeathEvent");
             
             // 장착된 무기 정보 로드
             equippedWeapon = GetEquippedWeapon();
@@ -436,15 +442,7 @@ namespace TowerBreak.Combat
             // 적 압박 업데이트
             var result = battleLoopController.Update(Time.deltaTime);
             
-            if (result.DidAdvancePressure)
-            {
-                if (result.PressureResult.DefeatedWall)
-                {
-                    Debug.Log("[Battle] ☠️ WALL DEFEATED! Game Over.");
-                    wallDefeated = true;
-                    return;
-                }
-            }
+            // 벽 파괴 패배 조건 제거 - 플레이어 체력 0일 때만 패배
             
             // 플레이어 입력 처리
             HandlePlayerInput();
@@ -544,8 +542,13 @@ namespace TowerBreak.Combat
         private void OnAttackButtonClicked()
         {
             Debug.Log("[BattleSceneInitializer] Attack button clicked");
-            if (playerController == null) return;
+            if (playerController == null)
+            {
+                Debug.LogError("[BattleSceneInitializer] playerController is null!");
+                return;
+            }
             
+            Debug.Log($"[BattleSceneInitializer] CanAttack: {playerController.CanAttack}, IsActionInProgress: {playerController.IsActionInProgress}, IsStunned: {playerController.IsStunned}");
             playerController.PerformAction(PlayerActionType.Attack);
         }
         
@@ -576,15 +579,20 @@ namespace TowerBreak.Combat
         
         private void ResumeAllMonsters()
         {
+            // 파괴된 적 제거
+            spawnedEnemies.RemoveAll(enemy => enemy == null);
+            
             foreach (var enemy in spawnedEnemies)
             {
+                if (enemy == null) continue;
+                
                 var controller = enemy.GetComponent<EnemyController>();
                 if (controller != null)
                 {
-                    controller.StopPushing();
+                    controller.ResumeMoving();
                 }
             }
-            Debug.Log("[BattleSceneInitializer] All monsters resumed");
+            Debug.Log($"[BattleSceneInitializer] All monsters resumed ({spawnedEnemies.Count} active)");
         }
         
         private void UpdateUIButtonStates()
@@ -1246,6 +1254,31 @@ namespace TowerBreak.Combat
             enemy.AddComponent<EnemyController>();
             
             return enemy;
+        }
+        
+        private void OnEnemyDeath(EnemyDeathEvent evt)
+        {
+            Debug.Log($"[Battle] Enemy {evt.EnemyId} died on floor {evt.FloorNumber}");
+            
+            // spawnedEnemies 리스트에서 특정 적 제거
+            if (evt.EnemyObject != null)
+            {
+                spawnedEnemies.Remove(evt.EnemyObject);
+                Debug.Log($"[Battle] Removed enemy {evt.EnemyId} from spawnedEnemies list");
+            }
+            
+            // null인 객체들도 정리
+            spawnedEnemies.RemoveAll(enemy => enemy == null);
+            
+            Debug.Log($"[Battle] Remaining spawned enemies: {spawnedEnemies.Count}");
+            
+            // 즉시 승리 체크
+            if (spawnedEnemies.Count == 0 && !victoryHandled)
+            {
+                Debug.Log("[Battle] All enemies defeated! Triggering victory...");
+                victoryHandled = true;
+                HandleFloorClear();
+            }
         }
     }
 }

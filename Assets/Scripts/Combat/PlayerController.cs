@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using TowerBreak.GameData.TowerBreaker;
 
@@ -178,8 +179,15 @@ namespace TowerBreak.Combat
                 Debug.Log("[Player] block animation triggered");
             }
             
-            // 모든 적을 뒤로 밀어내고, 나도 뒤로 빠짐
-            PushBackAllEnemiesAndRetreat();
+            // 가까이 있을 때만 밀어내기 (Lerp 보간)
+            if (touchingEnemies.Count > 0)
+            {
+                PushBackAllEnemiesAndRetreat();
+            }
+            else
+            {
+                Debug.Log("[Player] No enemies nearby to push!");
+            }
             
             // 가드 시 스턴 해제
             if (IsStunned)
@@ -188,26 +196,55 @@ namespace TowerBreak.Combat
             }
         }
         
+        [Header("Guard Push")]
+        [SerializeField] private float guardPushDuration = 0.2f;
+        [SerializeField] private float enemyPushDistance = 2f;
+        [SerializeField] private float playerRetreatDistance = 1f;
+        
         /// <summary>
-        /// 방어: 모든 적을 뒤로(오른쪽) 밀어내고, 플레이어도 뒤로(왼쪽) 빠짐
+        /// 방어: 모든 적을 뒤로(오른쪽) Lerp 이동, 플레이어도 뒤로(왼쪽) Lerp 이동
         /// </summary>
         private void PushBackAllEnemiesAndRetreat()
         {
-            float enemyPushDistance = 2f;
-            float playerRetreatDistance = 1f;
-            
-            // 씬의 모든 적을 밀어냄
+            // 모든 적을 Lerp로 밀어냄
             EnemyController[] allEnemies = FindObjectsOfType<EnemyController>();
             foreach (var enemy in allEnemies)
             {
                 if (enemy == null) continue;
-                enemy.transform.Translate(Vector3.right * enemyPushDistance);
+                Vector3 targetPos = enemy.transform.position + Vector3.right * enemyPushDistance;
+                StartCoroutine(LerpMove(enemy.transform, targetPos, guardPushDuration));
             }
-            Debug.Log($"[Player] Guard pushed back {allEnemies.Length} enemies by {enemyPushDistance} units!");
+            Debug.Log($"[Player] Guard pushing {allEnemies.Length} enemies with Lerp!");
             
-            // 플레이어도 뒤로(왼쪽) 빠짐
-            transform.position += new Vector3(-playerRetreatDistance, 0f, 0f);
-            Debug.Log($"[Player] Player retreated {playerRetreatDistance} units!");
+            // 플레이어도 Lerp로 뒤로 빠짐
+            Vector3 playerTarget = transform.position + Vector3.left * playerRetreatDistance;
+            StartCoroutine(LerpMove(transform, playerTarget, guardPushDuration));
+            Debug.Log($"[Player] Player retreating with Lerp!");
+        }
+        
+        /// <summary>
+        /// Lerp 보간으로 부드럽게 이동
+        /// </summary>
+        private IEnumerator LerpMove(Transform target, Vector3 destination, float duration)
+        {
+            Vector3 startPos = target.position;
+            float elapsed = 0f;
+            
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.SmoothStep(0f, 1f, elapsed / duration);
+                if (target != null)
+                {
+                    target.position = Vector3.Lerp(startPos, destination, t);
+                }
+                yield return null;
+            }
+            
+            if (target != null)
+            {
+                target.position = destination;
+            }
         }
         
         /// <summary>

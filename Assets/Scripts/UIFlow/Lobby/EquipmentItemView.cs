@@ -15,7 +15,6 @@ namespace TowerBreak.UIFlow.Lobby
         [SerializeField] private Button enhanceButton;
         [SerializeField] private TextMeshProUGUI enhanceCostText;
         [SerializeField] private GameObject equippedIndicator;
-        [SerializeField] private Image weaponImage;
 
         private int instanceId;
         private System.Action<int> onEquipCallback;
@@ -32,11 +31,12 @@ namespace TowerBreak.UIFlow.Lobby
             if (weaponImage != null && info.WeaponIcon != null)
             {
                 weaponImage.sprite = info.WeaponIcon;
-                weaponImage.enabled = true;
+                weaponImage.gameObject.SetActive(true);
+                weaponImage.SetNativeSize();
             }
             else if (weaponImage != null)
             {
-                weaponImage.enabled = false;
+                weaponImage.gameObject.SetActive(false);
             }
 
             if (nameText != null)
@@ -57,28 +57,6 @@ namespace TowerBreak.UIFlow.Lobby
             if (levelText != null)
             {
                 levelText.text = $"Lv.{info.EnhancementLevel}";
-            }
-
-            // 무기 이미지 로드 및 표시
-            if (weaponImage != null && !string.IsNullOrEmpty(info.WeaponSpritePath))
-            {
-                Sprite weaponSprite = Resources.Load<Sprite>(info.WeaponSpritePath);
-                if (weaponSprite != null)
-                {
-                    weaponImage.sprite = weaponSprite;
-                    weaponImage.gameObject.SetActive(true);
-                    weaponImage.SetNativeSize();
-                    Debug.Log($"[EquipmentItemView] Loaded weapon sprite: {info.WeaponSpritePath}");
-                }
-                else
-                {
-                    Debug.LogWarning($"[EquipmentItemView] Failed to load weapon sprite: {info.WeaponSpritePath}");
-                    weaponImage.gameObject.SetActive(false);
-                }
-            }
-            else if (weaponImage != null)
-            {
-                weaponImage.gameObject.SetActive(false);
             }
 
             if (equippedIndicator != null)

@@ -162,18 +162,6 @@ namespace TowerBreak.UIFlow.Lobby
                 WeaponIcon = icon
             };
         }
-
-        private string GetWeaponSpritePath(WeaponArchetype archetype)
-        {
-            switch (archetype)
-            {
-                case WeaponArchetype.Claw:
-                    return "Sprites/Player/claw_player";
-                case WeaponArchetype.Lance:
-                    return "Sprites/Player/lance_player";
-                default:
-                    return null;
-            }
-        }
     }
 }
+

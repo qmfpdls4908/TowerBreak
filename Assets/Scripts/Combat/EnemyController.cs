@@ -374,6 +374,14 @@ namespace TowerBreak.Combat
             GameObject player = GameObject.FindWithTag("Player");
             if (player != null)
             {
+                // 플레이어가 가드 중이면 밀지 않음 (몬스터만 이동)
+                var playerCtrl = player.GetComponent<PlayerController>();
+                if (playerCtrl != null && playerCtrl.CurrentAction == PlayerActionType.Guard)
+                {
+                    // 가드 중: 몬스터는 제자리, 플레이어를 밀지 않음
+                    return;
+                }
+                
                 // 플레이어를 밀기 전에 몬스터 이동
                 transform.Translate(Vector3.left * moveDistance);
 

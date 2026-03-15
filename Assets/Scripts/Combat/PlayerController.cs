@@ -156,6 +156,13 @@ namespace TowerBreak.Combat
             actionTimer = actionDuration;
             Debug.Log("[Player] Guard!");
             
+            // 방어 애니메이션
+            if (animator != null)
+            {
+                animator.SetTrigger("Block");
+                Debug.Log("[Player] Block animation triggered");
+            }
+            
             // 가드 시 스턴 해제
             if (IsStunned)
             {
@@ -171,6 +178,13 @@ namespace TowerBreak.Combat
         {
             CurrentAction = PlayerActionType.Dash;
             actionTimer = dashDuration;
+            
+            // 이동 애니메이션
+            if (animator != null)
+            {
+                animator.SetTrigger("Run");
+                Debug.Log("[Player] Run animation triggered");
+            }
             
             float moveDistance = dashDistance;
             float playerX = transform.position.x;

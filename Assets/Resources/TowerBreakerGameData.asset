@@ -50,6 +50,42 @@ MonoBehaviour:
     SpawnOrder: 1
     SpawnTime: 0
     Quantity: 10
+  - FloorId: 2
+    WaveIndex: 1
+    EnemyId: 102
+    SpawnOrder: 1
+    SpawnTime: 0
+    Quantity: 6
+  - FloorId: 3
+    WaveIndex: 1
+    EnemyId: 101
+    SpawnOrder: 1
+    SpawnTime: 0
+    Quantity: 3
+  - FloorId: 3
+    WaveIndex: 1
+    EnemyId: 102
+    SpawnOrder: 1
+    SpawnTime: 0
+    Quantity: 3
+  - FloorId: 4
+    WaveIndex: 1
+    EnemyId: 103
+    SpawnOrder: 1
+    SpawnTime: 0
+    Quantity: 2
+  - FloorId: 4
+    WaveIndex: 1
+    EnemyId: 102
+    SpawnOrder: 1
+    SpawnTime: 0
+    Quantity: 4
+  - FloorId: 4
+    WaveIndex: 1
+    EnemyId: 101
+    SpawnOrder: 1
+    SpawnTime: 0
+    Quantity: 4
   Enemies:
   - Id: 101
     Archetype: 0
@@ -69,7 +105,7 @@ MonoBehaviour:
     Archetype: 1
     Health: 67
     Pressure: 8
-    MoveSpeed: 0.2
+    MoveSpeed: 0.5
     AttackCadence: 2
     IsArmored: 1
     PrefabKey: enemy/armored_pusher
@@ -83,7 +119,7 @@ MonoBehaviour:
     Archetype: 3
     Health: 25
     Pressure: 6
-    MoveSpeed: 1.3
+    MoveSpeed: 0.5
     AttackCadence: 3
     IsArmored: 0
     PrefabKey: enemy/bomber

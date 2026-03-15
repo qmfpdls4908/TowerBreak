@@ -6,6 +6,7 @@ namespace TowerBreak.Combat
 {
     public sealed class PlayerController : MonoBehaviour, IPlayerActionHandler
     {
+        [SerializeField] private Animator animator;
         [SerializeField] private float actionDuration = 0.3f;
         [SerializeField] private float dashDuration = 0.15f;
         [SerializeField] private float dashDistance = 2f;
@@ -52,12 +53,18 @@ namespace TowerBreak.Combat
         
         public void PerformAction(PlayerActionType actionType)
         {
+            Debug.Log($"[PlayerController] PerformAction called: {actionType}, CanPerform: {CanPerformAction(actionType)}");
+            
             if (!CanPerformAction(actionType))
+            {
+                Debug.Log($"[PlayerController] Cannot perform action: {actionType}");
                 return;
+            }
             
             switch (actionType)
             {
                 case PlayerActionType.Attack:
+                    Debug.Log("[PlayerController] Performing Attack");
                     PerformAttack();
                     break;
                 case PlayerActionType.Guard:
@@ -90,11 +97,19 @@ namespace TowerBreak.Combat
             actionTimer = actionDuration;
             Debug.Log("[Player] Attack!");
             
+            // 애니메이션 트리거 실행
+            if (animator != null)
+            {
+                animator.SetTrigger("Attack");
+                Debug.Log("[Player] Attack animation triggered");
+            }
+            else
+            {
+                Debug.LogError("[Player] Animator is null! Cannot play attack animation.");
+            }
+            
             // 충돌 중인 몬스터에게 데미지
             AttackTouchingEnemies();
-            
-            // TODO: 애니메이션 트리거 호출
-            // GetComponent<Animator>()?.SetTrigger("Attack");
         }
         
         private void AttackTouchingEnemies()

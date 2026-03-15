@@ -208,6 +208,12 @@ namespace TowerBreak.Combat
             isStopped = true;
             Debug.Log("[EnemyController] Stopped by CombatManager");
         }
+        
+        public void ResumeMoving()
+        {
+            isStopped = false;
+            Debug.Log("[EnemyController] Resumed moving");
+        }
 
         public void TakeDamage(int damage)
         {
@@ -281,6 +287,15 @@ namespace TowerBreak.Combat
 
         private void Die()
         {
+            // 이벤트 발행 - 자신의 GameObject 참조 포함
+            var eventBus = DI.DIContainer.ResolveFromRegistered<EventBus<EnemyDeathEvent>>();
+            if (eventBus != null)
+            {
+                var deathEvent = new EnemyDeathEvent(EnemyId, 1, gameObject);
+                eventBus.Publish(deathEvent);
+                Debug.Log($"[EnemyController] Published death event for Enemy {EnemyId}");
+            }
+            
             CreateFragments();
             Destroy(gameObject);
         }

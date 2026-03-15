@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee297185ca83754084f1adbb3e9e61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TowerBreak.UIFlow::TowerBreak.UIFlow.Lobby.EquipmentItemView
+  weaponImage: {fileID: 2486927453435046043}
   nameText: {fileID: 4330674111075387683}
   attackText: {fileID: 7325052082874993975}
   levelText: {fileID: 0}

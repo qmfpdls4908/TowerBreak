@@ -19,7 +19,6 @@ namespace TowerBreak.Combat
         private Dictionary<SpriteRenderer, Color> originalColors = new Dictionary<SpriteRenderer, Color>();
         private bool isTouchingPlayer = false;
         private bool isStopped = false;
-        private EventBus<PlayerActionEvent> playerActionEventBus;
 
         public int EnemyId { get; private set; }
         public int CurrentHealth => currentHealth;
@@ -125,15 +124,6 @@ namespace TowerBreak.Combat
 
         private void Start()
         {
-            // EventBus 인스턴스를 DI에서 가져오기
-            playerActionEventBus = DIContainer.ResolveFromRegistered<EventBus<PlayerActionEvent>>();
-            
-            if (playerActionEventBus != null)
-            {
-                // 가드 이벤트 구독
-                playerActionEventBus.Subscribe(OnPlayerAction);
-            }
-
             // CombatManager Singleton 확인
             if (CombatManager.Instance == null)
             {
@@ -141,35 +131,6 @@ namespace TowerBreak.Combat
                 GameObject combatManagerGO = new GameObject("CombatManager");
                 combatManagerGO.AddComponent<CombatManager>();
             }
-        }
-
-        private void OnDestroy()
-        {
-            // 가드 이벤트 구독 취소
-            if (playerActionEventBus != null)
-            {
-                playerActionEventBus.Unsubscribe(OnPlayerAction);
-            }
-        }
-
-        private void OnPlayerAction(PlayerActionEvent evt)
-        {
-            // 플레이어가 가드를 사용하고, 몬스터가 플레이어와 닿아있을 때 밀림
-            if (isTouchingPlayer)
-            {
-                PushBack();
-            }
-        }
-
-        private void PushBack()
-        {
-            if (enemyData == null) return;
-            
-            // 오른쪽으로 밀림
-            float pushDistance = enemyData.PushBackDistance;
-            transform.Translate(Vector3.right * pushDistance);
-            
-            Debug.Log($"[EnemyController] Pushed back by {pushDistance}");
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

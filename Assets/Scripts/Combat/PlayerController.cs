@@ -21,11 +21,13 @@ namespace TowerBreak.Combat
         
         [Header("Movement Boundary")]
         [SerializeField] private float minXPosition = -8f;  // 뒤로 밀릴 수 있는 최소 X 위치
+        [SerializeField] private float maxXPosition = 8f;   // 적이 밀릴 수 있는 최대 X 위치 (오른쪽 벽)
         
         private float actionTimer = 0f;
         private WeaponRow currentWeapon;
         private List<EnemyController> touchingEnemies = new List<EnemyController>();
         private bool isAttackHeld = false;  // 공격 버튼 누르고 있는지
+        private float spawnX;  // 스폰 위치 기준 X (대시 최대 거리 계산용)
         
         public PlayerActionType CurrentAction { get; private set; } = PlayerActionType.None;
         public bool IsActionInProgress => CurrentAction != PlayerActionType.None;
@@ -34,6 +36,11 @@ namespace TowerBreak.Combat
         public IReadOnlyList<EnemyController> TouchingEnemies => touchingEnemies;
         public bool IsTouchingEnemy => touchingEnemies.Count > 0;
         
+        private void Start()
+        {
+            spawnX = transform.position.x;
+        }
+
         private void Update()
         {
             if (actionTimer > 0)
@@ -225,15 +232,24 @@ namespace TowerBreak.Combat
             foreach (var enemy in allEnemies)
             {
                 if (enemy == null) continue;
-                Vector3 targetPos = enemy.transform.position + Vector3.right * enemyPushDistance;
+                float rawTargetX = enemy.transform.position.x + enemyPushDistance;
+                float clampedTargetX = Mathf.Min(rawTargetX, maxXPosition);
+                Vector3 targetPos = new Vector3(clampedTargetX, enemy.transform.position.y, enemy.transform.position.z);
                 StartCoroutine(LerpMove(enemy.transform, targetPos, guardPushDuration));
             }
             Debug.Log($"[Player] Guard pushing {allEnemies.Length} enemies with Lerp!");
             
-            // 플레이어도 Lerp로 뒤로 빠짐
-            Vector3 playerTarget = transform.position + Vector3.left * playerRetreatDistance;
-            StartCoroutine(LerpMove(transform, playerTarget, guardPushDuration));
-            Debug.Log($"[Player] Player retreating with Lerp!");
+            // 벽에 붙어 있으면 뒤로 빠지지 않음
+            if (!IsTouchingWall)
+            {
+                Vector3 playerTarget = transform.position + Vector3.left * playerRetreatDistance;
+                StartCoroutine(LerpMove(transform, playerTarget, guardPushDuration));
+                Debug.Log($"[Player] Player retreating with Lerp!");
+            }
+            else
+            {
+                Debug.Log("[Player] Guard retreat skipped - player is touching wall!");
+            }
         }
         
         /// <summary>
@@ -277,8 +293,10 @@ namespace TowerBreak.Combat
                 Debug.Log("[Player] run animation triggered");
             }
             
-            float moveDistance = dashDistance;
             float playerX = transform.position.x;
+            // 스폰 위치 기준 최대 도달 X를 넘을 수 없음
+            float dashLimitX = spawnX + dashDistance;
+            float moveDistance = Mathf.Max(0f, dashLimitX - playerX);
             
             // 플레이어 콜라이더 크기 (정지 거리 계산용)
             Collider2D playerCollider = GetComponent<Collider2D>();
@@ -312,13 +330,13 @@ namespace TowerBreak.Combat
             {
                 // 적의 왼쪽 가장자리 - 플레이어 오른쪽 가장자리 = 이동 가능 거리
                 float maxAllowedDistance = (closestEnemyX - closestEnemyHalfWidth) - (playerX + playerHalfWidth) - 0.05f;
-                
+
                 if (maxAllowedDistance <= 0)
                 {
                     Debug.Log("[Player] Cannot advance - monster blocking the way!");
                     return;
                 }
-                
+
                 // 이동 거리는 dashDistance와 몬스터까지 거리 중 작은 값
                 float actualMove = Mathf.Min(moveDistance, maxAllowedDistance);
                 transform.position += new Vector3(actualMove, 0f, 0f);
@@ -329,6 +347,13 @@ namespace TowerBreak.Combat
                 // 앞에 적이 없으면 풀 거리 이동
                 transform.position += new Vector3(moveDistance, 0f, 0f);
                 Debug.Log($"[Player] Advanced {moveDistance} units forward!");
+            }
+
+            // 대시 최대 위치 제한
+            if (transform.position.x > maxXPosition)
+            {
+                transform.position = new Vector3(maxXPosition, transform.position.y, transform.position.z);
+                Debug.Log($"[Player] Dash clamped to maxXPosition: {maxXPosition}");
             }
             
             // 전진 시 스턴 해제

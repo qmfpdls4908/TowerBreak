@@ -118,11 +118,22 @@ namespace TowerBreak.UIFlow.Lobby
                 : currentAttack;
             bool canEnhance = nextCostRow != null && _wallet.Gold >= nextCost;
 
+            Sprite icon = null;
+            if (!string.IsNullOrEmpty(weapon.IconKey))
+            {
+                icon = Resources.Load<Sprite>(weapon.IconKey);
+                if (icon == null)
+                {
+                    Debug.LogWarning($"[EnhancementPresenter] Weapon icon not found for IconKey: {weapon.IconKey}");
+                }
+            }
+
             return new EnhancementDisplayInfo
             {
                 InstanceId = ownedEquipment.InstanceId,
                 WeaponId = ownedEquipment.WeaponId,
                 WeaponName = weapon.Archetype.ToString(),
+                WeaponIcon = icon,
                 CurrentLevel = currentLevel,
                 CurrentAttack = currentAttack,
                 NextLevel = currentLevel + 1,
@@ -139,6 +150,7 @@ namespace TowerBreak.UIFlow.Lobby
         public int InstanceId;
         public int WeaponId;
         public string WeaponName;
+        public Sprite WeaponIcon;
         public int CurrentLevel;
         public int CurrentAttack;
         public int NextLevel;

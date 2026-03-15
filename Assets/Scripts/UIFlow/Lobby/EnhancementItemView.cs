@@ -6,6 +6,7 @@ namespace TowerBreak.UIFlow.Lobby
 {
     public class EnhancementItemView : MonoBehaviour
     {
+        [SerializeField] private Image weaponImage;
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private TextMeshProUGUI levelText;
         [SerializeField] private TextMeshProUGUI currentAttackText;
@@ -21,6 +22,11 @@ namespace TowerBreak.UIFlow.Lobby
         {
             instanceId = info.InstanceId;
             onEnhanceCallback = onEnhance;
+
+            if (weaponImage != null && info.WeaponIcon != null)
+            {
+                weaponImage.sprite = info.WeaponIcon;
+            }
 
             if (nameText != null)
             {

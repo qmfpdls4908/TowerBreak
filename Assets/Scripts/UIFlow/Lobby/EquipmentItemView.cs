@@ -59,7 +59,7 @@ namespace TowerBreak.UIFlow.Lobby
             {
                 weaponImage.sprite = info.WeaponIcon;
                 weaponImage.gameObject.SetActive(true);
-                weaponImage.SetNativeSize();
+                weaponImage.rectTransform.sizeDelta = new Vector2(121f, 65f);
             }
             else if (weaponImage != null)
             {

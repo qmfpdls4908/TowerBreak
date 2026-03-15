@@ -19,6 +19,9 @@ namespace TowerBreak.Combat
         [SerializeField] private float shakeIntensity = 0.2f;
         [SerializeField] private float shakeDuration = 0.15f;
         
+        [Header("Movement Boundary")]
+        [SerializeField] private float minXPosition = -8f;  // 뒤로 밀릴 수 있는 최소 X 위치
+        
         private float actionTimer = 0f;
         private WeaponRow currentWeapon;
         private List<EnemyController> touchingEnemies = new List<EnemyController>();
@@ -46,6 +49,17 @@ namespace TowerBreak.Combat
             if (isAttackHeld && !IsActionInProgress && !IsStunned)
             {
                 PerformAction(PlayerActionType.Attack);
+            }
+            
+            // 플레이어 위치 제한 (뒤로 떨어지지 않도록)
+            ClampPosition();
+        }
+        
+        private void ClampPosition()
+        {
+            if (transform.position.x < minXPosition)
+            {
+                transform.position = new Vector3(minXPosition, transform.position.y, transform.position.z);
             }
         }
         

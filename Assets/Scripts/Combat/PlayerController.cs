@@ -165,57 +165,68 @@ namespace TowerBreak.Combat
         
         /// <summary>
         /// 신발 버튼: 앞으로 전진 (몬스터를 뚫고 지나갈 수 없음)
-        /// Raycast로 앞에 몬스터가 있는지 확인 후 이동
+        /// 씬의 모든 적을 확인하여 앞에 있는 가장 가까운 적 앞에서 멈춤
         /// </summary>
         private void PerformAdvance()
         {
             CurrentAction = PlayerActionType.Dash;
             actionTimer = dashDuration;
             
-            // 앞(오른쪽)으로 Raycast를 쏴서 몬스터/장애물 체크
             float moveDistance = dashDistance;
+            float playerX = transform.position.x;
             
-            // BoxCast로 플레이어 크기만큼 앞을 체크
+            // 플레이어 콜라이더 크기 (정지 거리 계산용)
             Collider2D playerCollider = GetComponent<Collider2D>();
-            Vector2 castSize = playerCollider != null 
-                ? playerCollider.bounds.size 
-                : new Vector2(0.5f, 0.5f);
+            float playerHalfWidth = playerCollider != null 
+                ? playerCollider.bounds.extents.x 
+                : 0.25f;
             
-            RaycastHit2D hit = Physics2D.BoxCast(
-                transform.position,
-                castSize * 0.9f,  // 약간 작게 해서 오차 방지
-                0f,
-                Vector2.right,
-                moveDistance,
-                LayerMask.GetMask("Default")  // 몬스터/벽 레이어
-            );
+            // 씬의 모든 적 중 플레이어 앞(오른쪽)에 있는 가장 가까운 적 찾기
+            EnemyController[] allEnemies = FindObjectsOfType<EnemyController>();
+            float closestEnemyX = float.MaxValue;
+            float closestEnemyHalfWidth = 0f;
+            bool foundEnemy = false;
             
-            if (hit.collider != null)
+            foreach (var enemy in allEnemies)
             {
-                // 몬스터나 장애물이 있으면 그 바로 앞에서 멈춤
-                EnemyController enemy = hit.collider.GetComponent<EnemyController>();
-                if (enemy != null)
+                if (enemy == null) continue;
+                
+                float enemyX = enemy.transform.position.x;
+                
+                // 플레이어보다 오른쪽에 있는 적만 체크
+                if (enemyX > playerX && enemyX < closestEnemyX)
                 {
-                    // 몬스터 앞까지만 이동 (약간의 여유 거리)
-                    float safeDistance = hit.distance - 0.1f;
-                    if (safeDistance > 0)
-                    {
-                        transform.position += new Vector3(safeDistance, 0f, 0f);
-                        Debug.Log($"[Player] Advanced {safeDistance:F2} units (blocked by monster)");
-                    }
-                    else
-                    {
-                        Debug.Log("[Player] Cannot advance - monster too close!");
-                    }
-                    return;
+                    closestEnemyX = enemyX;
+                    Collider2D enemyCol = enemy.GetComponent<Collider2D>();
+                    closestEnemyHalfWidth = enemyCol != null ? enemyCol.bounds.extents.x : 0.25f;
+                    foundEnemy = true;
                 }
             }
             
-            // 앞에 아무것도 없으면 풀 거리 이동
-            transform.position += new Vector3(moveDistance, 0f, 0f);
-            Debug.Log($"[Player] Advanced {moveDistance} units forward!");
+            if (foundEnemy)
+            {
+                // 적의 왼쪽 가장자리 - 플레이어 오른쪽 가장자리 = 이동 가능 거리
+                float maxAllowedDistance = (closestEnemyX - closestEnemyHalfWidth) - (playerX + playerHalfWidth) - 0.05f;
+                
+                if (maxAllowedDistance <= 0)
+                {
+                    Debug.Log("[Player] Cannot advance - monster blocking the way!");
+                    return;
+                }
+                
+                // 이동 거리는 dashDistance와 몬스터까지 거리 중 작은 값
+                float actualMove = Mathf.Min(moveDistance, maxAllowedDistance);
+                transform.position += new Vector3(actualMove, 0f, 0f);
+                Debug.Log($"[Player] Advanced {actualMove:F2} units (blocked by monster at x={closestEnemyX:F2})");
+            }
+            else
+            {
+                // 앞에 적이 없으면 풀 거리 이동
+                transform.position += new Vector3(moveDistance, 0f, 0f);
+                Debug.Log($"[Player] Advanced {moveDistance} units forward!");
+            }
             
-            // 대시 시 스턴 해제
+            // 전진 시 스턴 해제
             if (IsStunned)
             {
                 RecoverFromStun();

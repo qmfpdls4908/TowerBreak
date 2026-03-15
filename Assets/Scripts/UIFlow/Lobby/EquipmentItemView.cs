@@ -15,10 +15,37 @@ namespace TowerBreak.UIFlow.Lobby
         [SerializeField] private Button enhanceButton;
         [SerializeField] private TextMeshProUGUI enhanceCostText;
         [SerializeField] private GameObject equippedIndicator;
+        [SerializeField] private GameObject isEquipBadge;
 
         private int instanceId;
         private System.Action<int> onEquipCallback;
         private System.Action<int> onEnhanceCallback;
+
+        private void Awake()
+        {
+            if (equippedIndicator == null)
+            {
+                return;
+            }
+
+            if (weaponImage == null)
+            {
+                Transform found = equippedIndicator.transform.Find("WeaponImage");
+                if (found != null)
+                {
+                    weaponImage = found.GetComponent<Image>();
+                }
+            }
+
+            if (isEquipBadge == null)
+            {
+                Transform found = equippedIndicator.transform.Find("IsEquip");
+                if (found != null)
+                {
+                    isEquipBadge = found.gameObject;
+                }
+            }
+        }
 
         public void Setup(EquipmentDisplayInfo info, bool isEquipped, System.Action<int> onEquip, System.Action<int> onEnhance)
         {
@@ -59,9 +86,9 @@ namespace TowerBreak.UIFlow.Lobby
                 levelText.text = $"Lv.{info.EnhancementLevel}";
             }
 
-            if (equippedIndicator != null)
+            if (isEquipBadge != null)
             {
-                equippedIndicator.SetActive(isEquipped);
+                isEquipBadge.SetActive(isEquipped);
             }
 
             if (equipButton != null)

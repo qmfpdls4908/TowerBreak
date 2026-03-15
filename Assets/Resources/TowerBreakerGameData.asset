@@ -165,7 +165,7 @@ MonoBehaviour:
     AttackSpeed: 1.2
     PushPower: 1
     RerollGroupId: 1
-    IconKey: icon/weapon/claw
+    IconKey: Sprites/Player/claw_player
     AttackVfxKey: vfx/weapon/claw/attack
     HitSfxKey: sfx/weapon/claw/hit
     EquipSfxKey: sfx/weapon/claw/equip
@@ -176,7 +176,7 @@ MonoBehaviour:
     AttackSpeed: 0.9
     PushPower: 1.8
     RerollGroupId: 2
-    IconKey: icon/weapon/lance
+    IconKey: Sprites/Player/lance_player
     AttackVfxKey: vfx/weapon/lance/attack
     HitSfxKey: sfx/weapon/lance/hit
     EquipSfxKey: sfx/weapon/lance/equip
@@ -228,7 +228,7 @@ MonoBehaviour:
     Weight: 1
     QuantityMin: 1
     QuantityMax: 1
-    IconKey: icon/weapon/claw
+    IconKey: Sprites/Player/claw_player
   - RewardTableId: 1001
     RewardId: 4002
     RewardType: 1
@@ -236,7 +236,7 @@ MonoBehaviour:
     Weight: 1
     QuantityMin: 1
     QuantityMax: 1
-    IconKey: icon/weapon/lance
+    IconKey: Sprites/Player/lance_player
   - RewardTableId: 1002
     RewardId: 4003
     RewardType: 1
@@ -244,7 +244,7 @@ MonoBehaviour:
     Weight: 1
     QuantityMin: 1
     QuantityMax: 1
-    IconKey: icon/weapon/claw
+    IconKey: Sprites/Player/claw_player
   - RewardTableId: 1002
     RewardId: 4004
     RewardType: 1
@@ -252,7 +252,7 @@ MonoBehaviour:
     Weight: 1
     QuantityMin: 1
     QuantityMax: 1
-    IconKey: icon/weapon/lance
+    IconKey: Sprites/Player/lance_player
   - RewardTableId: 1003
     RewardId: 4005
     RewardType: 1
@@ -260,7 +260,7 @@ MonoBehaviour:
     Weight: 1
     QuantityMin: 1
     QuantityMax: 1
-    IconKey: icon/weapon/claw
+    IconKey: Sprites/Player/claw_player
   - RewardTableId: 1003
     RewardId: 4006
     RewardType: 1
@@ -268,7 +268,7 @@ MonoBehaviour:
     Weight: 1
     QuantityMin: 1
     QuantityMax: 1
-    IconKey: icon/weapon/lance
+    IconKey: Sprites/Player/lance_player
   EnhancementCosts:
   - Level: 1
     GoldCost: 100

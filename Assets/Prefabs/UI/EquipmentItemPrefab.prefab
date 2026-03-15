@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee297185ca83754084f1adbb3e9e61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TowerBreak.UIFlow::TowerBreak.UIFlow.Lobby.EquipmentItemView
-  weaponImage: {fileID: 2486927453435046043}
+  weaponImage: {fileID: 7648719573572342351}
   nameText: {fileID: 4330674111075387683}
   attackText: {fileID: 7325052082874993975}
   levelText: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   enhanceButton: {fileID: 0}
   enhanceCostText: {fileID: 0}
   equippedIndicator: {fileID: 7302544613662974848}
-  weaponImage: {fileID: 0}
+  isEquipBadge: {fileID: 8390158195220102364}
 --- !u!1 &1426466181219061203
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 128.20001, y: -14.555024}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1768958735982337161
 CanvasRenderer:

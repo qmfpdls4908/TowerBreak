@@ -38,6 +38,7 @@ namespace TowerBreak.Combat
         private string rewardMessage = "";
         private bool isGameComplete = false;
         private bool isFloorClearPopupShown = false;
+        private BattleUIInstaller uiInstaller;
 
         private const float PressureTickInterval = 0.5f;
         private const float WallHitThreshold = 10f;
@@ -496,7 +497,7 @@ namespace TowerBreak.Combat
         private void InitializeBattleUI()
         {
             // BattleUIInstaller가 씬에 있는지 확인
-            var uiInstaller = FindFirstObjectByType<BattleUIInstaller>();
+            uiInstaller = FindFirstObjectByType<BattleUIInstaller>();
             if (uiInstaller == null)
             {
                 // Canvas 찾기
@@ -513,13 +514,66 @@ namespace TowerBreak.Combat
                 uiInstaller = installerObject.AddComponent<BattleUIInstaller>();
                 Debug.Log("[Battle] BattleUIInstaller created on Canvas");
             }
-            
-            // BattleUIInstaller에 PlayerController 전달하여 초기화
-            if (uiInstaller != null && playerController != null)
+            else
             {
-                uiInstaller.Initialize(playerController);
-                Debug.Log("[Battle] BattleUIInstaller initialized with PlayerController");
+                Debug.Log("[Battle] BattleUIInstaller found");
             }
+            
+            // 버튼 이벤트 연결
+            if (uiInstaller != null)
+            {
+                SetupUIButtonListeners();
+                Debug.Log("[Battle] UI button listeners set up");
+            }
+        }
+        
+        private void SetupUIButtonListeners()
+        {
+            if (uiInstaller.AttackButton != null)
+            {
+                uiInstaller.AttackButton.onClick.AddListener(OnAttackButtonClicked);
+            }
+            if (uiInstaller.GuardButton != null)
+            {
+                uiInstaller.GuardButton.onClick.AddListener(OnGuardButtonClicked);
+            }
+            if (uiInstaller.DashButton != null)
+            {
+                uiInstaller.DashButton.onClick.AddListener(OnDashButtonClicked);
+            }
+        }
+        
+        private void OnAttackButtonClicked()
+        {
+            Debug.Log("[BattleSceneInitializer] Attack button clicked");
+            if (playerController == null) return;
+            
+            // Space 키와 동일한 동작
+            playerController.PerformAction(PlayerActionType.Attack);
+            if (!isAttackInFlight)
+            {
+                int damage = GetCurrentAttackPower();
+                _ = HandleAttackAsync(damage);
+            }
+        }
+        
+        private void OnGuardButtonClicked()
+        {
+            Debug.Log("[BattleSceneInitializer] Guard button clicked");
+            if (playerController == null) return;
+            
+            // G 키와 동일한 동작
+            playerController.PerformAction(PlayerActionType.Guard);
+            HandleGuard();
+        }
+        
+        private void OnDashButtonClicked()
+        {
+            Debug.Log("[BattleSceneInitializer] Dash button clicked");
+            if (playerController == null) return;
+            
+            // Left Shift 키와 동일한 동작
+            playerController.PerformAction(PlayerActionType.Dash);
         }
         
         private async Task HandleAttackAsync(int damage)
@@ -928,13 +982,44 @@ namespace TowerBreak.Combat
         
         private int GetCurrentAttackPower()
         {
-            if (equippedWeapon != null)
+            if (equippedWeapon == null)
+            {
+                Debug.Log("[Battle] GetCurrentAttackPower: No equipped weapon, returning default 15");
+                return 15;
+            }
+
+            // 장착된 무기의 인스턴스 ID로 OwnedEquipment 찾기
+            if (inventoryState == null || !inventoryState.EquippedWeaponInstanceId.HasValue)
+            {
+                Debug.Log($"[Battle] GetCurrentAttackPower: No equipped instance ID, returning BaseAttack {equippedWeapon.BaseAttack}");
+                return equippedWeapon.BaseAttack;
+            }
+
+            if (!inventoryState.TryGetEquipment(inventoryState.EquippedWeaponInstanceId.Value, out var ownedEquipment))
+            {
+                Debug.Log($"[Battle] GetCurrentAttackPower: OwnedEquipment not found for ID {inventoryState.EquippedWeaponInstanceId.Value}, returning BaseAttack {equippedWeapon.BaseAttack}");
+                return equippedWeapon.BaseAttack;
+            }
+
+            // 강화 레벨에 따른 공격력 계산
+            int enhancementLevel = ownedEquipment.EnhancementLevel;
+            Debug.Log($"[Battle] GetCurrentAttackPower: Weapon={equippedWeapon.Archetype}, Level={enhancementLevel}, BaseAttack={equippedWeapon.BaseAttack}");
+            
+            if (enhancementLevel <= 0)
             {
                 return equippedWeapon.BaseAttack;
             }
-            
-            // 기본 데미지 (무기 미장착 시)
-            return 15;
+
+            // 레벨당 10씩 증가 (EquipmentEnhancementService와 동일한 계산)
+            int totalBonus = 0;
+            for (int level = 1; level <= enhancementLevel; level++)
+            {
+                totalBonus += 10 * level;
+            }
+
+            int finalAttack = equippedWeapon.BaseAttack + totalBonus;
+            Debug.Log($"[Battle] GetCurrentAttackPower: Final attack power={finalAttack} (Base={equippedWeapon.BaseAttack}, Bonus={totalBonus})");
+            return finalAttack;
         }
         
         private int GetNextInstanceId()

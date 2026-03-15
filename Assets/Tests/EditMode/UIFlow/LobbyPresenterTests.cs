@@ -38,21 +38,29 @@ namespace TowerBreak.UIFlow.Tests
         public void Constructor_NullRouter_ThrowsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(() =>
-                new LobbyPresenter(null, new FakeStateReader()));
+                new LobbyPresenter(null, new FakeStateReader(), new TowerBreak.Meta.State.PlayerWalletState(0)));
         }
 
         [Test]
         public void Constructor_NullStateReader_ThrowsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(() =>
-                new LobbyPresenter(new FakeRouter(), null));
+                new LobbyPresenter(new FakeRouter(), null, new TowerBreak.Meta.State.PlayerWalletState(0)));
+        }
+
+        [Test]
+        public void Constructor_NullWallet_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+                new LobbyPresenter(new FakeRouter(), new FakeStateReader(), null));
         }
 
         [Test]
         public void CurrentFloorId_ReturnsStateReaderValue()
         {
             var state = new FakeStateReader { FloorId = 3 };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
 
             Assert.That(presenter.CurrentFloorId, Is.EqualTo(3));
         }
@@ -61,7 +69,8 @@ namespace TowerBreak.UIFlow.Tests
         public void Gold_ReturnsStateReaderValue()
         {
             var state = new FakeStateReader { GoldAmount = 500 };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
 
             Assert.That(presenter.Gold, Is.EqualTo(500));
         }
@@ -70,7 +79,8 @@ namespace TowerBreak.UIFlow.Tests
         public void HasEquippedWeapon_WhenNoWeapon_ReturnsFalse()
         {
             var state = new FakeStateReader { WeaponId = null };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
 
             Assert.That(presenter.HasEquippedWeapon, Is.False);
         }
@@ -79,7 +89,8 @@ namespace TowerBreak.UIFlow.Tests
         public void HasEquippedWeapon_WhenWeaponEquipped_ReturnsTrue()
         {
             var state = new FakeStateReader { WeaponId = 7 };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
 
             Assert.That(presenter.HasEquippedWeapon, Is.True);
         }
@@ -88,7 +99,8 @@ namespace TowerBreak.UIFlow.Tests
         public void EquippedWeaponId_WhenNoWeapon_ReturnsNull()
         {
             var state = new FakeStateReader { WeaponId = null };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
 
             Assert.That(presenter.EquippedWeaponId, Is.Null);
         }
@@ -97,7 +109,8 @@ namespace TowerBreak.UIFlow.Tests
         public void EquippedWeaponId_WhenWeaponEquipped_ReturnsId()
         {
             var state = new FakeStateReader { WeaponId = 12 };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
 
             Assert.That(presenter.EquippedWeaponId, Is.EqualTo(12));
         }
@@ -106,7 +119,8 @@ namespace TowerBreak.UIFlow.Tests
         public void OnOpenChallenge_CallsRouterOpenChallenge()
         {
             var router = new FakeRouter();
-            var presenter = new LobbyPresenter(router, new FakeStateReader());
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(router, new FakeStateReader(), wallet);
 
             presenter.OnOpenChallenge();
 
@@ -117,7 +131,8 @@ namespace TowerBreak.UIFlow.Tests
         public void OnOpenChallenge_DoesNotCallOtherRouterMethods()
         {
             var router = new FakeRouter();
-            var presenter = new LobbyPresenter(router, new FakeStateReader());
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(router, new FakeStateReader(), wallet);
 
             presenter.OnOpenChallenge();
 
@@ -129,7 +144,8 @@ namespace TowerBreak.UIFlow.Tests
         public void OnOpenEquipment_CallsRouterOpenEquipment()
         {
             var router = new FakeRouter();
-            var presenter = new LobbyPresenter(router, new FakeStateReader());
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(router, new FakeStateReader(), wallet);
 
             presenter.OnOpenEquipment();
 
@@ -140,7 +156,8 @@ namespace TowerBreak.UIFlow.Tests
         public void OnOpenReroll_CallsRouterOpenReroll()
         {
             var router = new FakeRouter();
-            var presenter = new LobbyPresenter(router, new FakeStateReader());
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(router, new FakeStateReader(), wallet);
 
             presenter.OnOpenReroll();
 

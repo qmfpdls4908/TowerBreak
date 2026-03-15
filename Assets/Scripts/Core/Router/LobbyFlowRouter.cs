@@ -43,14 +43,14 @@ namespace TowerBreak.Core.Router
 
         public void OpenReroll()
         {
-            Debug.Log("[LobbyFlowRouter] Opening reroll screen");
-            // TODO: Reroll 화면 활성화
+            Debug.Log("[LobbyFlowRouter] Opening enhancement screen");
+            _lobbyInitializer?.CreateEnhancementUI();
         }
 
         public void CloseReroll()
         {
-            Debug.Log("[LobbyFlowRouter] Closing reroll screen");
-            // TODO: Reroll 화면 비활성화
+            Debug.Log("[LobbyFlowRouter] Closing enhancement screen");
+            _lobbyInitializer?.CloseEnhancementUI();
         }
     }
 }

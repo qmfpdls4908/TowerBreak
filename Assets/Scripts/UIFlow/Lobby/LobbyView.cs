@@ -35,9 +35,49 @@ namespace TowerBreak.UIFlow.Lobby
             isInitialized = true;
 
             SetupButtons();
+            SubscribeToGoldChanges();
             Refresh();
 
             Debug.Log("[LobbyView] Initialized");
+        }
+
+        private void SubscribeToGoldChanges()
+        {
+            if (presenter?.WalletState != null)
+            {
+                presenter.WalletState.OnGoldChanged += OnGoldChanged;
+                Debug.Log("[LobbyView] Subscribed to gold changes");
+            }
+        }
+
+        private void OnGoldChanged(int newGold)
+        {
+            Debug.Log($"[LobbyView] Gold changed to {newGold}, updating UI");
+            DisplayedGold = newGold;
+            UpdateUI();
+        }
+
+        private void OnDestroy()
+        {
+            if (challengeButton != null)
+            {
+                challengeButton.onClick.RemoveListener(OnChallengeClicked);
+            }
+
+            if (equipmentButton != null)
+            {
+                equipmentButton.onClick.RemoveListener(OnEquipmentClicked);
+            }
+
+            if (rerollButton != null)
+            {
+                rerollButton.onClick.RemoveListener(OnRerollClicked);
+            }
+
+            if (presenter?.WalletState != null)
+            {
+                presenter.WalletState.OnGoldChanged -= OnGoldChanged;
+            }
         }
 
         private void SetupButtons()
@@ -125,24 +165,6 @@ namespace TowerBreak.UIFlow.Lobby
             if (weaponIcon != null)
             {
                 weaponIcon.gameObject.SetActive(IsWeaponEquipped);
-            }
-        }
-
-        private void OnDestroy()
-        {
-            if (challengeButton != null)
-            {
-                challengeButton.onClick.RemoveListener(OnChallengeClicked);
-            }
-
-            if (equipmentButton != null)
-            {
-                equipmentButton.onClick.RemoveListener(OnEquipmentClicked);
-            }
-
-            if (rerollButton != null)
-            {
-                rerollButton.onClick.RemoveListener(OnRerollClicked);
             }
         }
     }

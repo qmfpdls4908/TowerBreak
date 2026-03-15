@@ -71,7 +71,7 @@ namespace TowerBreak.Core.Tests
             sessionState.StartNewRun();
             LobbyFlowRouter router = new LobbyFlowRouter(sceneLoader, sessionState);
             LobbyStateReader stateReader = new LobbyStateReader(sessionState);
-            LobbyPresenter presenter = new LobbyPresenter(router, stateReader);
+            LobbyPresenter presenter = new LobbyPresenter(router, stateReader, sessionState.Wallet);
 
             presenter.OnOpenChallenge();
 
@@ -117,7 +117,7 @@ namespace TowerBreak.Core.Tests
 
             LobbyFlowRouter router = new LobbyFlowRouter(sceneLoader, sessionState);
             LobbyStateReader stateReader = new LobbyStateReader(sessionState);
-            LobbyPresenter presenter = new LobbyPresenter(router, stateReader);
+            LobbyPresenter presenter = new LobbyPresenter(router, stateReader, sessionState.Wallet);
 
             Assert.That(presenter.CurrentFloorId, Is.EqualTo(3), "Presenter should show floor 3");
 

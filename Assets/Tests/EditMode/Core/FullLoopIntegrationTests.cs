@@ -243,7 +243,7 @@ namespace TowerBreak.Core.Tests
             titleRouter.StartNewGame();
 
             TitleScreenPresenter titlePresenter = new TitleScreenPresenter(titleRouter, titleStateReader);
-            LobbyPresenter lobbyPresenter = new LobbyPresenter(lobbyRouter, lobbyStateReader);
+            LobbyPresenter lobbyPresenter = new LobbyPresenter(lobbyRouter, lobbyStateReader, sessionState.Wallet);
             RewardResultsPresenter rewardPresenter = new RewardResultsPresenter(rewardStateReader, rewardRouter);
             GrowthScreenPresenter growthPresenter = new GrowthScreenPresenter(growthStateReader, growthRouter);
 

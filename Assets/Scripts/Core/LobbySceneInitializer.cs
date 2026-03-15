@@ -14,6 +14,7 @@ namespace TowerBreak.Core
         [Header("UI References")]
         [SerializeField] private LobbyView lobbyViewPrefab;
         [SerializeField] private EquipmentView equipmentViewPrefab;
+        [SerializeField] private EnhancementView enhancementViewPrefab;
         [SerializeField] private Transform uiParent;
 
         [Header("Settings")]
@@ -22,6 +23,7 @@ namespace TowerBreak.Core
         private const string CurrentFloorKey = "CurrentBattleFloor";
         private LobbyView lobbyView;
         private EquipmentView equipmentView;
+        private EnhancementView enhancementView;
         private LobbyPresenter lobbyPresenter;
 
         private void Start()
@@ -77,7 +79,7 @@ namespace TowerBreak.Core
                 var flowRouter = new LobbyFlowRouter(sceneLoader, sessionState, this);
 
                 // 프레젠터 생성
-                lobbyPresenter = new LobbyPresenter(flowRouter, stateReader);
+                lobbyPresenter = new LobbyPresenter(flowRouter, stateReader, sessionState.Wallet);
 
                 Debug.Log("[Lobby] MVP setup complete");
             }
@@ -167,6 +169,61 @@ namespace TowerBreak.Core
                 Destroy(equipmentView.gameObject);
                 equipmentView = null;
                 Debug.Log("[Lobby] Equipment UI closed");
+            }
+        }
+
+        public void CreateEnhancementUI()
+        {
+            if (enhancementViewPrefab == null)
+            {
+                Debug.LogError("[Lobby] EnhancementView prefab is not assigned!");
+                return;
+            }
+
+            Transform parent = uiParent ?? transform;
+            enhancementView = Instantiate(enhancementViewPrefab, parent);
+            enhancementView.name = "EnhancementUI";
+
+            try
+            {
+                var container = DIGlobalContext.EnsureContainer();
+                var sessionState = container.Resolve<PlayerSessionState>();
+                var gameData = Resources.Load<TowerBreakerGameData>("TowerBreakerGameData");
+                var sceneLoader = container.Resolve<ISceneLoader>();
+                var flowRouter = new LobbyFlowRouter(sceneLoader, sessionState, this);
+
+                Debug.Log($"[Lobby] Creating EnhancementPresenter with Inventory count: {sessionState.Inventory.Equipment.Count}, Gold: {sessionState.Wallet.Gold}");
+
+                var enhancementPresenter = new EnhancementPresenter(
+                    flowRouter,
+                    sessionState.Inventory,
+                    sessionState.Wallet,
+                    gameData
+                );
+
+                enhancementView.Initialize(enhancementPresenter);
+                Debug.Log("[Lobby] Enhancement UI created");
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"[Lobby] Failed to create Enhancement UI: {ex.Message}");
+            }
+        }
+
+        public void CloseEnhancementUI()
+        {
+            if (enhancementView != null)
+            {
+                Destroy(enhancementView.gameObject);
+                enhancementView = null;
+                Debug.Log("[Lobby] Enhancement UI closed");
+            }
+            
+            // LobbyView 새로고침 (골드 갱신)
+            if (lobbyView != null)
+            {
+                lobbyView.Refresh();
+                Debug.Log("[Lobby] LobbyView refreshed after enhancement");
             }
         }
 

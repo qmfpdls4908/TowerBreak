@@ -40,7 +40,8 @@ namespace TowerBreak.UIFlow.Tests
         public void Initialize_SetsDisplayedFloorId()
         {
             var state = new FakeStateReader { FloorId = 2 };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(1000);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
             var view = new LobbyView();
 
             view.Initialize(presenter);
@@ -52,7 +53,8 @@ namespace TowerBreak.UIFlow.Tests
         public void Initialize_SetsDisplayedGold()
         {
             var state = new FakeStateReader { GoldAmount = 250 };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(250);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
             var view = new LobbyView();
 
             view.Initialize(presenter);
@@ -64,7 +66,8 @@ namespace TowerBreak.UIFlow.Tests
         public void Initialize_WhenNoWeapon_SetsIsWeaponEquippedFalse()
         {
             var state = new FakeStateReader { WeaponId = null };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
             var view = new LobbyView();
 
             view.Initialize(presenter);
@@ -76,7 +79,8 @@ namespace TowerBreak.UIFlow.Tests
         public void Initialize_WhenWeaponEquipped_SetsIsWeaponEquippedTrue()
         {
             var state = new FakeStateReader { WeaponId = 5 };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(0);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
             var view = new LobbyView();
 
             view.Initialize(presenter);
@@ -88,7 +92,8 @@ namespace TowerBreak.UIFlow.Tests
         public void Refresh_UpdatesDisplayedValues()
         {
             var state = new FakeStateReader { FloorId = 1, GoldAmount = 100 };
-            var presenter = new LobbyPresenter(new FakeRouter(), state);
+            var wallet = new TowerBreak.Meta.State.PlayerWalletState(100);
+            var presenter = new LobbyPresenter(new FakeRouter(), state, wallet);
             var view = new LobbyView();
 
             view.Initialize(presenter);

@@ -287,7 +287,32 @@ MonoBehaviour:
     QuantityMin: 1
     QuantityMax: 1
     IconKey: icon/weapon/lance
-  EnhancementCosts: []
+  EnhancementCosts:
+  - Level: 1
+    GoldCost: 100
+    MaterialCost: 0
+    AttackBonus: 10
+    PressureBonus: 0
+  - Level: 2
+    GoldCost: 200
+    MaterialCost: 0
+    AttackBonus: 10
+    PressureBonus: 0
+  - Level: 3
+    GoldCost: 300
+    MaterialCost: 0
+    AttackBonus: 10
+    PressureBonus: 0
+  - Level: 4
+    GoldCost: 400
+    MaterialCost: 0
+    AttackBonus: 10
+    PressureBonus: 0
+  - Level: 5
+    GoldCost: 500
+    MaterialCost: 0
+    AttackBonus: 10
+    PressureBonus: 0
   RerollCosts:
   - Rarity: 0
     GoldCost: 10

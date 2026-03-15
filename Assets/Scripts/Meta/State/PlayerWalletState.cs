@@ -6,6 +6,8 @@ namespace TowerBreak.Meta.State
     {
         private int gold;
 
+        public event Action<int> OnGoldChanged;
+
         public PlayerWalletState(int initialGold = 0)
         {
             if (initialGold < 0)
@@ -26,6 +28,7 @@ namespace TowerBreak.Meta.State
             }
 
             gold += amount;
+            OnGoldChanged?.Invoke(gold);
         }
 
         public bool TryDeductGold(int amount)
@@ -41,6 +44,7 @@ namespace TowerBreak.Meta.State
             }
 
             gold -= amount;
+            OnGoldChanged?.Invoke(gold);
             return true;
         }
     }

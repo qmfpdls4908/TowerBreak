@@ -32,10 +32,10 @@ RectTransform:
   - {fileID: 1285696437467655989}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -910}
-  m_SizeDelta: {x: -980, y: 100}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 9.106, y: 50}
+  m_SizeDelta: {x: 941.86, y: 157.97}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &3847428100174021840
 MonoBehaviour:
@@ -51,7 +51,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: TowerBreak.UIFlow::TowerBreak.UIFlow.Lobby.EquipmentItemView
   nameText: {fileID: 4330674111075387683}
   attackText: {fileID: 7325052082874993975}
+  levelText: {fileID: 0}
   equipButton: {fileID: 7252102106898020656}
+  enhanceButton: {fileID: 0}
+  enhanceCostText: {fileID: 0}
   equippedIndicator: {fileID: 7302544613662974848}
 --- !u!1 &1426466181219061203
 GameObject:
@@ -89,7 +92,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 440.66144, y: -14.794403}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 981.3229, y: 129.5888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3922239070474387800

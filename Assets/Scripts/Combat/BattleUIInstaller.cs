@@ -9,44 +9,17 @@ namespace TowerBreak.Combat
         [SerializeField] private Button guardButton;
         [SerializeField] private Button dashButton;
         
-        private PlayerController playerController;
-        
-        private void Start()
+        private void Awake()
         {
-            // BattleSceneInitializer에서 Initialize()를 호출할 때까지 대기
-            Debug.Log("[BattleUIInstaller] Start called - waiting for Initialize()");
-        }
-        
-        public void Initialize(PlayerController controller)
-        {
-            if (controller == null)
-            {
-                Debug.LogError("[BattleUIInstaller] PlayerController is null!");
-                return;
-            }
-            
-            playerController = controller;
-            Debug.Log($"[BattleUIInstaller] PlayerController assigned: {playerController.gameObject.name}");
-            
             // 버튼 찾기 (직접 할당되지 않은 경우)
             FindButtonsIfNotAssigned();
             
-            // 버튼 검증 로그
-            Debug.Log($"[BattleUIInstaller] AttackButton: {(attackButton != null ? attackButton.name : "NULL")}");
-            Debug.Log($"[BattleUIInstaller] GuardButton: {(guardButton != null ? guardButton.name : "NULL")}");
-            Debug.Log($"[BattleUIInstaller] DashButton: {(dashButton != null ? dashButton.name : "NULL")}");
-            
-            // 버튼 이벤트 연결
-            SetupButtonListeners();
-            
-            Debug.Log("[BattleUIInstaller] Battle UI initialized successfully");
+            Debug.Log($"[BattleUIInstaller] Buttons found - Attack: {attackButton != null}, Guard: {guardButton != null}, Dash: {dashButton != null}");
         }
         
-        private void Update()
-        {
-            // 버튼 활성화 상태 업데이트
-            UpdateButtonStates();
-        }
+        public Button AttackButton => attackButton;
+        public Button GuardButton => guardButton;
+        public Button DashButton => dashButton;
         
         private void FindButtonsIfNotAssigned()
         {
@@ -69,96 +42,21 @@ namespace TowerBreak.Combat
             var canvas = FindFirstObjectByType<UnityEngine.Canvas>();
             if (canvas == null) return null;
             
+            // 직접적인 자식에서 찾기
             var button = canvas.transform.Find(buttonName)?.GetComponent<Button>();
-            if (button == null)
+            if (button != null) return button;
+            
+            // 모든 자식에서 검색
+            foreach (Transform child in canvas.transform.GetComponentsInChildren<Transform>(true))
             {
-                // 자식 오브젝트에서 검색
-                foreach (Transform child in canvas.transform)
+                if (child.name == buttonName)
                 {
-                    if (child.name == buttonName)
-                    {
-                        button = child.GetComponent<Button>();
-                        if (button != null) break;
-                    }
+                    button = child.GetComponent<Button>();
+                    if (button != null) return button;
                 }
             }
-            return button;
-        }
-        
-        private void SetupButtonListeners()
-        {
-            if (attackButton != null)
-            {
-                attackButton.onClick.AddListener(OnAttackClicked);
-            }
-            if (guardButton != null)
-            {
-                guardButton.onClick.AddListener(OnGuardClicked);
-            }
-            if (dashButton != null)
-            {
-                dashButton.onClick.AddListener(OnDashClicked);
-            }
-        }
-        
-        private void UpdateButtonStates()
-        {
-            if (playerController == null) return;
             
-            bool canAttack = playerController.CanPerformAction(PlayerActionType.Attack);
-            bool canGuard = playerController.CanPerformAction(PlayerActionType.Guard);
-            bool canDash = playerController.CanPerformAction(PlayerActionType.Dash);
-            
-            if (attackButton != null)
-                attackButton.interactable = canAttack;
-            
-            if (guardButton != null)
-                guardButton.interactable = canGuard;
-            
-            if (dashButton != null)
-                dashButton.interactable = canDash;
-        }
-        
-        private void OnAttackClicked()
-        {
-            Debug.Log("[BattleUIInstaller] Attack button clicked!");
-            if (playerController != null)
-            {
-                Debug.Log("[BattleUIInstaller] Calling PerformAction(Attack)");
-                playerController.PerformAction(PlayerActionType.Attack);
-            }
-            else
-            {
-                Debug.LogError("[BattleUIInstaller] PlayerController is null!");
-            }
-        }
-        
-        private void OnGuardClicked()
-        {
-            if (playerController != null)
-            {
-                playerController.PerformAction(PlayerActionType.Guard);
-            }
-        }
-        
-        private void OnDashClicked()
-        {
-            if (playerController != null)
-            {
-                playerController.PerformAction(PlayerActionType.Dash);
-            }
-        }
-        
-        private void OnDestroy()
-        {
-            if (attackButton != null)
-                attackButton.onClick.RemoveListener(OnAttackClicked);
-            
-            if (guardButton != null)
-                guardButton.onClick.RemoveListener(OnGuardClicked);
-            
-            if (dashButton != null)
-                dashButton.onClick.RemoveListener(OnDashClicked);
+            return null;
         }
     }
 }

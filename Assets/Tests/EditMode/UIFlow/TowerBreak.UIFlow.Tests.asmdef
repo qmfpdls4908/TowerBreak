@@ -3,7 +3,8 @@
   "rootNamespace": "TowerBreak.UIFlow.Tests",
   "references": [
     "TowerBreak.UIFlow",
-    "TowerBreak.GameData"
+    "TowerBreak.GameData",
+    "TowerBreak.Meta"
   ],
   "includePlatforms": [
     "Editor"
